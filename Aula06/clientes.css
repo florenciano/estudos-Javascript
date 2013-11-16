@@ -1,0 +1,16 @@
+.wrapper{
+	width: 940px;
+	margin: 40px auto 0;
+	display: block;
+	height: auto;
+	background-color: #fafafa;
+	padding: 2em;
+	border: 1px solid #ebebeb;
+	box-shadow: 4px 4px rgba(0,0,0,0.2);
+}
+h1 {
+	margin: 0 !important;
+	color: MediumBlue;
+}
+#loading {display: none; }
+.resultado {display: none;}

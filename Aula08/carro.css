@@ -1,0 +1,12 @@
+.wrapper {
+	width: 960px;
+	margin: 20px auto 0;
+	display: block;
+}
+.linha {
+	display: block;
+	height: 1px;
+	border-bottom: 1px solid #ccc;
+	clear: both;
+	margin: 1em 0 1.5em;
+}

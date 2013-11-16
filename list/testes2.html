@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Conversor</title>
+	<style>
+		p {
+			font-family: georgia,serif;
+			font-size: 16px;
+			line-height: 1.65em;
+		}
+		p span {
+			font-weight: bold;
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+	<p> Quantidade de itens na lista é de <span class="display">x</span> unidades</p>
+	<ul id="lista1" class="topicos">
+		<li>item 1</li>
+		<li>item 2</li>
+		<li>item 3</li>
+		<li>item 4</li>
+		<li>item 5</li>
+		<li>item 6</li>
+	</ul>
+
+	<p> Quantidade de itens na lista é de <span class="display">x</span> unidades</p>
+	<ul id="lista2" class="topicos">
+		<li>item 1</li>
+		<li>item 2</li>
+	</ul>
+
+	<script src="../head.load.min.js"></script>
+	<script>
+		head.js(
+			/*
+			// plugins
+			"moeda.js",
+			"soma.js",
+			// content
+			"main.js"
+			*/
+			"list.js"
+			)
+	</script>
+</body>
+</html>

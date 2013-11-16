@@ -1,0 +1,12 @@
+.wrapper {
+	width: 480px;
+	margin: 40px auto 0;
+	display: block;
+}
+.error {
+	background-color: red !important
+}
+li { margin: 5px 0 }
+li:nth-child(even) {
+	background-color: #ebebeb;
+}

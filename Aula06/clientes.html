@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>listagem de clientes</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+	<link rel="stylesheet" href="clientes.css">
+</head>
+<body>
+	
+	<div class="wrapper">
+		<h1>Listagem de clientes</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nihil harum natus deserunt explicabo porro reprehenderit nemo animi ad quidem. Sed, sint, voluptatibus et animi nulla sequi ut itaque dolor.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, consequuntur, consectetur magni impedit fuga illo distinctio dolorem blanditiis voluptate error at molestiae sit pariatur laboriosam minus hic saepe magnam ullam non neque sint culpa repellendus nemo delectus eos soluta minima quae harum aperiam.</p>
+
+		<table class="pure-table pure-table-horizontal">
+		    
+		    <thead>
+		        <tr>
+		            <th>ID</th>
+		            <th>Nome</th>
+		            <th>Email</th>
+		            <th>Telefone</th>
+		            <th>País</th>
+		        </tr>
+		    </thead>
+
+		    <tbody>
+		        <tr>
+		        	<td colspan="5" id="loading">Carregando dados...</td>
+		        </tr>
+		        <tr class="resultado">
+		            <td class="id">1</td>
+		            <td class="nome">John Donne</td>
+		            <td class="email">donne@organization.com</td>
+		            <td class="telefone">55 7436-9852</td>
+		            <td class="pais">EUA</td>
+		        </tr>
+		    </tbody>
+		    
+		</table>
+	</div>
+
+	<script src="../head.load.min.js"></script>
+	<script type="text/Javascript">
+		head.js("../jquery-2.0.3.min.js", "clientes.js");
+	</script>
+</body>
+</html>

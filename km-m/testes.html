@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Conversor</title>
+	<style>
+		p {
+			font-family: georgia,serif;
+			font-size: 16px;
+			line-height: 1.65em;
+		}
+	</style>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, nisi, reprehenderit dolor totam voluptate laborum mollitia? Sed, assumenda, fugit temporibus laudantium ab esse ullam voluptates saepe repellendus porro magnam odit?. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, sed, ducimus, dignissimos, odit labore doloremque magni amet quo sint porro eius iusto quia deserunt praesentium ex vel debitis aliquam harum.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, consequuntur vero nihil debitis ullam minima recusandae veniam suscipit! Officiis, ratione quod vero quaerat?</p>
+
+	<form action="#">
+		<label for="km">
+			Kilometros
+			<input type="text" id="kmUnits" placeholder="KM">
+		</label>
+		<input type="button" value="Calcular" id="calcular">
+		<label for="meters">
+			Metros
+			<input type="text" id="meterUnits" placeholder="Metros" disabled>
+		</label>
+	</form>
+
+	<script src="../head.load.min.js"></script>
+	<script>
+		head.js(
+			/*
+			// plugins
+			"moeda.js",
+			"soma.js",
+			// content
+			"main.js"
+			*/
+			"calculadora.js"
+			)
+	</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<!-- é preciso criar um controller para gerar a magia
+	é o nome da funcao q o angular espera q tenha no seu js -->
+<html lang="en" ng-app ng-controller="carros">
+<head>
+	<meta charset="UTF-8">
+	<title>Carros</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+	<link rel="stylesheet" href="carro.css">
+	<script src="../angular.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- form -->
+		<form class="pure-form pure-form-stacked">
+		    <fieldset>
+		        <legend>Trabalhando com angular.js</legend>
+
+		        <label for="model">Model</label>
+		        <input id="model" type="text" placeholder="Model" ng-model="model">
+
+		        <label for="make">Make</label>
+		        <input id="make" type="text" placeholder="Make" ng-model="make">
+
+		        <label for="year">Year</label>
+		        <input id="year" type="text" placeholder="Year" ng-model="year">
+		        <input type="hidden" ng-mode="id">
+				<!-- acao de clique no angular -->
+		        <button type="submit" class="pure-button pure-button-primary" ng-click="add()" ng-hide="hideAdd">Add</button>
+		        <button type="submit" class="pure-button pure-button-primary" ng-click="save()" ng-hide="hideSave">Save</button>
+		    </fieldset>
+		</form>
+
+		<div class="linha"></div>
+		<!-- table -->
+		<table class="pure-table">
+		    <thead>
+		        <tr>
+		            <th>ID</th>
+		            <th>Make</th>
+		            <th>Model</th>
+		            <th>Year</th>
+		            <th>Actions</th>
+		        </tr>
+		    </thead>
+
+		    <tbody>
+		        <!-- <tr>
+		            <td>0</td>
+		            <td>Honda</td>
+		            <td>Accord</td>
+		            <td>2009</td>
+		            <td><a href="#"></a></td>
+		        </tr> -->
+		        <!-- aqui ira se repetir todo o array gravado no localStorage -->
+				<tr ng-repeat="item in listaCarros">
+					<td>{{$index+1}}</td>
+					<td>{{item.model}}</td>
+					<td>{{item.make}}</td>
+					<td>{{item.year}}</td>
+					<!-- ele vai passar a posição do array -->
+					<td>
+						<a href="#" ng-click="delete($index)">Excluir</a> | 
+						<a href="#" ng-click="edit($index)">Editar</a>
+					</td>
+				</tr>
+		    </tbody>
+		</table>
+	</div>
+
+	<script src="carro_controller.js"></script>
+</body>
+</html>
