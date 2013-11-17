@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Meu Plugin</title>
+</head>
+<body>
+	<div id="teste">
+		<label for="name">Nome do usuário</label> <br>
+		<input id="name" type="text">
+	</div>
+
+	<!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-git.js"></script>
+    <script>
+    	$.fn.meuAlerta = function() {
+    		alert("hola agora");
+    		// pensando numa possivel encadenhamento de funções
+    		return this;
+    	}
+    	$( "input#name" ).click(function(){
+    		$(this).meuAlerta().hide();
+    	});
+    </script>
+</body>
+</html>
