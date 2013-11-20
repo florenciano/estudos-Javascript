@@ -17,10 +17,17 @@ function Sacola() {
 
 	// determinando o valor que gostariamos que tivesse o total
 	// pense que é possível usar func para trabalhar este valor
-	this.meuValorTotal = function(param) {
+	/*
+		this.meuValorTotal = function(param) {
 
-		total = param;
-		return total;
+			total = param;
+			return total;
 
+		};
+	*/
+
+	// incrementando um valor e não deixando q o usuário determine um valor qualquer
+	this.incrementarTotal = function() {
+		total ++;
 	};
 }

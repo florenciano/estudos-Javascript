@@ -2,6 +2,12 @@
 var sacola1 = new Sacola();
 var sacola2 = new Sacola();
 
+sacola1.incrementarTotal();
 console.log(sacola1.obterTotal());
 
-console.log(sacola2.meuValorTotal(200));
+sacola1.incrementarTotal();
+sacola1.incrementarTotal();
+sacola1.incrementarTotal();
+sacola1.incrementarTotal();
+sacola1.incrementarTotal();
+console.log(sacola1.obterTotal());
