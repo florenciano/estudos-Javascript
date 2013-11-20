@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>ANGULAR</title>
+</head>
+<body>
+
+	<div class="container" ng-controller="SimpleController">
+		<p>Seu nome:</p>
+		<!--
+		user é um obj; nome é uma propriedade deste obj
+		 -->
+		<input type="text" ng-model="user.nome" value="{{ user.nome }}" placeholder="Seu nome aqui">
+		<h1>Olá Sr(a) {{ user.idade }} !</h1>
+	</div>
+
+
+	<div class="link" ng-controller="CountController">
+		<a href="#" ng-click="addOne()">+ 1</a>
+		<br>
+		<p>Valor: {{counter}}</p>
+	</div>
+
+
+	<div class="listas" ng-controller="listarFrutas">
+		<ul>
+			<li ng-repeat="nomeDasFrutas in frutas">
+				<a href="#">Nome da fruta: {{nomeDasFrutas.name}} e sua cor: {{ nomeDasFrutas.cor }}</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<!-- angular.js-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+	<!-- meus scripts para trabalhar c/ angular -->
+	<script src="../controller/	helloAngular.js"></script>
+</body>
+</html>

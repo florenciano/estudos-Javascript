@@ -1,0 +1,28 @@
+{ "frutas" : [
+
+	{
+		"id"	:		1,
+		"name"	: 		"Maça",
+		"cor"	: 		"vermelho"
+	},
+	{
+		"id"	:		2,
+		"name"	: 		"Banana",
+		"cor"	: 		"amarelo"
+	},
+	{
+		"id"	:		3,
+		"name"	: 		"Kiwi",
+		"cor"	: 		"verde"
+	},
+	{
+		"id"	:		4,
+		"name"	: 		"Coco",
+		"cor"	: 		"branco"
+	},
+	{
+		"id"	:		5,
+		"name"	: 		"Mamão",
+		"cor"	: 		"laranja"
+	}
+] }
