@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+	<meta charset="utf-8">
+	 <title>Google Phone Gallery: {{query}}</title>
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="js/controllers.js"></script>
+
+</head>
+<body ng-controller="PhoneListCtrl">
+
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				<!--Sidebar content-->
+
+				Search: <input id="pesquisar" ng-model="query">
+
+			</div>
+			<div class="span10">
+				<!--Body content-->
+				<nav>
+					<!-- container replicando -->
+					<div ng-repeat="phone in phones | filter:query" class="container">
+						<h3>{{phone.category}}</h3>
+						<ol>
+							<li>
+								<div class="containerCategory">
+		                            <div class="contLeft">
+		                                <span>&nbsp;</span><a href="#" class="exp-rec">[+]</a>
+		                            </div>
+		                            <div class="contRight">
+		                                <p>{{phone.name}}</p>
+		                            </div>
+		                        </div>
+
+		                        <!-- itens by category -->
+		                        <ul>
+		                        	<li class="sublist"><a href="#titlePage">{{phone.snippet}}</a></li>
+		                        	<li class="sublist" ><a href="#titlePage">{{phone.snippet2}}</a></li>
+		                        	<li class="sublist" ><a href="#titlePage">{{phone.snippet3}}</a></li>
+		                        	<li class="sublist" ><a href="#titlePage">{{phone.snippet4}}</a></li>
+		                        	<li class="sublist" ><a href="#titlePage">{{phone.snippet5}}</a></li>
+		                        </ul>
+
+								<!-- divise -->
+								<hr>
+
+							</li>
+						</ol>
+					</div>
+
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- <div id="status">Current filter: {{query}}</div> -->
+	<script src="js/limpeza.js"></script>
+
+</body>
+</html>
