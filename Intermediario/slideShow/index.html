@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Slide Show</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.1/pure-min.css">
+
+	<style type="text/css">
+
+		.wrapper {
+			display: block;
+			width: 80%;
+			margin: 20px auto 0;
+		}
+		.wrapper div {	display: block	}
+
+		/* container imagem e dos botões */
+		.wrapper .contImg,
+		.wrapper .contBtn {
+			margin: 0 auto;
+			width: 50%;
+			text-align: center;
+		}
+
+		/* Botões de navegação */
+		.textLeft,
+		.textRight 	{ width: 50% }
+
+		.textLeft p,
+		.textRight p { margin: 1em 0 }
+
+		.textLeft p a,
+		.textRight p a { display: block }
+
+		/* flutuando os botões para cada extremidade do painel */
+		.textLeft 	{ float: left }
+		.textRight 	{ float: right }
+
+	</style>
+
+</head>
+<body>
+	<div class="wrapper">
+		<!-- container imagem -->
+		<div class="contImg">
+			<img src="img1.gif" alt="azul" id="slideShow">
+		</div>
+		<!-- container texto -->
+		<div class="contBtn">
+			<!-- left text content -->
+			<div class="textLeft">
+				<p><a href="#" id="previousImg">Visualizar anterior</a></p>
+			</div>
+			<!-- right text content -->
+			<div class="textRight">
+				<p><a href="#" id="nextImg">Visualizar próxima</a></p>
+			</div>
+		</div>
+	</div>
+
+	<!-- script -->
+	<script type="text/javascript">
+
+		// declarando as variavies e criando o Array das imagens
+		var fotoAtual, painelImg, listaImagens;
+
+		fotoAtual 	= 	0;
+		painelImg 	= 	document.getElementById( 'slideShow' );
+		imagens 	= 	new Array();
+
+		window.onload = function () {
+
+			// realizando um 'preloading' das imagens
+			// teremos 7 objetos Image criado
+			for( i = 0; i < 7; i++) {
+				imagens[i] = new Image();
+			}
+
+			// definindo URL das imagens para seus respectivos objetos
+			imagens[0].src = "img1.gif";
+			imagens[1].src = "img2.gif";
+			imagens[2].src = "img3.gif";
+			imagens[3].src = "img4.gif";
+			imagens[4].src = "img5.gif";
+			imagens[5].src = "img6.gif";
+			imagens[6].src = "img7.gif";
+
+			// atribuindo a chamada da função no click do botão
+			document.getElementById( 'nextImg' ).onclick = nextPic;
+			document.getElementById( 'previousImg' ).onclick = previousPic;
+		}
+
+		function alterarFoto ( numbfoto ) {
+			// substituindo a imagem do container pelo o número do índice do Array
+			painelImg.src = imagens[numbfoto].src;
+		}
+
+		// definindo a função 'próxima imagem'
+		function nextPic( event ) {
+			fotoAtual ++;
+
+			// alterando o contador e consequentemente sua posição no Array
+			if( fotoAtual < imagens.length ) {
+
+				// função para substituir imagem
+				alterarFoto( fotoAtual )
+			} else {
+				// definir um limite no contador prevendo clicks 'a mais'
+				// depois da última imagem
+				fotoAtual = 6;
+			}
+
+			event.preventDefault();
+		}
+
+		// definindo a função 'imagem anterior'
+		function previousPic( event ) {
+
+			// se o contador for maior que zero
+			// o que significa que houve alteração do painel pelo 'next'
+			if( fotoAtual > 0 ) {
+				fotoAtual --;
+
+				// função para substituir imagem
+				alterarFoto( fotoAtual )
+			}
+
+			event.preventDefault();
+		}
+
+
+	</script>
+</body>
+</html>
