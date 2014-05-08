@@ -21,3 +21,16 @@ $(document).ready(function(){
 $( "#pesquisar" ).bind("keydown", "blur",function(){
 	clearList();
 });
+
+function teste2() {
+	var ola = $( ".teste" );
+	
+	ola.each(function(){
+		$(this).click(function(){
+			console.log("bicha");
+		});
+		$(this).css("color", "red");	
+	});
+}
+
+	teste2();
