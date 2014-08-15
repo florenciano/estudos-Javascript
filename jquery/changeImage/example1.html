@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mudando imagem com f5</title>
+	<style>
+		.container {
+			display: block;
+			width: 40%;
+			margin: 2em auto;
+			border: 1px solid #ccc;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img src="img/1.png" alt="Alerts general">
+	</div>
+	<script src="../jquery-1.11.0.min.js"></script>
+	<script>
+	var numbTotalImg = 5;
+	function refreshImg() {
+		var num = Math.ceil(Math.random() * numbTotalImg);
+		$( ".container img" ).attr( "src","img/"+num+".png" );
+	}
+	window.onload = refreshImg;
+	</script>
+</body>
+</html>
