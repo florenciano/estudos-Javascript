@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Estudos jQuery</title>
+	<style>
+		.mensagem {
+			border: 1px solid #ccc;
+			line-height: 1em;
+			padding: .5em;
+			height: 1em;
+		}
+		.board {
+			width: 400px;
+			height: 100px;
+			background-color: silver;
+			border-radius: 4px;
+		}
+		.display {
+			display: block;
+			margin: .5em auto;
+			border: 1px dotted orange;
+			height: 1em;
+			padding: .25em;
+			min-width: 10em;
+		}
+	</style>
+</head>
+<body>
+	<label for="nome"> Digite seu none: <br>
+		<input type="text" id="nome">
+	</label>
+	<br> <small><em>ao perder o foco o input dispara o evento</em></small>
+	<hr>
+	<label for="cpf"> Digite seu CPF: <br>
+		<input type="text" id="cpf">
+	</label>
+	<hr>
+
+	<h2>Lorem ipsum dolor sit.</h2>
+
+	<select name="" id="">
+		<option value="">lorem01</option>
+		<option value="">lorem02</option>
+		<option value="">lorem03</option>
+		<option value="">lorem04</option>
+	</select>
+	<p class="mensagem"></p>
+	<hr>
+
+	<p>Movimente o mouse sobre este div</p>
+	<div class="board"></div>
+	<span class="display"></span>
+	<br>
+
+	<!-- scripts -->
+	<script type="text/javascript" src="jquery-1.11.0.min.js"></script>
+	<script src="page5-1.js"></script>
+</body>
+</html>

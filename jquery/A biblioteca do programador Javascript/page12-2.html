@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Imagens</title>
+<style type="text/css" media="all">
+	body {
+	margin:20px 0;
+	padding:0;
+	background:#d6e2e5;
+	}
+#tudo {
+	width:600px;
+	font: 80%/1.2 Arial, Helvetica, sans-serif;
+	margin:0 auto;
+	padding:0 20px;
+	color:#666;
+	background:#fff;
+	border:1px dotted #999;
+	}
+.foto{border:none;margin:10px;}
+.left {float:left;}
+.right {float:right;}
+/* CSS para efeitos jQuery  */
+#mascara {
+	position:absolute;
+	background:#000;
+	z-index:1;
+	top:0;
+	}
+.foto-ampliada {
+	width: 500px;
+	height: 375px;
+	position:absolute;
+	z-index:2;
+	cursor:pointer;
+	border:5px solid #999;
+	}
+</style>
+</head>
+<body>
+
+<div id="tudo">
+<h1>Página com fotos</h1>
+<p><a href="1.jpg"><img src="1.jpg" alt="Descrição da foto" width="120" height="90" class="foto left" /></a>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor. Duis vitae ipsum. Maecenas dapibus hendrerit diam. Morbi varius, massa id pretium accumsan, nunc lorem congue libero, ut euismod metus libero id nulla. Duis posuere odio sed velit vulputate venenatis. Suspendisse et dui ac metus auctor fringilla. Curabitur interdum augue a pede.</p>
+
+<p><a href="9.jpg"><img src="9.jpg" alt="Descrição da foto" width="100" height="75" class="foto right" /></a>Curabitur hendrerit erat ut augue. Cras gravida. Mauris consequat aliquam leo. Aenean non tortor id metus aliquet consectetuer. Quisque sodales lectus ac orci.</p>
+<p><a href="10.jpg"><img src="10.jpg" alt="Descrição da foto" width="120" height="90" class="foto left" /></a>Donec eleifend fringilla mi. Vivamus vel massa. Aenean interdum pellentesque sem. Nulla pellentesque felis et tortor. Duis cursus, dui non dictum tincidunt, wisi ipsum mollis wisi, nec ornare velit ipsum eget enim. In sed felis. Phasellus condimentum sodales nulla. Etiam orci leo, rutrum malesuada, congue vel, fringilla vitae, lorem. Pellentesque ligula.</p>
+
+<p style="text-align:right;"><strong>Clique qualquer foto.</strong></p>
+
+	<!-- scripts -->
+	<!--
+	<script type="text/javascript" src="jquery-1.11.0.min.js"></script> -->
+	<script type="text/javascript" src="jquery-1.2.6.js"></script>
+	<script src="page12-2.js"></script>
+</body>
+</html>
