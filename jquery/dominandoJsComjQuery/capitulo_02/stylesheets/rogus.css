@@ -8,7 +8,7 @@ body {
 	font-family: Helvetica, Tahoma, sans-serif;
 	color: #113157; /* #333344; */
 	font-size: 100%; /* 100% = 16px */
-	text-shadow: 0.1em 0.1em 0.1em #ddf;
+	/*text-shadow: 0.1em 0.1em 0.1em #ddf;*/
 	line-height: 1.5em;
 }
 
