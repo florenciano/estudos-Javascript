@@ -19,8 +19,8 @@ function converterEmText (value) {
 
 // Alterando o valor total da lista de compras
 function escreverTotal (value) {
-	var total = document.getElementById('total');
-	total.innerHTML = converterEmText(value);
+	var total = $( "#total" );
+	$(total).text(converterEmText(value));
 }
 
 /*
@@ -31,39 +31,26 @@ function escreverTotal (value) {
 
 // fazendo os cálculos necessários para ter o valor total
 function calculateTotalProducts () {
-	var produtos = document.getElementsByClassName("produto"); // array: lista do carrinho da compra
+	var produtos, totalProdutos;
+		produtos = $( ".produto" ), // array
+		totalProdutos = 0;
 
-	var totalProdutos = 0;
-	for(var pos = 0; pos < produtos.length; pos++) {
-		// trabalhando com o valor unitário
-		var priceElements = produtos[pos].getElementsByClassName("price");
-		var priceText = priceElements[0].innerHTML;
-		var price = converterEmNumber(priceText);
+	$(produtos).each(function (pos, produto) {
+		var $produto = $(produto);
+		var quantity = converterEmNumber(
+			$produto.find( ".quantity" ).val() );
+		var price = converterEmNumber(
+			$produto.find( ".price" ).text() );
 
-		// trabalhando com a qtde
-		var qtyElements = produtos[pos].getElementsByClassName("quantity");
-		var qtyText = qtyElements[0].value;
-		var quantity = converterEmNumber(qtyText);
-		
-		// criando subtotais e add no valor Total
-		var subTotal = quantity * price;
-			totalProdutos += subTotal;
-	}
+		totalProdutos += quantity * price;
+	});
 	return totalProdutos;
 }
 
-// qdo houver a mudança no campo faça...
-function quantidadeMudou () {
-	escreverTotal(calculateTotalProducts());
-}
-
 // recalculando a cada mudança no campo qtde
-function onDocumentLoad () {
-	var textEdits = document.getElementsByClassName("quantity");
+$(function(){
+	$( ".quantity" ).change(function () {
+		escreverTotal(calculateTotalProducts()); // chama a funcão do cálculo
+	});
+});
 
-	for(var i = 0; i < textEdits.length; textEdits++) {
-		textEdits[i].onchange = quantidadeMudou;
-	}
-}
-
-window.onload = onDocumentLoad;
