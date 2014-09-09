@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Teste</title>
+	<style>
+		.msgDisplay {
+			display: none;
+			/* format */
+			margin-top: 10px;
+			padding: 15px;
+			color: #8a6d3b;
+			background-color: #fcf8e3;
+			border-color: #faebcc;
+		}
+	</style>
+</head>
+<body>
+	<select id="myselect">
+	    <option value="Analista/Assistente">Analista/Assistente</option>
+		<option value="Coordenador/Supervisor">Coordenador/Supervisor</option>
+		<option value="Gerente">Gerente</option><option value="Diretor">Diretor</option>
+		<option value="Presidente">Presidente</option>
+		<option value="Consultor">Consultor</option>
+		<option value="Profissional Liberal">Profissional Liberal</option>
+		<option value="Professor">Professor</option>
+		<option value="Aluno">Aluno</option><option value="Outros">Outros</option>
+	</select>
+
+	<div class="msgDisplay">
+		Para utilizar o caso em sala de aula, por favor encaminhar um e-mail para <a href="mailto:casos@insper.edu.br">casos@insper.edu.br</a>.
+	</div>
+	
+	<script src="jquery-2.0.3.min.js"></script>
+	<script>
+	$( "#myselect" ).on( "change", function() {
+		if( $(this).val() == "Professor" ) {
+			$( ".msgDisplay" ).css( "display", "block" );
+		} else {
+			$( ".msgDisplay" ).css( "display", "none" );
+		}
+	});
+	</script>
+</body>
+</html>
