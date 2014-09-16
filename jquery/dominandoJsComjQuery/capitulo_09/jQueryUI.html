@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery UI</title>
+	<link rel="stylesheet" href="jquery-ui-1.11.1/jquery-ui.structure.css">
+	<link rel="stylesheet" href="jquery-ui-1.11.1/jquery-ui.theme.min.css">
+</head>
+<body>
+	<!-- ACCORDION -->
+	<div id="accordion">
+		<h3>Quem somos</h3>
+		<div>
+			<p>Somos uma empresa que escreve aquelas coisas bonitas de
+				visão e missão, mas fazemos diferente na vida real.
+			</p>
+			<p>Também somos mamilos polemicos!!</p>
+		</div>
+		<h3>O que fazemos</h3>
+		<div>
+			<p>Criamos produtos que são vendidos com um ano de garantia
+				e quebram após um ano e meio de uso.
+			</p>
+		</div>
+		<h3>Trabalhe conosco</h3>
+		<div>
+			<p>Se você é do tipo que venderia um gato morto para a
+				própria avó, venha trabalhar conosco!
+			</p>
+		</div>
+	</div>
+	<p>&nbsp;</p>
+	
+	<!-- AUTOCOMPLETE -->
+	<div class="ui-widget"> <!-- Esta classe faz com que o elemento receba as regras do 'theme' -->
+		<label for="linguagens">Linguagem: </label>
+		<input id="linguagens" type="text" placeholder="Qual linguagem?" />
+	</div>
+	<p>&nbsp;</p>
+
+	<!-- DATE PICKER -->
+	<div class="ui-widget">
+		<label for="nascimento">Data de nascimento:</label>
+		<input id="nascimento" type="text">
+	</div>
+	<p>&nbsp;</p>
+
+	<!-- DIALOGS -->
+	<div id="dialog" title="Aviso do sistema">
+		<p>Você acha que esse é o melhor livro de JavaScript que já existiu?</p>
+	</div>
+
+	<script src="jquery-ui-1.11.1/external/jquery/jquery.js"></script>
+	<script src="jquery-ui-1.11.1/jquery-ui.min.js"></script>
+	<script>
+		// accordion
+		$( "#accordion" ).accordion();
+
+		// autocomplete
+		var linguagensLista = [
+			"Clojure",
+			"Common LISP",
+			"Erlang",
+			"F#",
+			"Haskell",
+			"JavaScript",
+			"OCaml",
+			"PHP",
+			"Ruby on Rails",
+			"Scala",
+			"Scheme"
+		];
+		$( "#linguagens" ).autocomplete({ source:linguagensLista });
+
+		// datepicker: personalizado
+		$("#nascimento").datepicker({
+			// showWeek: true,
+			firstDay: 0,
+			dateFormat: "dd/mm/yy",
+			dayNames: [
+				"Domingo",
+				"Segunda-Feira",
+				"Terça-Feira",
+				"Quarta-Feira",
+				"Quinta-Feira",
+				"Sexta-Feira",
+				"Sábado"
+			],
+			dayNamesMin: [ "D", "S", "T", "Q", "Q", "S", "S" ],
+			monthNames: [
+				"Janeiro",
+				"Fevereiro",
+				"Março",
+				"Abril",
+				"Maio",
+				"Junho",
+				"Julho",
+				"Agosto",
+				"Setembro",
+				"Outubro",
+				"Novembro",
+				"Dezembro"
+			],
+			monthNamesShort: [
+				"Jan",
+				"Fev",
+				"Mar",
+				"Abr",
+				"Mai",
+				"Jun",
+				"Jul",
+				"Ago",
+				"Set",
+				"Out",
+				"Nov",
+				"Dez"
+			],
+			showButtonPanel: true, // responsavel de por o par de botões
+			currentText: "Hoje",
+			closeText: "Fechar",
+			weekHeader: "#"
+		});
+
+		// dialogs: personalizado
+		function onSimClick () {
+			console.log("Você escolheu sim");
+			$( this ).dialog( "close" );
+		}
+		function onClaroClick () {
+			console.log("Você escolheu não");
+			$( this ).dialog( "close" );
+		}
+		var opcoes = {
+			buttons: {
+				"Sim": onSimClick, // tem q ser chamada de função
+				"Não": onClaroClick // tem q ser chamada de função
+			}
+		};
+
+		$( "#dialog" ).dialog(opcoes);
+
+	</script>
+</body>
+</html>
