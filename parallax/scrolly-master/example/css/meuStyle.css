@@ -1,0 +1,117 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body { font-family: helvetica, sans-serif; }
+section {
+	position: relative;
+	overflow: hidden;
+	min-height: 100%;
+	width: 100%;
+	min-width: 100%;
+}
+section article {
+	z-index: 10;
+}
+
+/* configurando a altura das seções */
+section:nth-of-type(1){ background-color: #faa61a; height: 1600px; }
+section:nth-of-type(2){ background-color: #ffffff; height: 1200px; }
+section:nth-of-type(3){ background: #414042; height: 1200px; }
+
+/* formatando a 1º seção */
+#section-1>div:nth-of-type(1) {
+	background: url(../img/section1b-bg.jpg) 100% 0 no-repeat fixed;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#section-1 article {
+	width: 550px;
+	position: absolute;
+	top: 20%;
+	left: 5%;
+}
+#section-1 h1 {
+	background-color: #fff;
+	color: #faa61a;
+	font-size: 80px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	padding-top: 10px;
+}
+#section-1 p {
+	font-size: 14px;
+	line-height: 22px;
+	color: #fff;
+	margin-top: 10px;
+}
+#section-1 p span {
+	background-color: #ee2a5d;
+	padding: .1em .25em;
+}
+
+/* formatando a 2º seção */
+#section-2>div:nth-of-type(1) {
+	background: url(../img/section2-bg.jpg) 100% 0 no-repeat fixed;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#section-2>div:nth-of-type(2) {
+	background: url(../img/section2b-bg.png) 0% 0 no-repeat fixed;
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#section-2 article {
+	width: 380px;
+	position: absolute;
+	top: 50%;
+	left: 10%;
+}
+#section-2 h1 {
+	color: #faa61a;
+	font-size: 40px;
+	text-transform: uppercase;
+	border-bottom: 5px solid #faa61a;
+}
+#section-2 p {
+	font-size: 14px;
+	line-height: 22px;
+	color: #414042;
+	margin-top: 10px;
+}
+
+/* formatando a 3º seção */
+#section-3 .cortina {
+	background: url(../img/cortina.png) 0 top no-repeat;
+	display: block;
+	width: 100%;
+	height: 300px
+}
+#section-3 article {
+	width: 60%;
+	position: absolute;
+	top: 25%;
+	left: 15%;
+}
+#section-3 h1 {
+	color: #faa61a;
+	font-size: 44px;
+	border-bottom: 5px solid #faa61a;
+}
+#section-3 p {
+	font-family: georgia, serif;
+	font-size: 32px;
+	line-height: 1.6em;
+	color: #faa61a;
+	margin-top: 20px;
+}

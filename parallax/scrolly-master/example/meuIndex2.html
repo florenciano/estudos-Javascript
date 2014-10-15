@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Meu primeiro parallax</title>
+	<link rel="stylesheet" href="css/meuStyle.css">
+</head>
+<body>
+	<section id="section-1">
+		<article>
+			<h1>Título 1</h1>
+			<p>Cras tristique, mi non commodo gravida, neque sem lacinia mauris, ut mollis lacus felis non sapien. Nunc ut pulvinar metus. Fusce enim sem, dapibus eget nisl vitae, <span>porta congue lacus</span>. Fusce pellentesque ex vel nisl blandit, non ultrices odio porta. In hac habitasse platea dictumst. Pellentesque lobortis felis id eleifend laoreet. Pellentesque nec accumsan tortor. Sed sagittis, erat vitae congue lobortis, nisi neque lobortis est, ac hendrerit ipsum erat hendrerit ipsum. Aliquam sed vehicula dui. Phasellus ligula sem, consequat pellentesque scelerisque id, congue sit amet arcu.</p>
+			<p>Lorem <span>ipsum</span> dolor sit amet, consectetur adipisicing elit. Fugit voluptate assumenda facere cum nemo dolores suscipit vel molestiae, eligendi inventore dolorum eos aliquid ex modi distinctio blanditiis atque quod architecto!</p>
+		</article>
+		<!-- esta div tera o bg do primeira seção -->
+		<div class="parallax" data-velocity="-.2"></div>
+	</section>
+	<section id="section-2">
+		<article>
+			<h1>Subtítulo 1</h1>
+			<p>Cras tristique, mi non commodo gravida, neque sem lacinia mauris, ut mollis lacus felis non sapien.  Phasellus ligula sem, consequat pellentesque scelerisque id, congue sit amet arcu.</p>
+			<p>Curabitur cursus id tellus sed pharetra. Nullam eget dolor nec ipsum hendrerit tincidunt. Praesent finibus eleifend pretium. Aliquam consequat lobortis lectus a fermentum. Suspendisse a dolor vel mauris bibendum commodo id et nunc. Sed accumsan, lacus quis faucibus consequat, ipsum nisl finibus augue, et semper turpis risus nec ipsum. Nulla at ipsum ut risus pretium rutrum at eget arcu. Cras nunc mi, porta id tempus id, viverra quis felis. Aliquam gravida, augue quis congue faucibus, turpis lectus vulputate libero, tempus interdum nunc augue vel felis.</p>
+		</article>
+		<div class="parallax" data-velocity="-.1" data-fit="100"></div>
+		<!-- data-fit: inicio do background-position -->
+        <div class="parallax" data-velocity=".3"></div>
+	</section>
+	<section id="section-3">
+		<div class="cortina"></div>
+		<article>
+			<h1>Subtítulo 2</h1>
+			<p>Suspendisse posuere neque in sapien elementum, in hendrerit odio euismod. Mauris fringilla gravida fermentum. Quisque pulvinar ex tincidunt velit scelerisque placerat. Mauris sit amet risus et nunc scelerisque eleifend. Sed ultrices ante diam, at consectetur elit mattis in. In id erat et <strong>nunc fringilla tincidunt nec vel elit</strong>. In quis molestie arcu. Nam hendrerit eros non sollicitudin viverra. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur lorem sapien, suscipit nec lectus et, suscipit mattis lacus. Etiam suscipit aliquam accumsan.</p>
+		</article>
+	</section>
+
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="../jquery.scrolly.js"></script>
+	<script>
+		$(document).ready(function(){
+	    	$( ".parallax" ).scrolly({bgParallax: true});
+	   	});
+	
+		/*
+		// identificando os elemets q serão aplicados o efeito
+		// neste caso todo el q recebe as classes 'bgParallax'
+		$( ".parallax" ).each(function(){
+			var $obj = $(this);
+
+			$( window ).scroll(function(){
+				// rolagem da tela dividido pela velocidade do atributo data-speed add no el.
+				// porque negativo? O back tem q rolar para cima
+				var yPos = ($(window).scrollTop() / $obj.data( "velocity" ));
+
+				// o valor acima será aplicado no background-position: top
+				var bgpos = "100% "+ yPos + "px";
+				// atribuindo...
+				$obj.css( "background-position", bgpos );
+			});
+			
+		});
+		*/
+	</script>
+</body>
+</html>
