@@ -1,0 +1,32 @@
+// vars
+$nomeEfeito: fadeInLeft;
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@include keyframes($nomeEfeito) {
+    0% { 
+        opacity: 0;
+        -webkit-transform: translate3d(-15%, 0, 0);
+                transform: translate3d(-15%, 0, 0);
+    }
+    100% { 
+        opacity: 1;
+        -webkit-transform: none;
+                transform: none;
+    }
+}
+
+// here name of the class
+.#{$nomeEfeito} {
+    -webkit-animation-name: $nomeEfeito;
+            animation-name: $nomeEfeito;  
+}
