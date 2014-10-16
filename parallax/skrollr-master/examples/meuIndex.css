@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+body { 
+	font-family: sans-serif; 
+	padding-top: 2em;
+	background: url(images/kitteh1.jpg) 50% 0 no-repeat fixed;
+}
+p { line-height: 1.6em; font-size: 22px; }
+.section-1 {
+	padding: 1em;
+	width: 98%;
+	margin: 1% auto;
+	color: #414042;
+}
