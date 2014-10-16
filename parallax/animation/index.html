@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Teste de animação</title>
+	<link rel="stylesheet" href="animate.css">
+	<style>
+	* { box-sizing: border-box; }
+	body {
+		line-height: 1.65em;
+		font-size: 125%;
+		font-family: georgia,serif;
+		width: 1200px;
+		padding: 1em;
+		margin: 0 auto;
+	}
+	.row {
+		width: 100%;
+		display: block;
+		margin: 3em 0;
+		float: left;
+		min-height: 380px;
+	}
+	.c6 {
+		width: 50%;
+		float: left;
+		padding: 1em;
+	}
+	.containerText { 
+		color: rgb(0,165,255);
+	}
+	.containerText h2 { margin: 0 }
+	.containerImg  img {
+		display: block;
+		margin: 0 auto;
+		padding: .35em;
+		border: 1px solid rgb(0,165,255);
+		border-radius: 2px;
+		border-bottom-width: 2px;
+		border-right-width: 2px;
+	}
+	/* reest */
+	.fix:before,
+	.fix:after {
+	    content: " ";
+	    display: table;
+	}
+	.fix:after {
+	    clear: both;
+	}
+
+	.fix {
+	    *zoom: 1;
+	}
+	.hidden{ opacity:0;	}
+	.visible{ opacity:1; }
+	</style>
+</head>
+<body>
+	<h1>Algum título de teste</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est consequatur, deserunt ab, sint omnis alias et maiores, dolore provident explicabo voluptatem quam! Minus ea culpa cumque nisi natus consequuntur repellendus, quod odio voluptates, illo molestiae, fugiat cupiditate, repudiandae quisquam soluta! Est aliquid in eveniet temporibus, optio eius neque pariatur voluptates sit totam iste sint necessitatibus dolore repellat rem, tempora. Dolorum doloribus eligendi deleniti quo, ipsa cum dolor laudantium perferendis esse doloremque autem perspiciatis, inventore enim eum quas, nihil ea. Officia et dolor illo inventore soluta asperiores itaque animi ipsam quas, ipsa quibusdam optio cum beatae odit possimus accusamus enim praesentium distinctio id saepe ut veritatis at rerum delectus velit! Est at, minima ratione voluptatem consectetur, quibusdam voluptatibus dicta corrupti, aperiam tenetur soluta architecto provident tempora doloremque necessitatibus omnis iste! Neque totam qui veniam minima, numquam, eos nulla animi, itaque porro vitae voluptatum aliquam adipisci quidem nesciunt sint dicta temporibus minus similique eum ex vero ea quisquam. Quam illum itaque at ab, voluptates sequi in autem sit adipisci architecto! Ex porro consequatur dolores sint deleniti iste aliquam quas voluptates similique et, perspiciatis, voluptatibus repudiandae libero soluta ipsa eaque autem! Error quae accusantium dolorem amet tempora. Ab, maiores excepturi illo quam eos eaque, eligendi veritatis, consequuntur facere facilis hic repellat! Architecto ipsum, quo. Facere dolor tempore assumenda officia asperiores sunt eligendi, reprehenderit laborum deserunt officiis alias id vitae eos dolorem, nemo, eum recusandae error repellat sit perspiciatis velit praesentium distinctio at. Quas perferendis quod illo hic. Porro cum voluptate voluptas harum consequuntur, obcaecati corporis maiores, nulla! Iste eaque quidem culpa quisquam, tempora totam explicabo a inventore consequatur commodi doloribus aspernatur eveniet! A eos doloribus nihil, inventore, commodi eaque voluptatem magnam ea laborum dignissimos consequatur adipisci laboriosam perferendis, laudantium odit, optio beatae amet consequuntur nam veritatis voluptatibus. Sunt quaerat ratione asperiores, rerum soluta.</p>
+	<hr class="fix">
+	<h1>Teste de animações</h1>
+	<div class="row">
+		<div class="c6">
+			<div class="containerText">
+				<h2>Lorem ipsum dolor simet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi cupiditate aspernatur, sed cum iure maiores repellendus, temporibus esse doloremque consequuntur fugit eum iste velit minus at. Dicta, voluptates unde. Odit!</p>	
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nihil explicabo impedit qui unde perspiciatis minima maxime quas sed obcaecati animi nostrum hic earum, iusto porro quisquam, commodi ut eligendi labore illum odit, quae magni. Dolore et, assumenda quis veniam recusandae labore!</p>
+			</div>
+		</div>
+		<div class="c6">
+			<div class="containerImg">
+				<img src="bread.jpg" alt="imagem qualquer">
+			</div>
+		</div>
+	</div>
+	<hr class="fix">
+	<div class="row">
+		<div class="c6">
+			<div class="containerImg">
+				<img src="bread.jpg" alt="imagem qualquer">
+			</div>
+		</div>
+		<div class="c6">
+			<div class="containerText">
+				<h2>Lorem ipsum dolor simet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi cupiditate aspernatur, sed cum iure maiores repellendus, temporibus esse doloremque consequuntur fugit eum iste velit minus at. Dicta, voluptates unde. Odit!</p>	
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nihil explicabo impedit qui unde perspiciatis minima maxime quas sed obcaecati animi nostrum hic earum, iusto porro quisquam, commodi ut eligendi labore illum odit, quae magni. Dolore et, assumenda quis veniam recusandae labore!</p>
+			</div>
+		</div>
+	</div>
+	<hr class="fix">
+	<div class="row">
+		<div class="c6">
+			<div class="containerText">
+				<h2>Lorem ipsum dolor simet</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi cupiditate aspernatur, sed cum iure maiores repellendus, temporibus esse doloremque consequuntur fugit eum iste velit minus at. Dicta, voluptates unde. Odit!</p>	
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste nihil explicabo impedit qui unde perspiciatis minima maxime quas sed obcaecati animi nostrum hic earum, iusto porro quisquam, commodi ut eligendi labore illum odit, quae magni. Dolore et, assumenda quis veniam recusandae labore!</p>
+			</div>
+		</div>
+		<div class="c6">
+			<div class="containerImg">
+				<img src="bread.jpg" alt="imagem qualquer">
+			</div>
+		</div>
+	</div>
+	<hr class="fix">
+	<h1>Nam et nunc consectetur, ullamcorper ex nec, pretium felis</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda reiciendis in amet recusandae cupiditate, totam. Nihil laborum quos dolorum quas eveniet tenetur vitae tempore asperiores consectetur commodi. Aspernatur quos nemo, cum quibusdam.</p>
+
+	<!-- plugins -->
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="jQuery-viewport-checker-master/jquery.viewportchecker.js"></script>
+	<!-- main -->
+	<script>
+	$(function(){
+		// your code here...
+		// $(window).scroll(function(){
+		// 	console.log($(window).scrollTop());
+		// });
+		$( ".containerText" ).addClass( "hidden" ).viewportChecker({
+			classToAdd: "visible animated fadeInLeft",
+			offset: 400
+		});
+		$( ".containerImg" ).addClass( "hidden" ).viewportChecker({
+			classToAdd: "visible animated fadeIn",
+			offset: 400
+		});
+	});
+	</script>
+</body>
+</html>
