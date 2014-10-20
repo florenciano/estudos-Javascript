@@ -56,12 +56,15 @@
 	.visible{ opacity:1; }
 	.textus,
 	.fromRight,
-	.fromLeft { opacity: 0 }
+	.fromLeft { opacity: 0; position: relative; }
+	.fromLeft { left: -50px; }
+	.fromRight { right: -50px; }
+	.animatedX { opacity: 1 }
 	</style>
 </head>
 <body>
 	<h1>Algum título de teste</h1>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est consequatur, deserunt ab, sint omnis alias et maiores, dolore provident explicabo voluptatem quam! Minus ea culpa cumque nisi natus consequuntur repellendus, quod odio voluptates, illo molestiae, fugiat cupiditate, repudiandae quisquam soluta! Est aliquid in eveniet temporibus, optio eius neque pariatur voluptates sit totam iste sint necessitatibus dolore repellat rem, tempora. Dolorum doloribus eligendi deleniti quo, ipsa cum dolor laudantium perferendis esse doloremque autem perspiciatis, inventore enim eum quas, nihil ea. Officia et dolor illo inventore soluta asperiores <span style="color:red">itaque</span> animi ipsam quas, ipsa quibusdam optio cum beatae odit possimus accusamus enim praesentium distinctio id saepe ut veritatis at rerum delectus velit! Est at, minima ratione voluptatem consectetur, quibusdam voluptatibus dicta corrupti, aperiam tenetur soluta architecto provident tempora doloremque necessitatibus omnis iste! Neque totam qui veniam minima, numquam, eos nulla animi, itaque porro vitae voluptatum aliquam adipisci quidem nesciunt sint dicta temporibus minus similique eum ex vero ea quisquam. Quam illum itaque at ab, voluptates sequi in autem sit adipisci architecto! Ex porro consequatur dolores sint deleniti iste aliquam quas voluptates similique et, perspiciatis, voluptatibus repudiandae libero soluta ipsa eaque autem! Error quae accusantium dolorem amet tempora. Ab, maiores excepturi illo quam eos eaque, eligendi veritatis, consequuntur facere facilis hic repellat! Architecto ipsum, quo. Facere dolor tempore assumenda officia asperiores sunt eligendi, reprehenderit laborum deserunt officiis alias id vitae eos dolorem, nemo, eum recusandae error repellat sit perspiciatis velit praesentium distinctio at. Quas perferendis quod illo hic. Porro cum voluptate voluptas harum consequuntur, obcaecati corporis maiores, nulla! Iste eaque quidem culpa quisquam, tempora totam explicabo a inventore consequatur commodi doloribus aspernatur eveniet! A eos doloribus nihil, inventore, commodi eaque voluptatem magnam ea laborum dignissimos consequatur adipisci laboriosam perferendis, laudantium odit, optio beatae amet consequuntur nam veritatis voluptatibus. Sunt quaerat ratione asperiores, rerum soluta.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est consequatur, deserunt ab, sint omnis alias et maiores, dolore provident explicabo voluptatem quam! Minus ea culpa cumque nisi natus consequuntur repellendus, quod odio voluptates, illo molestiae, fugiat cupiditate, repudiandae quisquam soluta! Est aliquid in eveniet temporibus, optio eius neque pariatur voluptates sit totam iste sint necessitatibus dolore repellat rem, tempora. Dolorum doloribus eligendi deleniti quo, ipsa cum dolor laudantium perferendis esse doloremque autem perspiciatis, inventore enim eum quas, nihil ea. Officia et dolor illo inventore soluta asperiores itaque animi ipsam quas, ipsa quibusdam optio cum beatae odit possimus accusamus enim praesentium distinctio id saepe ut veritatis at rerum delectus velit! Est at, minima ratione voluptatem consectetur, quibusdam voluptatibus dicta corrupti, aperiam tenetur soluta architecto provident tempora doloremque necessitatibus omnis iste! Neque totam qui veniam minima, numquam, eos nulla animi, itaque porro vitae voluptatum aliquam adipisci quidem nesciunt sint dicta temporibus minus similique eum ex vero ea quisquam. Quam illum itaque at ab, voluptates sequi in autem sit adipisci architecto! Ex porro consequatur dolores sint deleniti iste aliquam quas voluptates similique et, perspiciatis, voluptatibus repudiandae libero soluta ipsa eaque autem! Error quae accusantium dolorem amet tempora. Ab, maiores excepturi illo quam eos eaque, eligendi veritatis, consequuntur facere facilis hic repellat! Architecto ipsum, quo. Facere dolor tempore assumenda officia asperiores sunt eligendi, reprehenderit laborum deserunt officiis alias id vitae eos dolorem, nemo, eum recusandae error repellat sit perspiciatis velit praesentium distinctio at. Quas perferendis quod illo hic. Porro cum voluptate voluptas harum consequuntur, obcaecati corporis maiores, nulla! Iste eaque quidem culpa quisquam, tempora totam explicabo a inventore consequatur commodi doloribus aspernatur eveniet! A eos doloribus nihil, inventore, commodi eaque voluptatem magnam ea laborum dignissimos consequatur adipisci laboriosam perferendis, laudantium odit, optio beatae amet consequuntur nam veritatis voluptatibus. Sunt quaerat ratione asperiores, rerum soluta.</p>
 	<hr class="fix">
 	<h1>Teste de animações</h1>
 	<div class="row">
@@ -118,18 +121,53 @@
 	<!-- main -->
 	<script>
 	$(function(){
+
 		var texts = $( ".textus", ".row" ).viewportChecker({
 			classToAdd: "visible animated fadeIn",
 			offset: 300
 		});
 		var imgsRight = $( ".fromRight", ".c6" ).viewportChecker({
 			classToAdd: "visible animated fadeInRight",
-			offset: 300
+			offset: 300,
 		});
 		var imgsLeft = $( ".fromLeft", ".c6" ).addClass( "hidden" ).viewportChecker({
 			classToAdd: "visible animated fadeInLeft",
 			offset: 300
 		});
+
+		/* MINHA VERSAO
+		˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
+		var txts = $( ".textus" ),
+			imgsRight = $( ".fromRight", ".c6" ),
+			imgsLeft = $( ".fromLeft", ".c6" );
+
+		function fazAbagaca (element) {
+			var heightScroll = $(window).scrollTop();
+			element.each(function() {
+				if( $(this).offset().top - heightScroll >= 600 && $(this).offset().top - heightScroll <= 700) {
+					if( !$(this).hasClass( "animated") ) {
+						// primeira vez da animacao
+						$(this).animate({
+							opacity: 1
+						}, 400, function() {
+							$(this).parents( ".row" ).find( imgsRight ).animate({ // naveguar no DOM
+								opacity: 1,
+								left: "50px"
+							}, "fast");
+						});
+						$(this).addClass( "animatedX" );
+					}
+				}
+			});
+
+		}
+
+		$( window ).bind( "load scroll", function() {
+			fazAbagaca( $(txts) );
+		});
+		˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
+		*/
+
 	});
 	</script>
 </body>
