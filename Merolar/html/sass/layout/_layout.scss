@@ -1,0 +1,696 @@
+/////////////////////////////////////////////////////////////////////
+// fonts
+// colaborate: http://www.fontsquirrel.com/fonts/Colaborate
+// font default usado no layout [psd]
+/////////////////////////////////////////////////////////////////////
+/*
+@font-face {
+    font-family: 'colaborate-regular';
+    src: url('../font/colaborate_regular/ColabReg-webfont.eot');
+    src: url('../font/colaborate_regular/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/colaborate_regular/ColabReg-webfont.woff') format('woff'),
+         url('../font/colaborate_regular/ColabReg-webfont.ttf') format('truetype'),
+         url('../font/colaborate_regular/ColabReg-webfont.svg#colaborate-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+@import "compass/css3";
+
+@include font-face(
+    "colaborate-thin",
+    font-files("../fonts/colaborate_thin/ColabThi-webfont.woff",
+        "../fonts/colaborate_thin/ColabThi-webfont.ttf",
+        "../fonts/colaborate_thin/ColabThi-webfont.svg#colaborate-thin",
+        "../fonts/colaborate_thin/ColabThi-webfont.eot",
+        "../fonts/colaborate_thin/ColabThi-webfont.eot?#iefix"));
+
+@include font-face(
+    "colaborate-regular",
+    font-files("../fonts/colaborate_regular/ColabReg-webfont.woff",
+        "../fonts/colaborate_regular/ColabReg-webfont.ttf",
+        "../fonts/colaborate_regular/ColabReg-webfont.svg#colaborate-regular",
+        "../fonts/colaborate_regular/ColabReg-webfont.eot",
+        "../fonts/colaborate_regular/ColabReg-webfont.eot?#iefix"));
+
+@include font-face(
+    "colaborate-medium",
+    font-files("../fonts/colaborate_medium/ColabMed-webfont.woff",
+        "../fonts/colaborate_medium/ColabMed-webfont.ttf",
+        "../fonts/colaborate_medium/ColabMed-webfont.svg#colaborate-medium",
+        "../fonts/colaborate_medium/ColabMed-webfont.eot",
+        "../fonts/colaborate_medium/ColabMed-webfont.eot?#iefix"));
+/////////////////////////////////////////////////////////////////////
+// Vars
+/////////////////////////////////////////////////////////////////////
+
+// fonts
+$fontThin: "colaborate-thin";
+$fontRegular: "colaborate-regular";
+$fontMedium: "colaborate-medium";
+$fsize: 100%;
+
+// grids
+$grid: 40px;
+$meioGrid: $grid/2;
+
+// colors
+$cinza10: rgba(1,1,1,.10);
+$cinza15: rgba(1,1,1,.15);
+$cinza30: rgba(1,1,1,.3);
+$cinza50: rgba(1,1,1,.5);
+$cinza85: rgba(1,1,1,.85);
+$laranja: rgb(242,99,34);
+
+
+/////////////////////////////////////////////////////////////////////
+// Mixin
+/////////////////////////////////////////////////////////////////////
+
+@mixin font($font, $fsize) {
+    font-family: $font;
+    font-size: $fsize
+}
+
+@mixin bShadow($lenH,$lenV,$blur,$spread,$rgba) {
+    box-shadow: $lenH $lenV $blur $spread $rgba;
+    -o-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -ms-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -moz-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -webkit-box-shadow: $lenH $lenV $blur $spread $rgba;
+}
+
+@mixin box-size($boxSize) {
+    box-sizing: $boxSize;
+    -o-box-sizing: $boxSize;
+    -ms-box-sizing: $boxSize;
+    -moz-box-sizing: $boxSize;
+    -webkit-box-sizing: $boxSize;
+}
+
+@mixin radius($radT,$radR,$radB,$radL) {
+    border-radius: $radT $radR $radB $radL;
+    -o-border-radius: $radT $radR $radB $radL;
+    -ms-border-radius: $radT $radR $radB $radL;
+    -moz-border-radius: $radT $radR $radB $radL;
+    -webkit-border-radius: $radT $radR $radB $radL;
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+}
+
+/////////////////////////////////////////////////////////////////////
+// Resets
+/////////////////////////////////////////////////////////////////////
+
+* {
+    @include box-size(border-box);
+    // @include transition(all .25s ease);
+    // // Trasition removed in all style, it's not a good pratice
+}
+
+body { @include font($fontRegular, $fsize); }
+strong { @include font($fontMedium, $fsize); }
+ul, ol { list-style-type: none; margin: 0; padding: 0; }
+ul li, ol li { display: inline-block; }
+a { color: $cinza85; text-decoration: none; }
+a:hover { color: $laranja; text-decoration: underline; }
+a.btnSaibaMais { color: #fff; }
+a.btnSaibaMais:hover { text-decoration: none; }
+
+/* patterns */
+// btn
+.btnSaibaMais {
+    background-color: $laranja;
+    @include radius(5px,5px,5px,5px);
+    border-radius: ($meioGrid/4);
+    color: #fff;
+    font-size: 1rem;
+    padding: .75em 1em;
+    text-transform: uppercase;
+    border: none;
+    &:hover { background-color: #E1581A; }
+}
+// pager carousel
+.pagerCustomizado {
+    display: inline-block;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    .bx-pager-item {
+        display: inline-block;
+        width: $meioGrid;
+        a {
+            height: 15px;
+            width: 15px;
+            display: inline-block;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            text-indent: -9999px;
+        }
+        a.active { background-color: #fff; }
+    }
+}
+//controls caurosel
+.bx-controls-direction {
+    a {
+        position: absolute;
+        top: 50%;
+        margin-top: -88px;
+        outline: 0;
+        width: 22px;
+        height: 177px;
+        text-indent: -9999px;
+        z-index: 9999;
+    }
+    .bx-prev {
+        background: url('../img/header/btnPrev.png') no-repeat center center;
+        left: 8.33%;
+    }
+    .bx-next {
+        background: url('../img/header/btnNext.png') no-repeat center center;
+        right: 8.33%;
+    }
+}
+// titles
+.title {
+    color: $laranja;
+    font-size: 2.0625rem;
+    font-family: $fontRegular, sans-serif;
+    font-weight: normal;
+    margin: 2rem 0 1rem;
+    &:before {
+        content: "";
+        height: 42px;
+        width: 42px;
+        display: inline-block;
+        background: transparent url('../img/ui/icosTitle.png') no-repeat 0 0;
+        margin-right: .5rem;
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+// HEADER
+header[role="banner"] {
+    // firtsline
+    .firsLine {
+        height: $grid;
+        background-color: rgba(1,1,1,.15);
+        width: 100%;
+        display: block;
+        .fixbug { padding-right: 5em; }
+    }
+    .language, .netWork {
+        font-family: $fontThin, sans-serif;
+        font-size: .875rem;
+        display: inline-block;
+        margin: .5em 0;
+        li {
+            margin-right: .5em
+        }
+    }
+    .netWork {
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: $cinza50;
+        padding-left: 1em;
+        li {
+            height: 24px;
+            width: 24px;
+            a {
+                display: block;
+                text-indent: -9999px;
+                background: transparent url('../img/ui/network.png') 0 0 no-repeat;
+                @include transition(background .25s ease);
+            }
+        }
+        .twi {
+            a:hover { background-position: 0 -24px; }
+        }
+        .fac {
+            a { background-position: 0 -48px; }
+            a:hover { background-position: 0 -72px; }
+        }
+    }
+    //content
+    .headerGeneral {
+        position: relative;
+        // promotional
+        .promotional {
+            position: absolute;
+            background-color: $cinza30;
+            border-radius: ($meioGrid/4);
+            bottom: $meioGrid*3;
+            left: 15%;
+            color: #fff;
+            padding: $meioGrid;
+            font-weight: normal;
+            border: 1px solid $cinza15;
+            h4 {
+                text-transform: uppercase;
+                font-size: 2.2rem;
+                font-family: $fontRegular, sans-serif;
+                letter-spacing: -2px;
+                margin: 0;
+                font-weight: normal;
+                line-height: 1em;
+            }
+            p {
+                margin: 0;
+                font-size: 1.25rem;
+                font-family: $fontThin, sans-serif;
+                line-height: 1em;
+            }
+            .dorms {
+                font-size: 1.6rem;
+                font-family: $fontRegular, sans-serif;
+            }
+            a {
+                font-size: 1rem;
+                margin-top: $meioGrid/2;
+                display: inline-block;
+            }
+        }
+        .brandSearchFlags {
+            position: absolute;
+            top: 0;
+            background-color: $cinza50;
+            border-radius: ($meioGrid/4);
+            width: 980px;
+            margin-left: 50px;
+        }
+        // logo
+        .brand {
+            img { margin-left: 0; }
+        }
+        // search
+        .busca {
+            text-align: right;
+            padding: $meioGrid ($meioGrid/2) 0 0;
+            position: relative;
+            input[type="text"] {
+                background-color: #fff;
+                border-radius: ($meioGrid/4);
+                border: none;
+                font-size: .75rem;
+                padding: .5em;
+                width: 220px;
+            }
+            .icoSearch {
+                margin: 0;
+                position: absolute;
+                right: 95px;
+                top: 25px;
+            }
+            @-moz-document url-prefix() {
+              .icoSearch { right: 105px; }
+            }
+            input[type="submit"] {
+                @extend .btnSaibaMais;
+                margin-left: .5em;
+                cursor: pointer;
+                padding: .5em 1em;
+                font-size: .75rem;
+            }
+        }
+        // flags
+        .flags {
+            color: #fff;
+            margin-top: $meioGrid;
+            padding-right: $meioGrid/2;
+            text-align: right;
+            h6 {
+                margin: 0;
+                text-transform: uppercase;
+                font-family: $fontRegular;
+                font-size: .75rem;
+                letter-spacing: -1px;
+                text-align: left;
+                margin-left: 6.25em;
+            }
+            .listFlags {
+                margin-top: .25em;
+                li {
+                    i {
+                        height: 26px;
+                        width: 36px;
+                        display: block;
+                        background: transparent url('../img/ui/flags.png') no-repeat 0 0;
+                        margin: auto;
+                    }
+                    span {
+                        font-size: .6875rem;
+                        font-family: $fontThin;
+                        text-align: center;
+                        display: inline-block;
+                        color: transparent;
+                     }
+                     &:hover {
+                        span { color: #fff; }
+                     }
+                }
+                .espanha { background-position: 0 0; }
+                .portugal { background-position: -42px 0; }
+                .alemanha { background-position: -83px 0; }
+                .polonia { background-position: -126px 0; }
+                .hungria { background-position: -166px 0; }
+                .romenia { background-position: -206px 0; }
+                .mexico { background-position: -248px 0; }
+                .peru { background-position: -288px 0; }
+                .colombia { background-position: -330px 0; }
+            }
+        }
+    }
+}
+nav[role="navigation"] {
+    background: $cinza85 url('../img/header/bgNav.png') repeat-x top;
+    min-height: 94px;
+    display: block;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    border-bottom: 3px solid $laranja;
+    li {
+        border-left: 1px solid rgba(255,255,255,0.1);
+        min-width: 10rem;
+        &:last-child {
+            border-right: 1px solid rgba(255,255,255,0.1);
+            a { width: 100% }
+        }
+        a {
+            font-size: 1rem;
+            font-family: $fontThin, sans-serif;
+            text-transform: uppercase;
+            color: #adadad;
+            padding: 2em 1em;
+            display: block;
+            width: 102%;
+            height: 100%;
+            &:hover { color: $laranja; }
+        }
+        .activeMenu { background: $cinza30; color: $laranja; }
+    }
+}
+
+// BODY
+.backgroundColors { background: rgba(0,0,0,.1) url('../img/home/bgBody.png') repeat-x top left; }
+div[role="main"] {
+    .aboutBrand {
+        background-color: #f0f0f0;
+        @include radius(5px,5px,5px,5px);
+        max-width: 1000px;
+        display: block;
+        margin: ($meioGrid*1.5) auto;
+        padding: $grid $grid $grid*1.5;
+        .descritionBrand {
+            font-size: 1.75rem;
+            font-family: $fontThin, sans-serif;
+            margin: 0;
+            line-height: 1.3em;
+            width: 96%;
+            color: rgba(0,0,0,.75);
+            strong { font-size: 2.0625rem; }
+        }
+    }
+    //  thumbnails
+    .thumbnails {
+        padding: 0;
+        li {
+            padding: 0;
+        }
+        figure {
+            margin: 0;
+        }
+        img {
+            background: #fff;
+            padding: 12px;
+            @include radius(10px,10px,10px,10px);
+        }
+        figcaption {
+            margin: 0 ($meioGrid*1.5);
+            p { margin: 0; line-height: 1em; }
+            p:last-child { margin-top: $meioGrid*1.5; }
+        }
+        .nameTitle {
+            color: $laranja;
+            font-size: 2.25rem;
+            margin: $meioGrid 0 ($meioGrid/2);
+            letter-spacing: -1px;
+        }
+        .place {
+            font-size: 1.125rem;
+            font-family: $fontThin, sans-serif;
+            color: #4b4b4b;
+            strong { font-family: $fontRegular, sans-serif; }
+        }
+        .city {
+            font-size: 1rem;
+            color: $laranja;
+            margin: .25em 0;
+        }
+        .dorms {
+            font-size: 1rem;
+            font-family: $fontThin, sans-serif;
+            color: #4b4b4b;
+        }
+    }
+}
+//FOOTER
+footer[role="contentinfo"] {
+    background-color: #000;
+    color: #fff;
+    font-size: .875rem;
+    font-family: #fontThin, sans-serif;
+    p {
+        img {
+            margin: 0;
+            display: inline-block;
+            margin-right: .5em;
+        }
+    }
+    .saibaMaisFooter {
+        color: #fff;
+        font-size: .75rem;
+        padding: .5em 1em;
+        margin-left: .5em;
+    }
+}
+
+
+/*  $Media Queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Media query for 960 Screens - sets nested grids to 100%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media only screen and (max-width:960px) {
+    .row .row .c1,
+    .row .row .c2,
+    .row .row .c3,
+    .row .row .c4,
+    .row .row .c5,
+    .row .row .c6,
+    .row .row .c7,
+    .row .row .c8,
+    .row .row .c9,
+    .row .row .c10,
+    .row .row .c11,
+    .row .row .c12 { width:100%; margin-bottom:20px }
+    .row .row > div:last-child { margin-bottom:0 !important; }
+}
+
+
+/* Media query for iPad and tablets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
+
+    .row { margin-bottom: 0!important; }
+
+    .c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12 {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: $meioGrid/2;
+    }
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Index
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+    header[role="banner"] {
+        .headerGeneral {
+            .brandSearchFlags {
+                background-color: transparent;
+                width: 100%;
+                margin: 0;
+                h1 { margin: 0; }
+            }
+            .brand {
+                h1 { margin: ($meioGrid/2) 0 0 0; }
+                img {
+                    margin-left: 0;
+                    width: 3.5em;
+                }
+            }
+            .search {
+                position: absolute;
+                top: $meioGrid*1.5;
+                right: $meioGrid;
+            }
+            .busca {
+                text-align: right;
+                padding: 0;
+                .icoSearch {
+                    right: 41%;
+                    top: 4px;
+                }
+            }
+            .flags { display: none; }
+        }
+    }
+
+}
+
+
+/* Media query for 480 Screens - sets for mobile phone
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media only screen and (max-width:480px) {
+    .row .row .c1,
+    .row .row .c2,
+    .row .row .c3,
+    .row .row .c4,
+    .row .row .c5,
+    .row .row .c6,
+    .row .row .c7,
+    .row .row .c8,
+    .row .row .c9,
+    .row .row .c10,
+    .row .row .c11,
+    .row .row .c12 { width:100%; margin-bottom:20px; }
+    .row .row > div:last-child { margin-bottom:0 !important; }
+
+    body{
+        background: gold !important;  // deletar
+        color: #000;
+    }
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Index
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+    // YOUR CODE HERE...
+
+
+}
+/* $Helper classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.fix:before,
+.fix:after {
+    content: " ";
+    display: table;
+}
+
+.fix:after {
+    clear: both;
+}
+
+.fix {
+    *zoom: 1;
+}
+
+/* $Print Styles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
