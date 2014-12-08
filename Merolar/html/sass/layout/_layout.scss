@@ -20,27 +20,27 @@
 
 @include font-face(
     "colaborate-thin",
-    font-files("../fonts/colaborate_thin/ColabThi-webfont.woff",
-        "../fonts/colaborate_thin/ColabThi-webfont.ttf",
-        "../fonts/colaborate_thin/ColabThi-webfont.svg#colaborate-thin",
-        "../fonts/colaborate_thin/ColabThi-webfont.eot",
-        "../fonts/colaborate_thin/ColabThi-webfont.eot?#iefix"));
+    font-files("../../fonts/colaborate_thin/ColabThi-webfont.woff",
+        "../../fonts.colaborate_thin/ColabThi-webfont.ttf",
+        "../../fonts/colaborate_thin/ColabThi-webfont.svg#colaborate-thin",
+        "../../fonts/colaborate_thin/ColabThi-webfont.eot",
+        "../../fonts/colaborate_thin/ColabThi-webfont.eot?#iefix"));
 
 @include font-face(
     "colaborate-regular",
-    font-files("../fonts/colaborate_regular/ColabReg-webfont.woff",
-        "../fonts/colaborate_regular/ColabReg-webfont.ttf",
-        "../fonts/colaborate_regular/ColabReg-webfont.svg#colaborate-regular",
-        "../fonts/colaborate_regular/ColabReg-webfont.eot",
-        "../fonts/colaborate_regular/ColabReg-webfont.eot?#iefix"));
+    font-files("../../fonts/colaborate_regular/ColabReg-webfont.woff",
+        "../../fonts/colaborate_regular/ColabReg-webfont.ttf",
+        "../../fonts/colaborate_regular/ColabReg-webfont.svg#colaborate-regular",
+        "../../fonts/colaborate_regular/ColabReg-webfont.eot",
+        "../../fonts/colaborate_regular/ColabReg-webfont.eot?#iefix"));
 
 @include font-face(
     "colaborate-medium",
-    font-files("../fonts/colaborate_medium/ColabMed-webfont.woff",
-        "../fonts/colaborate_medium/ColabMed-webfont.ttf",
-        "../fonts/colaborate_medium/ColabMed-webfont.svg#colaborate-medium",
-        "../fonts/colaborate_medium/ColabMed-webfont.eot",
-        "../fonts/colaborate_medium/ColabMed-webfont.eot?#iefix"));
+    font-files("../../fonts/colaborate_medium/ColabMed-webfont.woff",
+        "../../fonts/colaborate_medium/ColabMed-webfont.ttf",
+        "../../fonts/colaborate_medium/ColabMed-webfont.svg#colaborate-medium",
+        "../../fonts/colaborate_medium/ColabMed-webfont.eot",
+        "../../fonts/colaborate_medium/ColabMed-webfont.eot?#iefix"));
 /////////////////////////////////////////////////////////////////////
 // Vars
 /////////////////////////////////////////////////////////////////////
@@ -172,11 +172,11 @@ a.btnSaibaMais:hover { text-decoration: none; }
     }
     .bx-prev {
         background: url('../img/header/btnPrev.png') no-repeat center center;
-        left: 8.33%;
+        left: $grid;
     }
     .bx-next {
         background: url('../img/header/btnNext.png') no-repeat center center;
-        right: 8.33%;
+        right: $grid;
     }
 }
 // titles
@@ -198,13 +198,13 @@ a.btnSaibaMais:hover { text-decoration: none; }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 // HEADER
 header[role="banner"] {
     // firtsline
     .firsLine {
-        height: $grid;
+        // height: $grid;
         background-color: rgba(1,1,1,.15);
         width: 100%;
         display: block;
@@ -250,15 +250,15 @@ header[role="banner"] {
             position: absolute;
             background-color: $cinza30;
             border-radius: ($meioGrid/4);
-            bottom: $meioGrid*3;
-            left: 15%;
+            bottom: 15%;
+            left: 12%;
             color: #fff;
-            padding: $meioGrid;
+            padding: $meioGrid/2;
             font-weight: normal;
             border: 1px solid $cinza15;
             h4 {
                 text-transform: uppercase;
-                font-size: 2.2rem;
+                font-size: 1.8rem;
                 font-family: $fontRegular, sans-serif;
                 letter-spacing: -2px;
                 margin: 0;
@@ -267,18 +267,19 @@ header[role="banner"] {
             }
             p {
                 margin: 0;
-                font-size: 1.25rem;
+                font-size: 1rem;
                 font-family: $fontThin, sans-serif;
                 line-height: 1em;
             }
             .dorms {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
                 font-family: $fontRegular, sans-serif;
             }
             a {
                 font-size: 1rem;
                 margin-top: $meioGrid/2;
                 display: inline-block;
+                padding: .25em .75em;
             }
         }
         .brandSearchFlags {
@@ -286,12 +287,17 @@ header[role="banner"] {
             top: 0;
             background-color: $cinza50;
             border-radius: ($meioGrid/4);
-            width: 980px;
-            margin-left: 50px;
+            padding: $meioGrid/2;
+            width: 80%;
+            left: 10%;
         }
         // logo
         .brand {
-            img { margin-left: 0; }
+            h1 { margin: 0; }
+            img { 
+                margin: 10% 0 0;
+                max-width: 140px;
+            }
         }
         // search
         .busca {
@@ -314,20 +320,19 @@ header[role="banner"] {
             }
             @-moz-document url-prefix() {
               .icoSearch { right: 105px; }
-            }
-            input[type="submit"] {
-                @extend .btnSaibaMais;
-                margin-left: .5em;
-                cursor: pointer;
-                padding: .5em 1em;
-                font-size: .75rem;
-            }
+          }
+          input[type="submit"] {
+            @extend .btnSaibaMais;
+            margin-left: .5em;
+            cursor: pointer;
+            padding: .5em 1em;
+            font-size: .75rem;
         }
+    }
         // flags
         .flags {
             color: #fff;
             margin-top: $meioGrid;
-            padding-right: $meioGrid/2;
             text-align: right;
             h6 {
                 margin: 0;
@@ -335,11 +340,10 @@ header[role="banner"] {
                 font-family: $fontRegular;
                 font-size: .75rem;
                 letter-spacing: -1px;
-                text-align: left;
-                margin-left: 6.25em;
+                text-align: right;
             }
             .listFlags {
-                margin-top: .25em;
+                margin-top: 0;
                 li {
                     i {
                         height: 26px;
@@ -354,10 +358,10 @@ header[role="banner"] {
                         text-align: center;
                         display: inline-block;
                         color: transparent;
-                     }
-                     &:hover {
+                    }
+                    &:hover {
                         span { color: #fff; }
-                     }
+                    }
                 }
                 .espanha { background-position: 0 0; }
                 .portugal { background-position: -42px 0; }
@@ -470,7 +474,7 @@ footer[role="contentinfo"] {
     background-color: #000;
     color: #fff;
     font-size: .875rem;
-    font-family: #fontThin, sans-serif;
+    font-family: $fontThin, sans-serif;
     p {
         img {
             margin: 0;
@@ -506,6 +510,9 @@ footer[role="contentinfo"] {
     .row .row .c11,
     .row .row .c12 { width:100%; margin-bottom:20px }
     .row .row > div:last-child { margin-bottom:0 !important; }
+
+    // flags
+    .flags { display: none; }
 }
 
 
@@ -523,40 +530,65 @@ footer[role="contentinfo"] {
     }
 
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Index
+    Index
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
     header[role="banner"] {
+        .firsLine { height: 35px; }
         .headerGeneral {
             .brandSearchFlags {
                 background-color: transparent;
                 width: 100%;
                 margin: 0;
+                left: 0;
+                top: 0;
                 h1 { margin: 0; }
             }
             .brand {
-                h1 { margin: ($meioGrid/2) 0 0 0; }
                 img {
-                    margin-left: 0;
+                    margin: 0;
                     width: 3.5em;
                 }
             }
             .search {
                 position: absolute;
-                top: $meioGrid*1.5;
-                right: $meioGrid;
+                top: $meioGrid+5;
+                right: 0;
+                .busca {
+                    text-align: right;
+                    padding: 0;
+                    .icoSearch {
+                        right: 5.5em;
+                        top: 4px;
+                    }
+                }
+                .flags { display: none; }
             }
-            .busca {
-                text-align: right;
-                padding: 0;
-                .icoSearch {
-                    right: 41%;
-                    top: 4px;
+            // promotional
+            .promotional {
+                bottom: 15%;
+                left: 12%;
+                padding: $meioGrid/2;
+                h4 { font-size: 1.4rem; }
+                p { font-size: .875rem }
+                .dorms { font-size: 1rem; }
+                a { 
+                    padding: .25em .75em;
+                    font-size: .875rem;
                 }
             }
-            .flags { display: none; }
         }
     }
+    .pagerCustomizado { 
+        bottom: 5px;
+        .bx-pager-item {
+            margin: 0 ($meioGrid/4);
+            a {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+    .bx-controls-direction { display: none; }
 
 }
 
@@ -584,7 +616,7 @@ footer[role="contentinfo"] {
     }
 
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Index
+    Index
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
     // YOUR CODE HERE...
@@ -652,9 +684,9 @@ footer[role="contentinfo"] {
      * Don't show links for images, or javascript/internal links
      */
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
+     .ir a:after,
+     a[href^="javascript:"]:after,
+     a[href^="#"]:after {
         content: "";
     }
 

@@ -69,10 +69,19 @@ $(document).ready(function () {
         // prevSelector: '.prev'
     });
 
-    // adjust alinhament pager carousel
-    var p = $( ".pagerCustomizado" );
-    var w = p.width()/2;
-    p.css( "margin-left",-w );
+    // adjust alinhament elements carousel header
+    function adjusAlign(el) {
+        var p = $(el);
+        var w = p.width()/2;
+        p.css( "margin-left",-w );
+
+    }
+    adjusAlign( ".pagerCustomizado" );
+
+    // if( $(window).width() < 769 ) {   
+    //     adjusAlign( ".promotional" );
+    //     return false;
+    // }
 
 });
 

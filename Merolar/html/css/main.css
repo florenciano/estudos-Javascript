@@ -89,9 +89,12 @@ textarea { resize: vertical; }
 
 }
 */
-@font-face { font-family: "colaborate-thin"; src: url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.woff?1417795356') format('woff'), url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.ttf?1417795356') format('truetype'), url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.svg?1417795356#colaborate-thin') format('svg'), url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.eot?1417795356') format('embedded-opentype'), url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.eot?&1417795356#iefix') format('embedded-opentype'); }
-@font-face { font-family: "colaborate-regular"; src: url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.woff?1417795356') format('woff'), url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.ttf?1417795356') format('truetype'), url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.svg?1417795356#colaborate-regular') format('svg'), url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.eot?1417795356') format('embedded-opentype'), url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.eot?&1417795356#iefix') format('embedded-opentype'); }
-@font-face { font-family: "colaborate-medium"; src: url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.woff?1417795356') format('woff'), url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.ttf?1417795356') format('truetype'), url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.svg?1417795356#colaborate-medium') format('svg'), url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.eot?1417795356') format('embedded-opentype'), url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.eot?&1417795356#iefix') format('embedded-opentype'); }
+@font-face { font-family: "colaborate-thin"; src: url('fonts/../../fonts/colaborate_thin/ColabThi-webfont.woff') format('woff'), url('fonts/../../fonts.colaborate_thin/ColabThi-webfont.ttf') format('truetype'), url('fonts/../../fonts/colaborate_thin/ColabThi-webfont.svg#colaborate-thin') format('svg'), url('fonts/../../fonts/colaborate_thin/ColabThi-webfont.eot') format('embedded-opentype'), url('fonts/../../fonts/colaborate_thin/ColabThi-webfont.eot?#iefix') format('embedded-opentype'); }
+
+@font-face { font-family: "colaborate-regular"; src: url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.woff') format('woff'), url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.ttf') format('truetype'), url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.svg#colaborate-regular') format('svg'), url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.eot') format('embedded-opentype'), url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.eot?#iefix') format('embedded-opentype'); }
+
+@font-face { font-family: "colaborate-medium"; src: url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.woff') format('woff'), url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.ttf') format('truetype'), url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.svg#colaborate-medium') format('svg'), url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.eot') format('embedded-opentype'), url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.eot?#iefix') format('embedded-opentype'); }
+
 * { box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 
 body { font-family: "colaborate-regular"; font-size: 100%; }
@@ -120,15 +123,14 @@ a.btnSaibaMais:hover { text-decoration: none; }
 .pagerCustomizado .bx-pager-item a.active { background-color: #fff; }
 
 .bx-controls-direction a { position: absolute; top: 50%; margin-top: -88px; outline: 0; width: 22px; height: 177px; text-indent: -9999px; z-index: 9999; }
-.bx-controls-direction .bx-prev { background: url("../img/header/btnPrev.png") no-repeat center center; left: 8.33%; }
-.bx-controls-direction .bx-next { background: url("../img/header/btnNext.png") no-repeat center center; right: 8.33%; }
+.bx-controls-direction .bx-prev { background: url("../img/header/btnPrev.png") no-repeat center center; left: 40px; }
+.bx-controls-direction .bx-next { background: url("../img/header/btnNext.png") no-repeat center center; right: 40px; }
 
 .title { color: #f26322; font-size: 2.0625rem; font-family: "colaborate-regular", sans-serif; font-weight: normal; margin: 2rem 0 1rem; }
 .title:before { content: ""; height: 42px; width: 42px; display: inline-block; background: transparent url("../img/ui/icosTitle.png") no-repeat 0 0; margin-right: .5rem; }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Index
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-header[role="banner"] .firsLine { height: 40px; background-color: rgba(1, 1, 1, 0.15); width: 100%; display: block; }
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Index ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+header[role="banner"] .firsLine { background-color: rgba(1, 1, 1, 0.15); width: 100%; display: block; }
 header[role="banner"] .firsLine .fixbug { padding-right: 5em; }
 header[role="banner"] .language, header[role="banner"] .netWork { font-family: "colaborate-thin", sans-serif; font-size: .875rem; display: inline-block; margin: .5em 0; }
 header[role="banner"] .language li, header[role="banner"] .netWork li { margin-right: 0.5em; }
@@ -139,21 +141,22 @@ header[role="banner"] .netWork .twi a:hover { background-position: 0 -24px; }
 header[role="banner"] .netWork .fac a { background-position: 0 -48px; }
 header[role="banner"] .netWork .fac a:hover { background-position: 0 -72px; }
 header[role="banner"] .headerGeneral { position: relative; }
-header[role="banner"] .headerGeneral .promotional { position: absolute; background-color: rgba(1, 1, 1, 0.3); border-radius: 5px; bottom: 60px; left: 15%; color: #fff; padding: 20px; font-weight: normal; border: 1px solid rgba(1, 1, 1, 0.15); }
-header[role="banner"] .headerGeneral .promotional h4 { text-transform: uppercase; font-size: 2.2rem; font-family: "colaborate-regular", sans-serif; letter-spacing: -2px; margin: 0; font-weight: normal; line-height: 1em; }
-header[role="banner"] .headerGeneral .promotional p { margin: 0; font-size: 1.25rem; font-family: "colaborate-thin", sans-serif; line-height: 1em; }
-header[role="banner"] .headerGeneral .promotional .dorms { font-size: 1.6rem; font-family: "colaborate-regular", sans-serif; }
-header[role="banner"] .headerGeneral .promotional a { font-size: 1rem; margin-top: 10px; display: inline-block; }
-header[role="banner"] .headerGeneral .brandSearchFlags { position: absolute; top: 0; background-color: rgba(1, 1, 1, 0.5); border-radius: 5px; width: 980px; margin-left: 50px; }
-header[role="banner"] .headerGeneral .brand img { margin-left: 0; }
-header[role="banner"] .headerGeneral .busca { text-align: right; padding: 20px 10px 0 0; position: relative; }
+header[role="banner"] .headerGeneral .promotional { position: absolute; background-color: rgba(1, 1, 1, 0.3); border-radius: 5px; bottom: 15%; left: 12%; color: #fff; padding: 10px; font-weight: normal; border: 1px solid rgba(1, 1, 1, 0.15); }
+header[role="banner"] .headerGeneral .promotional h4 { text-transform: uppercase; font-size: 1.8rem; font-family: "colaborate-regular", sans-serif; letter-spacing: -2px; margin: 0; font-weight: normal; line-height: 1em; }
+header[role="banner"] .headerGeneral .promotional p { margin: 0; font-size: 1rem; font-family: "colaborate-thin", sans-serif; line-height: 1em; }
+header[role="banner"] .headerGeneral .promotional .dorms { font-size: 1.4rem; font-family: "colaborate-regular", sans-serif; }
+header[role="banner"] .headerGeneral .promotional a { font-size: 1rem; margin-top: 10px; display: inline-block; padding: .25em .75em; }
+header[role="banner"] .headerGeneral .brandSearchFlags { position: absolute; top: 0; background-color: rgba(1, 1, 1, 0.5); border-radius: 5px; padding: 10px; width: 80%; left: 10%; }
+header[role="banner"] .headerGeneral .brand h1 { margin: 0; }
+header[role="banner"] .headerGeneral .brand img { margin: 10% 0 0; max-width: 140px; }
+header[role="banner"] .headerGeneral .busca { text-align: right; padding: 20px 10px 0 0; position: relative; @-moz-document url-prefix() { .icoSearch { right: 105px; } }
+ }
 header[role="banner"] .headerGeneral .busca input[type="text"] { background-color: #fff; border-radius: 5px; border: none; font-size: .75rem; padding: .5em; width: 220px; }
 header[role="banner"] .headerGeneral .busca .icoSearch { margin: 0; position: absolute; right: 95px; top: 25px; }
-@-moz-document url-prefix() { header[role="banner"] .headerGeneral .busca .icoSearch { right: 105px; } }
 header[role="banner"] .headerGeneral .busca input[type="submit"] { margin-left: .5em; cursor: pointer; padding: .5em 1em; font-size: .75rem; }
-header[role="banner"] .headerGeneral .flags { color: #fff; margin-top: 20px; padding-right: 10px; text-align: right; }
-header[role="banner"] .headerGeneral .flags h6 { margin: 0; text-transform: uppercase; font-family: "colaborate-regular"; font-size: .75rem; letter-spacing: -1px; text-align: left; margin-left: 6.25em; }
-header[role="banner"] .headerGeneral .flags .listFlags { margin-top: .25em; }
+header[role="banner"] .headerGeneral .flags { color: #fff; margin-top: 20px; text-align: right; }
+header[role="banner"] .headerGeneral .flags h6 { margin: 0; text-transform: uppercase; font-family: "colaborate-regular"; font-size: .75rem; letter-spacing: -1px; text-align: right; }
+header[role="banner"] .headerGeneral .flags .listFlags { margin-top: 0; }
 header[role="banner"] .headerGeneral .flags .listFlags li i { height: 26px; width: 36px; display: block; background: transparent url("../img/ui/flags.png") no-repeat 0 0; margin: auto; }
 header[role="banner"] .headerGeneral .flags .listFlags li span { font-size: .6875rem; font-family: "colaborate-thin"; text-align: center; display: inline-block; color: transparent; }
 header[role="banner"] .headerGeneral .flags .listFlags li:hover span { color: #fff; }
@@ -193,7 +196,7 @@ div[role="main"] .thumbnails .place strong { font-family: "colaborate-regular", 
 div[role="main"] .thumbnails .city { font-size: 1rem; color: #f26322; margin: .25em 0; }
 div[role="main"] .thumbnails .dorms { font-size: 1rem; font-family: "colaborate-thin", sans-serif; color: #4b4b4b; }
 
-footer[role="contentinfo"] { background-color: #000; color: #fff; font-size: .875rem; font-family: #fontThin, sans-serif; }
+footer[role="contentinfo"] { background-color: #000; color: #fff; font-size: .875rem; font-family: "colaborate-thin", sans-serif; }
 footer[role="contentinfo"] p img { margin: 0; display: inline-block; margin-right: .5em; }
 footer[role="contentinfo"] .saibaMaisFooter { color: #fff; font-size: .75rem; padding: .5em 1em; margin-left: .5em; }
 
@@ -202,20 +205,30 @@ footer[role="contentinfo"] .saibaMaisFooter { color: #fff; font-size: .75rem; pa
 /* Media query for 960 Screens - sets nested grids to 100%
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width: 960px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; margin-bottom: 20px; }
-  .row .row > div:last-child { margin-bottom: 0 !important; } }
+  .row .row > div:last-child { margin-bottom: 0 !important; }
+  .flags { display: none; } }
 /* Media query for iPad and tablets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation: portrait) { .row { margin-bottom: 0 !important; }
   .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 { width: 100%; margin-right: 0; margin-left: 0; margin-bottom: 10px; }
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Index ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-  header[role="banner"] .headerGeneral .brandSearchFlags { background-color: transparent; width: 100%; margin: 0; }
+  header[role="banner"] .firsLine { height: 35px; }
+  header[role="banner"] .headerGeneral .brandSearchFlags { background-color: transparent; width: 100%; margin: 0; left: 0; top: 0; }
   header[role="banner"] .headerGeneral .brandSearchFlags h1 { margin: 0; }
-  header[role="banner"] .headerGeneral .brand h1 { margin: 10px 0 0 0; }
-  header[role="banner"] .headerGeneral .brand img { margin-left: 0; width: 3.5em; }
-  header[role="banner"] .headerGeneral .search { position: absolute; top: 30px; right: 20px; }
-  header[role="banner"] .headerGeneral .busca { text-align: right; padding: 0; }
-  header[role="banner"] .headerGeneral .busca .icoSearch { right: 41%; top: 4px; }
-  header[role="banner"] .headerGeneral .flags { display: none; } }
+  header[role="banner"] .headerGeneral .brand img { margin: 0; width: 3.5em; }
+  header[role="banner"] .headerGeneral .search { position: absolute; top: 25px; right: 0; }
+  header[role="banner"] .headerGeneral .search .busca { text-align: right; padding: 0; }
+  header[role="banner"] .headerGeneral .search .busca .icoSearch { right: 5.5em; top: 4px; }
+  header[role="banner"] .headerGeneral .search .flags { display: none; }
+  header[role="banner"] .headerGeneral .promotional { bottom: 15%; left: 12%; padding: 10px; }
+  header[role="banner"] .headerGeneral .promotional h4 { font-size: 1.4rem; }
+  header[role="banner"] .headerGeneral .promotional p { font-size: 0.875rem; }
+  header[role="banner"] .headerGeneral .promotional .dorms { font-size: 1rem; }
+  header[role="banner"] .headerGeneral .promotional a { padding: .25em .75em; font-size: .875rem; }
+  .pagerCustomizado { bottom: 5px; }
+  .pagerCustomizado .bx-pager-item { margin: 0 5px; }
+  .pagerCustomizado .bx-pager-item a { height: 20px; width: 20px; }
+  .bx-controls-direction { display: none; } }
 /* Media query for 480 Screens - sets for mobile phone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width: 480px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; margin-bottom: 20px; }
