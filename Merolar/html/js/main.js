@@ -63,11 +63,19 @@ $(document).ready(function () {
     search.on( "blur, focusout", function() { icoSearch.css( "display","inline-block" ) });
 
     // carousel
-    $( ".carouselHeader" ).bxSlider({
+    var carouselHeader = $( ".carouselHeader" ).bxSlider({
         pagerSelector: '.pagerCustomizado'
-        // nextSelector: '.next',
-        // prevSelector: '.prev'
     });
+    // destroy carousel in mobile
+    if( $(window).width() < 481 ) {   
+        carouselHeader.destroySlider();
+    }
+    $(window).resize(function() {
+        if( $(this).width() < 481 ) {   
+            carouselHeader.destroySlider();
+        }
+    });
+
 
     // adjust alinhament elements carousel header
     function adjusAlign(el) {
@@ -78,10 +86,23 @@ $(document).ready(function () {
     }
     adjusAlign( ".pagerCustomizado" );
 
-    // if( $(window).width() < 769 ) {   
-    //     adjusAlign( ".promotional" );
-    //     return false;
-    // }
+    /* EMPREENDIMENTOS */
 
+    // thumbnails gallery
+    $( ".carouselThumb" ).bxSlider({
+        minSlides: 3,
+        maxSlides: 4,
+        slideMargin: 10,
+        slideWidth: 170,
+        pager: false,
+        nextSelector: ".nextGaleria",
+        prevSelector:  ".prevGaleria"
+    });
+
+    // aplication in the images of the gallery
+    // used thumbnails above
+    $( ".pagerThumb" ).bxSlider({
+        pagerCustom: "#carouselThumbPager"
+    })
 });
 

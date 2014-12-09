@@ -1,23 +1,10 @@
 /////////////////////////////////////////////////////////////////////
 // fonts
 // colaborate: http://www.fontsquirrel.com/fonts/Colaborate
-// font default usado no layout [psd]
+// origin layout '.psd'
 /////////////////////////////////////////////////////////////////////
-/*
-@font-face {
-    font-family: 'colaborate-regular';
-    src: url('../font/colaborate_regular/ColabReg-webfont.eot');
-    src: url('../font/colaborate_regular/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/colaborate_regular/ColabReg-webfont.woff') format('woff'),
-         url('../font/colaborate_regular/ColabReg-webfont.ttf') format('truetype'),
-         url('../font/colaborate_regular/ColabReg-webfont.svg#colaborate-regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
-*/
 @import "compass/css3";
-
 @include font-face(
     "colaborate-thin",
     font-files("../../fonts/colaborate_thin/ColabThi-webfont.woff",
@@ -124,7 +111,7 @@ a:hover { color: $laranja; text-decoration: underline; }
 a.btnSaibaMais { color: #fff; }
 a.btnSaibaMais:hover { text-decoration: none; }
 
-/* patterns */
+/* patterns project */
 // btn
 .btnSaibaMais {
     background-color: $laranja;
@@ -179,6 +166,26 @@ a.btnSaibaMais:hover { text-decoration: none; }
         right: $grid;
     }
 }
+/////////////////////////////////////////////////////////////////////
+// Este regra controla os btns prev e next dos thumbnails
+.nextGaleria, .prevGaleria {
+    a {
+        background-color: red;
+        height: 20px;
+        width: 20px;
+        text-indent: -999px;
+        display: inline-block;
+    }
+}
+// Esta regra elimina os controles das img grandes da galeria
+.imgGaleria {
+    .bx-controls-direction {
+        a {
+            display: none;
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////
 // titles
 .title {
     color: $laranja;
@@ -198,7 +205,7 @@ a.btnSaibaMais:hover { text-decoration: none; }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Index
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 // HEADER
 header[role="banner"] {
@@ -476,6 +483,7 @@ footer[role="contentinfo"] {
     font-size: .875rem;
     font-family: $fontThin, sans-serif;
     p {
+        text-align: center;
         img {
             margin: 0;
             display: inline-block;
@@ -489,6 +497,10 @@ footer[role="contentinfo"] {
         margin-left: .5em;
     }
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 /*  $Media Queries
@@ -530,7 +542,7 @@ footer[role="contentinfo"] {
     }
 
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Index
+        Index
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     header[role="banner"] {
         .firsLine { height: 35px; }
@@ -589,7 +601,51 @@ footer[role="contentinfo"] {
         }
     }
     .bx-controls-direction { display: none; }
+    
+    nav[role="navigation"] {
+        min-height: 1em;
+        background: $cinza85;
+        li { 
+            min-width: 22%;
+            a { padding: 1em; }
+        }
+    }
 
+    div[role="main"] {
+        .aboutBrand {
+            margin: $meioGrid ($meioGrid/2);
+            padding: $meioGrid;
+            .descritionBrand {
+                font-size: 1.4rem;
+                strong { font-size: 1.4rem; }
+            }
+        }
+        .thumbnails {
+            li { margin-bottom: $meioGrid; }
+            figure {
+                margin: 0;
+                width: 50%;
+                position: relative;
+            }
+            figcaption {
+                margin: 0;
+                width: 100%;
+                position: absolute;
+                left: 90%;
+                top: 0;
+            }
+        }
+    }
+
+    footer[role="contentinfo"] {
+        p {
+            width: 75%;
+            text-align: center;
+            margin: 0 auto;
+            padding: 1em 0;
+        }
+        .saibaMaisFooter { display: inline-block; }
+    }
 }
 
 
@@ -610,19 +666,103 @@ footer[role="contentinfo"] {
     .row .row .c12 { width:100%; margin-bottom:20px; }
     .row .row > div:last-child { margin-bottom:0 !important; }
 
-    body{
-        background: gold !important;  // deletar
-        color: #000;
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Index
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    header[role="banner"] {
+        .firsLine {
+            .fixbug {
+                padding-right: 0;
+                text-align: center;
+            }
+            .end { width: 100%; }
+        }
+        .language, .network { width: 60%; }
+        .headerGeneral {
+            background: $cinza85;
+            min-height: 14em;
+            .carouselHeader { display: none; }
+            .brand {
+                img {
+                    margin: auto;
+                    width: 4.5em;
+                }
+            }
+            .search {
+                position: relative;
+                margin: 0;
+                top: 1em;
+                .busca { 
+                    text-align: center;
+                    padding: 0;
+                    margin-top: $meioGrid/2;
+                    input[type="text"] { width: 100%; }
+                    .icoSearch {
+                        right: 0.5em;
+                        top: 4px;
+                    }
+                    input[type="submit"] {
+                        margin: $meioGrid/2 0 0;
+                    }
+                }
+            }
+        }
+        .pagerCustomizado { display: none; }
+
     }
 
-    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Index
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    nav[role="navigation"] {
+        li {
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: none;
+        }
+    }
 
-    // YOUR CODE HERE...
+    div[role="main"] {
+        .aboutBrand {
+            margin: $meioGrid;
+            .descritionBrand { text-align: center; }
+        }
+        .thumbnails {
+            figure {
+                width: 100%;
+                position: relative;
+                display: block;
+            }
+            img {
+                padding: $meioGrid/2;
+                @include radius(5px,5px,5px,5px);
+            }
+            figcaption {
+                width: 100%;
+                position: relative;
+                left: 0;
+                top: 0;
+                text-align: center;
+                p:last-child { margin: $meioGrid 0; }
+            }
+            .nameTitle { 
+                font-size: 2rem;
+                margin: ($meioGrid/2) 0;
+            }
+        }
+    }
 
+    footer[role="contentinfo"] {
+        p {
+            width: 90%;
+            padding: 1em;
+        }
+        .saibaMaisFooter {
+            display: block;
+            width: 10em;
+            margin: 1em auto;
+        }
+    }
 
 }
+
 /* $Helper classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .ir {
