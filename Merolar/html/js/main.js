@@ -50,9 +50,8 @@ $(function(){
     }
 });
 /* ==========================================================================
-   Page: local
+   Page project
 ========================================================================== */
-// home
 $(document).ready(function () {
 
     /* INDEX */
@@ -82,7 +81,6 @@ $(document).ready(function () {
         var p = $(el);
         var w = p.width()/2;
         p.css( "margin-left",-w );
-
     }
     adjusAlign( ".pagerCustomizado" );
 
@@ -93,16 +91,55 @@ $(document).ready(function () {
         minSlides: 3,
         maxSlides: 4,
         slideMargin: 10,
-        slideWidth: 170,
+        slideWidth: 170, // alterar larguras das imagens
         pager: false,
         nextSelector: ".nextGaleria",
         prevSelector:  ".prevGaleria"
     });
-
     // aplication in the images of the gallery
     // used thumbnails above
     $( ".pagerThumb" ).bxSlider({
         pagerCustom: "#carouselThumbPager"
-    })
+    });
+
+    // swipe images of the 'plantas'
+    var containerImg = $( ".imgGaleriaPlantas" ), botoesImg = $( ".btnPlantas" );
+    botoesImg.each( function (key, value) {
+        $(this).on( "click", function (ev) {
+            $(containerImg).fadeOut( 'fast' );
+            ev.preventDefault();
+            if( key == 0 ) { $(containerImg).eq(0).fadeIn( 'fast' ); }
+            if( key == 1 ) { $(containerImg).eq(1).fadeIn( 'fast' ); }
+            if( key == 2 ) { $(containerImg).eq(2).fadeIn( 'fast' ); }
+            if( key == 3 ) { $(containerImg).eq(3).fadeIn( 'fast' ); }
+        });
+    });
+
+    // progress work construcion
+    function progressBar() {
+        var progressBar = $( ".percent" ),
+            display = $( ".barra span" );
+
+        progressBar.each(function() {
+            // attr 'data-value' ao progressBar
+            var value = $(this).attr( "data-value" );
+            $(this).css( "width", value + "%" );
+
+            // set text percentual
+            var display = $(this).prev( "span" );
+            display.html( value + "%" );
+
+            // conditional display's
+            if( value >= 75 ) { display.css( "color", "#fff" ) };
+            if( value > 100 ) { 
+                $(this).css( "width", "100%" );
+                display.html( "100%" );
+            };
+            if( isNaN(value) ) { display.html( "NaN" ) };
+        });
+    }
+    progressBar();
+    
+
 });
 

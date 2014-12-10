@@ -499,9 +499,19 @@ footer[role="contentinfo"] {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Index
+    Empreendimentos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+// as demais imagens da seção 'Plantas'
+.img-2, .img-3, .img-4 { display:none; }
+
+// o mapa de localização
+.mapaLocalizacao {
+    display: block;
+    height: 30rem;
+    margin: 0px;
+    padding: 0px;
+}
 
 /*  $Media Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

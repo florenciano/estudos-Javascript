@@ -201,8 +201,12 @@ footer[role="contentinfo"] p { text-align: center; }
 footer[role="contentinfo"] p img { margin: 0; display: inline-block; margin-right: .5em; }
 footer[role="contentinfo"] .saibaMaisFooter { color: #fff; font-size: .75rem; padding: .5em 1em; margin-left: .5em; }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Index
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Empreendimentos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.img-2, .img-3, .img-4 { display: none; }
+
+.mapaLocalizacao { display: block; height: 30rem; margin: 0px; padding: 0px; }
+
 /*  $Media Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Media query for 960 Screens - sets nested grids to 100%
