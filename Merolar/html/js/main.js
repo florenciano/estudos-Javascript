@@ -120,10 +120,13 @@ $(document).ready(function () {
         var progressBar = $( ".percent" ),
             display = $( ".barra span" );
 
+
         progressBar.each(function() {
             // attr 'data-value' ao progressBar
             var value = $(this).attr( "data-value" );
             $(this).css( "width", value + "%" );
+
+            // var max = $(this).attr( "data-max" );
 
             // set text percentual
             var display = $(this).prev( "span" );
