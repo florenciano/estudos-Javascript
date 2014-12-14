@@ -84,12 +84,9 @@ textarea { resize: vertical; }
 
 .end { float: right !important; }
 
-@font-face { font-family: "colaborate-thin"; src: url('fonts/../../fonts/colaborate_thin/ColabThi-webfont.woff') format('woff'), url('fonts/../../fonts.colaborate_thin/ColabThi-webfont.ttf') format('truetype'), url('fonts/../../fonts/colaborate_thin/ColabThi-webfont.svg#colaborate-thin') format('svg'), url('fonts/../../fonts/colaborate_thin/ColabThi-webfont.eot') format('embedded-opentype'), url('fonts/../../fonts/colaborate_thin/ColabThi-webfont.eot?#iefix') format('embedded-opentype'); }
-
-@font-face { font-family: "colaborate-regular"; src: url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.woff') format('woff'), url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.ttf') format('truetype'), url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.svg#colaborate-regular') format('svg'), url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.eot') format('embedded-opentype'), url('fonts/../../fonts/colaborate_regular/ColabReg-webfont.eot?#iefix') format('embedded-opentype'); }
-
-@font-face { font-family: "colaborate-medium"; src: url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.woff') format('woff'), url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.ttf') format('truetype'), url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.svg#colaborate-medium') format('svg'), url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.eot') format('embedded-opentype'), url('fonts/../../fonts/colaborate_medium/ColabMed-webfont.eot?#iefix') format('embedded-opentype'); }
-
+@font-face { font-family: "colaborate-thin"; src: url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.woff?1417795356') format('woff'), url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.ttf?1417795356') format('truetype'), url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.svg?1417795356#colaborate-thin') format('svg'), url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.eot?1417795356') format('embedded-opentype'), url('../fonts/../fonts/colaborate_thin/ColabThi-webfont.eot?&1417795356#iefix') format('embedded-opentype'); }
+@font-face { font-family: "colaborate-regular"; src: url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.woff?1417795356') format('woff'), url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.ttf?1417795356') format('truetype'), url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.svg?1417795356#colaborate-regular') format('svg'), url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.eot?1417795356') format('embedded-opentype'), url('../fonts/../fonts/colaborate_regular/ColabReg-webfont.eot?&1417795356#iefix') format('embedded-opentype'); }
+@font-face { font-family: "colaborate-medium"; src: url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.woff?1417795356') format('woff'), url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.ttf?1417795356') format('truetype'), url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.svg?1417795356#colaborate-medium') format('svg'), url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.eot?1417795356') format('embedded-opentype'), url('../fonts/../fonts/colaborate_medium/ColabMed-webfont.eot?&1417795356#iefix') format('embedded-opentype'); }
 * { box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 
 body { font-family: "colaborate-regular"; font-size: 100%; }
@@ -121,10 +118,6 @@ a.btnSaibaMais:hover { text-decoration: none; }
 .bx-controls-direction .bx-prev { background: url("../img/header/btnPrev.png") no-repeat center center; left: 40px; }
 .bx-controls-direction .bx-next { background: url("../img/header/btnNext.png") no-repeat center center; right: 40px; }
 
-.nextGaleria a, .prevGaleria a { background-color: red; height: 20px; width: 20px; text-indent: -999px; display: inline-block; }
-
-.imgGaleria .bx-controls-direction a { display: none; }
-
 .title { color: #f26322; font-size: 2.0625rem; font-family: "colaborate-regular", sans-serif; font-weight: normal; margin: 2rem 0 1rem; }
 .title:before { content: ""; height: 42px; width: 42px; display: inline-block; background: transparent url("../img/ui/icosTitle.png") no-repeat 0 0; margin-right: .5rem; }
 
@@ -149,10 +142,10 @@ header[role="banner"] .headerGeneral .promotional a { font-size: 1rem; margin-to
 header[role="banner"] .headerGeneral .brandSearchFlags { position: absolute; top: 0; background-color: rgba(1, 1, 1, 0.5); border-radius: 5px; padding: 10px; width: 80%; left: 10%; }
 header[role="banner"] .headerGeneral .brand h1 { margin: 0; }
 header[role="banner"] .headerGeneral .brand img { margin: 10% 0 0; max-width: 140px; }
-header[role="banner"] .headerGeneral .busca { text-align: right; padding: 20px 10px 0 0; position: relative; @-moz-document url-prefix() { .icoSearch { right: 105px; } }
- }
+header[role="banner"] .headerGeneral .busca { text-align: right; padding: 20px 10px 0 0; position: relative; }
 header[role="banner"] .headerGeneral .busca input[type="text"] { background-color: #fff; border-radius: 5px; border: none; font-size: .75rem; padding: .5em; width: 220px; }
 header[role="banner"] .headerGeneral .busca .icoSearch { margin: 0; position: absolute; right: 95px; top: 25px; }
+@-moz-document url-prefix() { header[role="banner"] .headerGeneral .busca .icoSearch { right: 105px; } }
 header[role="banner"] .headerGeneral .busca input[type="submit"] { margin-left: .5em; cursor: pointer; padding: .5em 1em; font-size: .75rem; }
 header[role="banner"] .headerGeneral .flags { color: #fff; margin-top: 20px; text-align: right; }
 header[role="banner"] .headerGeneral .flags h6 { margin: 0; text-transform: uppercase; font-family: "colaborate-regular"; font-size: .75rem; letter-spacing: -1px; text-align: right; }
@@ -190,7 +183,8 @@ div[role="main"] .thumbnails img { background: #fff; padding: 12px; border-radiu
 div[role="main"] .thumbnails figcaption { margin: 0 30px; }
 div[role="main"] .thumbnails figcaption p { margin: 0; line-height: 1em; }
 div[role="main"] .thumbnails figcaption p:last-child { margin-top: 30px; }
-div[role="main"] .thumbnails .nameTitle { color: #f26322; font-size: 2.25rem; margin: 20px 0 10px; letter-spacing: -1px; }
+div[role="main"] .thumbnails .nameTitle { color: #f26322; font-size: 2rem; margin: 20px 0 10px; letter-spacing: -1px; background: none; }
+div[role="main"] .thumbnails .titleIndex { text-align: left; }
 div[role="main"] .thumbnails .place { font-size: 1.125rem; font-family: "colaborate-thin", sans-serif; color: #4b4b4b; }
 div[role="main"] .thumbnails .place strong { font-family: "colaborate-regular", sans-serif; }
 div[role="main"] .thumbnails .city { font-size: 1rem; color: #f26322; margin: .25em 0; }
@@ -203,9 +197,83 @@ footer[role="contentinfo"] .saibaMaisFooter { color: #fff; font-size: .75rem; pa
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Empreendimentos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.img-2, .img-3, .img-4 { display: none; }
-
-.mapaLocalizacao { display: block; height: 30rem; margin: 0px; padding: 0px; }
+div[role="main"] section { width: 100%; display: block; }
+div[role="main"] .nameTitle { background: transparent url("../img/ui/borderTitle.png") repeat-x center 55%; display: block; text-align: center; margin: 20px; }
+div[role="main"] .nameTitle h3 { display: inline-block; text-transform: uppercase; padding: 0 .25em; font-size: 1.875rem; margin: 0; }
+div[role="main"] .sobre, div[role="main"] .plantas, div[role="main"] .obra { background-color: rgba(1, 1, 1, 0.15); }
+div[role="main"] .titleSobre, div[role="main"] .titlePlantas, div[role="main"] .titleObra { background-color: #d8d8d8; }
+div[role="main"] .galeria, div[role="main"] .localizacao { background-color: rgba(1, 1, 1, 0.1); }
+div[role="main"] .titleGaleria, div[role="main"] .titleLocalizacao { background-color: #e5e5e5; }
+div[role="main"] .titleSobre:before { background-position: -38px 2px; }
+div[role="main"] .titleGaleria:before { background-position: -80px 6px; }
+div[role="main"] .titlePlantas:before { background-position: -118px 4px; }
+div[role="main"] .titleLocalizacao:before { background-position: -160px 4px; }
+div[role="main"] .titleObra:before { background-position: -198px 5px; }
+div[role="main"] .content { background-color: #f0f0f0; background-color: #f0f0f0; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; padding: 40px; margin: 20px; }
+div[role="main"] .asideMenu { display: none; position: fixed; right: -5px; top: 5%; }
+div[role="main"] .asideMenu ul { width: 65px; }
+div[role="main"] .asideMenu ul li { width: 52px; height: 58px; background: #f26322 url("../img/ui/icosTitle.png") no-repeat -54px -54px; margin-bottom: 2px; }
+div[role="main"] .asideMenu ul li:hover { background-color: #b24706 !important; }
+div[role="main"] .asideMenu ul li a { display: block; width: 100%; height: 100%; text-indent: -9999px; }
+div[role="main"] .asideMenu .item2 { background-position: -114px -54px; }
+div[role="main"] .asideMenu .item3 { background-position: -174px -54px; }
+div[role="main"] .asideMenu .item4 { background-position: -236px -52px; }
+div[role="main"] .asideMenu .item5 { background-position: -306px -54px; }
+div[role="main"] .activeAsideMenu { background-color: #b24706 !important; }
+div[role="main"] .sobre { position: relative; }
+div[role="main"] .sobre .nameTitle { margin-right: 80px; }
+div[role="main"] .sobre .content { position: relative; }
+div[role="main"] .sobre .content h4 { font-family: "colaborate-thin", sans-serif; font-size: 2.5rem; margin: 0; padding: 0; text-transform: uppercase; color: #f26322; }
+div[role="main"] .sobre .content p { font-size: 1.25rem; line-height: 2.25rem; font-family: "colaborate-thin"; margin: 0; }
+div[role="main"] .sobre .content .logoEmpreendimento { position: absolute; top: -80px; right: 40px; }
+div[role="main"] .sobre .saibaMaisSobre { text-align: right; }
+div[role="main"] .galeria .content .btns h4, div[role="main"] .plantas .content .btns h4 { font-size: 1.5625rem; margin: 0; padding: 10px 0 20px; text-transform: uppercase; color: #f26322; text-align: center; font-family: "colaborate-medium", sans-serif; letter-spacing: -2px; }
+div[role="main"] .galeria .content .btns ul, div[role="main"] .plantas .content .btns ul { text-align: center; }
+div[role="main"] .galeria .content .btns ul li, div[role="main"] .plantas .content .btns ul li { margin-bottom: 30px; }
+div[role="main"] .galeria .content .btns ul li a, div[role="main"] .plantas .content .btns ul li a { font-family: "colaborate-regular", sans-serif; font-size: 1.25rem; background-color: #acacac; }
+div[role="main"] .galeria .content .btns ul li a:hover, div[role="main"] .plantas .content .btns ul li a:hover { background-color: #a2a1a1; }
+div[role="main"] .galeria .content .btns ul li .activeBtnGaleria, div[role="main"] .plantas .content .btns ul li .activeBtnGaleria { background-color: #f26322; }
+div[role="main"] .galeria .content .btns ul li .activeBtnGaleria:hover, div[role="main"] .plantas .content .btns ul li .activeBtnGaleria:hover { background-color: #E1581A; }
+div[role="main"] .galeria .content .btns p, div[role="main"] .plantas .content .btns p { font-size: 1.25rem; line-height: 1.875rem; font-family: "colaborate-thin", sans-serif; }
+div[role="main"] .galeria .content .imgGaleria, div[role="main"] .plantas .content .imgGaleria { text-align: center; height: 500px; overflow: hidden; }
+div[role="main"] .galeria .content .imgGaleria .pagerThumb img, div[role="main"] .galeria .content .imgGaleria .carouselThumb img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-2 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-2 img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-3 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-3 img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-4 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-4 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb img, div[role="main"] .plantas .content .imgGaleria .carouselThumb img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-2 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-2 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-3 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-3 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-4 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-4 img { padding: 12px; background-color: #fff; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+div[role="main"] .galeria .content .imgGaleria .carouselThumb img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-2 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-3 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-4 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-2 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-3 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-4 img { padding: 4px; }
+div[role="main"] .galeria .content .imgGaleria .nextGaleria a, div[role="main"] .galeria .content .imgGaleria .prevGaleria a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-2 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-2 a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-3 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-3 a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-4 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-4 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria a, div[role="main"] .plantas .content .imgGaleria .prevGaleria a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-2 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-2 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-3 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-3 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-4 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-4 a { background-color: transparent; height: 114px; width: 32px; text-indent: -9999px; display: inline-block; }
+div[role="main"] .galeria .content .imgGaleria .prevGaleria a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-2 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-3 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-4 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-2 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-3 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-4 a { background: url("../img/ui/prevGaleria.png") no-repeat center center; }
+div[role="main"] .galeria .content .imgGaleria .nextGaleria a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-2 a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-3 a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-4 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-2 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-3 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-4 a { background: url("../img/ui/nextGaleria.png") no-repeat center center; }
+div[role="main"] .galeria .content .imgGaleria .containerThumb, div[role="main"] .plantas .content .imgGaleria .containerThumb { position: relative; }
+div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-4, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-4 { position: absolute; top: -10px; }
+div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-4 { left: 5px; }
+div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-4 { right: 5px; }
+div[role="main"] .galeria .content .imgGaleria .galerias, div[role="main"] .plantas .content .imgGaleria .galerias { margin-bottom: 20px; }
+div[role="main"] .plantas .imgPlantas { text-align: center; background-color: #fff; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; height: 370px; overflow: hidden; }
+div[role="main"] .plantas .imgPlantas .imgGaleriaPlantas { padding: 20px 10px; }
+div[role="main"] .plantas .imgPlantas p { font-size: 1.25rem; font-family: "colaborate-thin", sans-serif; margin: 0; }
+div[role="main"] .localizacao p { font-size: 1.25rem; font-family: "colaborate-thin", sans-serif; margin: 0; line-height: 1.5rem; }
+div[role="main"] .localizacao h5 { color: #f26322; font-size: 1.25rem; margin: 1rem 0; }
+div[role="main"] .localizacao .mapaLocalizacao { display: block; height: 30rem; margin: 0px; padding: 0px; border: 1px  solid #d9d9d9; }
+div[role="main"] .localizacao .mapaLocalizacao img { max-width: none; }
+div[role="main"] .localizacao .itensLocalizacao h6 { font-size: 1.25rem; margin: 40px 0 10px 0; padding: 0; text-transform: uppercase; color: #f26322; font-family: "colaborate-regular", sans-serif; letter-spacing: -1px; }
+div[role="main"] .localizacao .itensLocalizacao ul { border-right: 1px solid rgba(255, 102, 9, 0.6); }
+div[role="main"] .localizacao .itensLocalizacao ul li { font-size: 1rem; font-family: "colaborate-thin", sans-serif; }
+div[role="main"] .localizacao .itensLocalizacao .clr { border-right: none; }
+div[role="main"] .obra .datas h6 { font-size: 1.25rem; margin: 0; padding: 0; text-transform: uppercase; color: #f26322; font-family: "colaborate-medium", sans-serif; letter-spacing: -1px; line-height: 1em; }
+div[role="main"] .obra .datas p { margin: 0; font-family: "colaborate-thin"; font-size: 1.25rem; }
+div[role="main"] .obra .datas ul li:first-child { border-right: 1px solid rgba(255, 102, 9, 0.6); }
+div[role="main"] .obra .datas .head { padding: 0 20px; }
+div[role="main"] .obra .ilustra { padding-top: 20px; }
+div[role="main"] .obra .itensEstagioObra .status { font-size: 1.125rem; font-family: "colaborate-thin", sans-serif; width: 120px; line-height: 1em; border-bottom: 1px solid #ccc; margin-bottom: 24px; padding: 5px; }
+div[role="main"] .obra .itensEstagioObra .status span .indic { color: #f26322; font-family: "colaborate-regular"; }
+div[role="main"] .obra .itensEstagioObra ul li { display: block; margin-bottom: 10px; font-family: "colaborate-thin", sans-serif; font-size: 1.125rem; }
+div[role="main"] .obra .itensEstagioObra ul li p { margin: 0; line-height: 1.125rem; }
+div[role="main"] .obra .itensEstagioObra .barra { display: block; width: 100%; background-color: #fff; position: relative; padding: 0; min-height: 1.56rem; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+div[role="main"] .obra .itensEstagioObra .barra span { display: inline-block; color: #000; position: absolute; z-index: 10; font-size: 1.125rem; top: 0; left: 50%; margin-left: -.5rem; line-height: 1.56rem; }
+div[role="main"] .obra .itensEstagioObra .barra .percent { height: 100%; width: 0; background-color: #f26322; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; position: absolute; top: 0; left: 0; }
+div[role="main"] .obra .fotosObra { padding: 0; }
+div[role="main"] .obra .fotosObra h4 { font-size: 1.5rem; margin: 0; padding: 30px 0 20px; text-transform: uppercase; color: #f26322; text-align: center; font-family: "colaborate-regular", sans-serif; letter-spacing: -1px; }
+div[role="main"] .obra .fotosObra .fotosObraBig { padding-top: 20px; text-align: center; }
+div[role="main"] .obra .fotosObra .fotosObraBig img { background-color: #fff; padding: 8px; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; display: inline-block; margin-right: 15px; margin-bottom: 15px; }
+div[role="main"] .obra .thumbBigFotosObra img { background-color: #fff; padding: 10px; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
 
 /*  $Media Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -213,7 +281,10 @@ footer[role="contentinfo"] .saibaMaisFooter { color: #fff; font-size: .75rem; pa
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width: 960px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; margin-bottom: 20px; }
   .row .row > div:last-child { margin-bottom: 0 !important; }
-  .flags { display: none; } }
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Index ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  .flags { display: none; }
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Empreendimentos ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  .asideMenu { display: none; } }
 /* Media query for iPad and tablets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation: portrait) { .row { margin-bottom: 0 !important; }
@@ -246,7 +317,31 @@ footer[role="contentinfo"] .saibaMaisFooter { color: #fff; font-size: .75rem; pa
   div[role="main"] .thumbnails figure { margin: 0; width: 50%; position: relative; }
   div[role="main"] .thumbnails figcaption { margin: 0; width: 100%; position: absolute; left: 90%; top: 0; }
   footer[role="contentinfo"] p { width: 75%; text-align: center; margin: 0 auto; padding: 1em 0; }
-  footer[role="contentinfo"] .saibaMaisFooter { display: inline-block; } }
+  footer[role="contentinfo"] .saibaMaisFooter { display: inline-block; }
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Empreendimentos ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  div[role="main"] .nameTitle h3 { font-size: 1.65rem; }
+  div[role="main"] .galeria .content, div[role="main"] .plantas .content { padding: 20px; margin: 10px; }
+  div[role="main"] .galeria .content .btns, div[role="main"] .plantas .content .btns { margin-bottom: 0; }
+  div[role="main"] .galeria .content .btns h4, div[role="main"] .plantas .content .btns h4 { font-size: 1.5em; padding: 5px; }
+  div[role="main"] .galeria .content .btns ul, div[role="main"] .plantas .content .btns ul { margin-bottom: 10px; }
+  div[role="main"] .galeria .content .btns ul li, div[role="main"] .plantas .content .btns ul li { width: 49%; margin-bottom: 10px; }
+  div[role="main"] .galeria .content .btns ul li a, div[role="main"] .plantas .content .btns ul li a { display: block; font-size: 1rem; }
+  div[role="main"] .galeria .content .btns p, div[role="main"] .plantas .content .btns p { margin: 0; text-align: center; font-size: 1.1rem; }
+  div[role="main"] .galeria .content .imgGaleria, div[role="main"] .plantas .content .imgGaleria { height: 560px; }
+  div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-4 { right: 35px; }
+  div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-4 { left: 35px; }
+  div[role="main"] .plantas .imgPlantas { height: 400px; }
+  div[role="main"] .localizacao .itensLocalizacao .c3 { margin-bottom: 0; }
+  div[role="main"] .localizacao .itensLocalizacao h6 { margin: 5px 0; font-size: 1rem; border-bottom: 1px solid #f26322; font-size: 1.125rem; }
+  div[role="main"] .localizacao .itensLocalizacao ul { border-right: none; }
+  div[role="main"] .localizacao .itensLocalizacao ul li { display: block; line-height: 1.2em; border-right: none; }
+  div[role="main"] .obra .datas ul { margin-bottom: 0; text-align: center; }
+  div[role="main"] .obra .datas ul li { margin-bottom: 0; }
+  div[role="main"] .obra .datas ul li:first-child { border-right: none; }
+  div[role="main"] .obra .datas ul li h6 { font-size: 1.125rem; }
+  div[role="main"] .obra .datas ul li p { font-size: 1rem; }
+  div[role="main"] .obra .itensEstagioObra .status { display: block; text-align: center; font-size: 1.125rem; line-height: 1em; border-bottom: 0; margin: 0; width: 100%; padding-bottom: 10px; }
+  div[role="main"] .obra .fotosObra h4 { padding: 20px 0 0; font-size: 1.25rem; } }
 /* Media query for 480 Screens - sets for mobile phone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width: 480px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; margin-bottom: 20px; }
@@ -265,15 +360,47 @@ footer[role="contentinfo"] .saibaMaisFooter { color: #fff; font-size: .75rem; pa
   header[role="banner"] .headerGeneral .search .busca input[type="submit"] { margin: 10px 0 0; }
   header[role="banner"] .pagerCustomizado { display: none; }
   nav[role="navigation"] li { width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.1); border-left: none; }
+  nav[role="navigation"] li:first-child { border-top: 1px solid rgba(255, 255, 255, 0.1); }
   div[role="main"] .aboutBrand { margin: 20px; }
   div[role="main"] .aboutBrand .descritionBrand { text-align: center; }
   div[role="main"] .thumbnails figure { width: 100%; position: relative; display: block; }
   div[role="main"] .thumbnails img { padding: 10px; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
   div[role="main"] .thumbnails figcaption { width: 100%; position: relative; left: 0; top: 0; text-align: center; }
   div[role="main"] .thumbnails figcaption p:last-child { margin: 20px 0; }
-  div[role="main"] .thumbnails .nameTitle { font-size: 2rem; margin: 10px 0; }
+  div[role="main"] .thumbnails .nameTitle { font-size: 2rem; margin: 10px 0; text-align: center; }
   footer[role="contentinfo"] p { width: 90%; padding: 1em; }
-  footer[role="contentinfo"] .saibaMaisFooter { display: block; width: 10em; margin: 1em auto; } }
+  footer[role="contentinfo"] .saibaMaisFooter { display: block; width: 10em; margin: 1em auto; }
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Empreendimentos ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  div[role="main"] .logoEmpreendimento { display: none; }
+  div[role="main"] .nameTitle { background: none; }
+  div[role="main"] .nameTitle h3 { font-size: 1.25rem; }
+  div[role="main"] .content { padding: 10px; margin: 0; }
+  div[role="main"] .sobre .nameTitle { margin: 10px; }
+  div[role="main"] .sobre h3 { font-size: 1.25rem; }
+  div[role="main"] .sobre .content h4 { font-size: 2rem; }
+  div[role="main"] .sobre .saibaMaisSobre { text-align: center; padding-bottom: 20px; margin-top: 20px; }
+  div[role="main"] .galeria .content, div[role="main"] .plantas .content { padding: 10px; margin: 0; }
+  div[role="main"] .galeria .content .btns, div[role="main"] .plantas .content .btns { padding: 0; }
+  div[role="main"] .galeria .content .btns ul li, div[role="main"] .plantas .content .btns ul li { width: 100%; margin-bottom: 5px; }
+  div[role="main"] .galeria .content .btns ul li a, div[role="main"] .plantas .content .btns ul li a { font-size: 1rem; padding: .5em; line-height: 1.2em; }
+  div[role="main"] .galeria .content .btns p, div[role="main"] .plantas .content .btns p { font-size: 1.1rem; line-height: 1.1em; }
+  div[role="main"] .galeria .content .imgGaleria, div[role="main"] .plantas .content .imgGaleria { height: 420px; }
+  div[role="main"] .galeria .content .imgGaleria .nextGaleria a, div[role="main"] .galeria .content .imgGaleria .prevGaleria a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-2 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-2 a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-3 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-3 a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-4 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-4 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria a, div[role="main"] .plantas .content .imgGaleria .prevGaleria a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-2 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-2 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-3 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-3 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-4 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-4 a { height: 35px; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+  div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-4 { top: -35px; left: 0; }
+  div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-4 { top: -35px; right: 0; }
+  div[role="main"] .galeria .content .imgGaleria .pagerThumb img, div[role="main"] .galeria .content .imgGaleria .carouselThumb img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-2 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-2 img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-3 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-3 img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-4 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-4 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb img, div[role="main"] .plantas .content .imgGaleria .carouselThumb img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-2 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-2 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-3 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-3 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-4 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-4 img { padding: 4px; }
+  div[role="main"] .plantas .imgPlantas { height: 290px; }
+  div[role="main"] .plantas .imgPlantas p { font-size: 1rem; line-height: 1em; }
+  div[role="main"] .localizacao h5 { font-size: 1.125rem; line-height: 1em; text-align: center; }
+  div[role="main"] .localizacao .mapaLocalizacao { height: 20rem; }
+  div[role="main"] .obra .fotosObra h4 { padding: 10px 0 0; font-size: 1rem; }
+  div[role="main"] .obra .fotosObra .fotosObraBig img { padding: 4px; margin-bottom: 10px; margin-right: 0; width: 100%; }
+  div[role="main"] .obra .thumbBigFotosObra { padding: 0; }
+  div[role="main"] .obra .thumbBigFotosObra a { width: 45%; display: inline-block; }
+  div[role="main"] .obra .thumbBigFotosObra .imgSlider { display: none; } }
+/* Mobile ching-ling */
+@media only screen and (max-width: 320px) { div[role="main"] .galeria .content .imgGaleria { height: 280px; }
+  div[role="main"] .plantas .imgPlantas { height: 210px; } }
 /* $Helper classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .ir { background-color: transparent; border: 0; overflow: hidden; *text-indent: -9999px; }

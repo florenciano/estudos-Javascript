@@ -7,27 +7,27 @@
 @import "compass/css3";
 @include font-face(
     "colaborate-thin",
-    font-files("../../fonts/colaborate_thin/ColabThi-webfont.woff",
-        "../../fonts.colaborate_thin/ColabThi-webfont.ttf",
-        "../../fonts/colaborate_thin/ColabThi-webfont.svg#colaborate-thin",
-        "../../fonts/colaborate_thin/ColabThi-webfont.eot",
-        "../../fonts/colaborate_thin/ColabThi-webfont.eot?#iefix"));
+    font-files("../fonts/colaborate_thin/ColabThi-webfont.woff",
+        "../fonts/colaborate_thin/ColabThi-webfont.ttf",
+        "../fonts/colaborate_thin/ColabThi-webfont.svg#colaborate-thin",
+        "../fonts/colaborate_thin/ColabThi-webfont.eot",
+        "../fonts/colaborate_thin/ColabThi-webfont.eot?#iefix"));
 
 @include font-face(
     "colaborate-regular",
-    font-files("../../fonts/colaborate_regular/ColabReg-webfont.woff",
-        "../../fonts/colaborate_regular/ColabReg-webfont.ttf",
-        "../../fonts/colaborate_regular/ColabReg-webfont.svg#colaborate-regular",
-        "../../fonts/colaborate_regular/ColabReg-webfont.eot",
-        "../../fonts/colaborate_regular/ColabReg-webfont.eot?#iefix"));
+    font-files("../fonts/colaborate_regular/ColabReg-webfont.woff",
+        "../fonts/colaborate_regular/ColabReg-webfont.ttf",
+        "../fonts/colaborate_regular/ColabReg-webfont.svg#colaborate-regular",
+        "../fonts/colaborate_regular/ColabReg-webfont.eot",
+        "../fonts/colaborate_regular/ColabReg-webfont.eot?#iefix"));
 
 @include font-face(
     "colaborate-medium",
-    font-files("../../fonts/colaborate_medium/ColabMed-webfont.woff",
-        "../../fonts/colaborate_medium/ColabMed-webfont.ttf",
-        "../../fonts/colaborate_medium/ColabMed-webfont.svg#colaborate-medium",
-        "../../fonts/colaborate_medium/ColabMed-webfont.eot",
-        "../../fonts/colaborate_medium/ColabMed-webfont.eot?#iefix"));
+    font-files("../fonts/colaborate_medium/ColabMed-webfont.woff",
+        "../fonts/colaborate_medium/ColabMed-webfont.ttf",
+        "../fonts/colaborate_medium/ColabMed-webfont.svg#colaborate-medium",
+        "../fonts/colaborate_medium/ColabMed-webfont.eot",
+        "../fonts/colaborate_medium/ColabMed-webfont.eot?#iefix"));
 /////////////////////////////////////////////////////////////////////
 // Vars
 /////////////////////////////////////////////////////////////////////
@@ -166,25 +166,7 @@ a.btnSaibaMais:hover { text-decoration: none; }
         right: $grid;
     }
 }
-/////////////////////////////////////////////////////////////////////
-// Este regra controla os btns prev e next dos thumbnails
-.nextGaleria, .prevGaleria {
-    a {
-        background-color: red;
-        height: 20px;
-        width: 20px;
-        text-indent: -999px;
-        display: inline-block;
-    }
-}
-// Esta regra elimina os controles das img grandes da galeria
-.imgGaleria {
-    .bx-controls-direction {
-        a {
-            display: none;
-        }
-    }
-}
+
 /////////////////////////////////////////////////////////////////////
 // titles
 .title {
@@ -301,7 +283,7 @@ header[role="banner"] {
         // logo
         .brand {
             h1 { margin: 0; }
-            img { 
+            img {
                 margin: 10% 0 0;
                 max-width: 140px;
             }
@@ -454,10 +436,12 @@ div[role="main"] {
         }
         .nameTitle {
             color: $laranja;
-            font-size: 2.25rem;
+            font-size: 2rem;
             margin: $meioGrid 0 ($meioGrid/2);
             letter-spacing: -1px;
+            background: none;
         }
+        .titleIndex { text-align: left; }
         .place {
             font-size: 1.125rem;
             font-family: $fontThin, sans-serif;
@@ -501,16 +485,383 @@ footer[role="contentinfo"] {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Empreendimentos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div[role="main"] {
+    section {
+        width: 100%;
+        display: block;
+    }
+    // patterns title
+    .nameTitle {
+        background: transparent url("../img/ui/borderTitle.png") repeat-x center 55%;
+        display: block;
+        text-align: center;
+        margin: $meioGrid;
+        h3 {
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 0 .25em;
+            font-size: 1.875rem;
+            margin: 0;
+        }
+    }
+    .sobre, .plantas, .obra { background-color: $cinza15; }
+    .titleSobre, .titlePlantas, .titleObra { background-color: #d8d8d8; }
 
-// as demais imagens da seção 'Plantas'
-.img-2, .img-3, .img-4 { display:none; }
+    .galeria, .localizacao { background-color: $cinza10;  }
+    .titleGaleria, .titleLocalizacao { background-color: #e5e5e5; }
 
-// o mapa de localização
-.mapaLocalizacao {
-    display: block;
-    height: 30rem;
-    margin: 0px;
-    padding: 0px;
+    .titleSobre:before { background-position: -38px 2px; }
+    .titleGaleria:before { background-position: -80px 6px; }
+    .titlePlantas:before { background-position: -118px 4px; }
+    .titleLocalizacao:before { background-position: -160px 4px; }
+    .titleObra:before { background-position: -198px 5px; }
+
+    // patterns content
+    .content {
+        background-color: #f0f0f0;
+        background-color: #f0f0f0;
+        @include radius(5px,5px,5px,5px);
+        padding: $grid;
+        margin: $meioGrid;
+    }
+
+    // patterns aside Menu
+    .asideMenu {
+        display: none;
+        position: fixed;
+        right: -5px;
+        top: 5%;
+        ul {
+            width: 65px;
+            li {
+                width: 52px;
+                height: 58px;
+                background: $laranja url("../img/ui/icosTitle.png") no-repeat -54px -54px;
+                margin-bottom: 2px;
+                &:hover { background-color: #b24706 !important; }
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-indent: -9999px;
+                }
+            }
+        }
+        .item2 { background-position: -114px -54px; }
+        .item3 { background-position: -174px -54px; }
+        .item4 { background-position: -236px -52px; }
+        .item5 { background-position: -306px -54px; }
+    }
+    .activeAsideMenu { background-color: #b24706 !important; }
+
+
+    // section sobre
+    .sobre {
+        position: relative;
+        .nameTitle { margin-right: 80px;  }
+        .content {
+            position: relative;
+            h4 {
+                font-family: $fontThin, sans-serif;
+                font-size: 2.5rem;
+                margin: 0;
+                padding: 0;
+                text-transform: uppercase;
+                color: $laranja;
+            }
+            p {
+                font-size: 1.25rem;
+                line-height: 2.25rem;
+                font-family: $fontThin;
+                margin: 0;
+            }
+            .logoEmpreendimento {
+                position: absolute;
+                top: -($grid*2);
+                right: $grid;
+            }
+        }
+        .saibaMaisSobre {  text-align: right; }
+    }
+
+    // section galeria
+    .galeria, .plantas {
+        .content {
+            .btns {
+                h4 {
+                    font-size: 1.5625rem;
+                    margin: 0;
+                    padding: ($meioGrid/2) 0 $meioGrid;
+                    text-transform: uppercase;
+                    color: $laranja;
+                    text-align: center;
+                    font-family: $fontMedium, sans-serif;
+                    letter-spacing: -2px;
+                }
+                ul {
+                    text-align: center;
+                    li {
+                        margin-bottom: $meioGrid*1.5;
+                        a {
+                            font-family: $fontRegular, sans-serif;
+                            font-size: 1.25rem;
+                            background-color: #acacac;
+                            &:hover { background-color: #a2a1a1; }
+                        }
+                        .activeBtnGaleria {
+                            background-color: $laranja;
+                            &:hover { background-color: #E1581A; }
+                        }
+                    }
+                }
+                p {
+                    font-size: 1.25rem;
+                    line-height: 1.875rem;
+                    font-family: $fontThin, sans-serif;
+                }
+            }
+            .imgGaleria {
+                text-align: center;
+                // container
+                height: 500px;
+                overflow: hidden;
+                .pagerThumb, .carouselThumb,
+                .pagerThumb-2, .carouselThumb-2,
+                .pagerThumb-3, .carouselThumb-3,
+                .pagerThumb-4, .carouselThumb-4 {
+                    img {
+                        padding: 12px;
+                        background-color: #fff;
+                        @include radius(5px,5px,5px,5px);
+                    }
+                }
+                .carouselThumb, .carouselThumb-2, .carouselThumb-3, .carouselThumb-4 {
+                    img {
+                        padding: 4px;
+                    }
+                }
+                // icons thumbnails 'prev' and 'next'
+                .nextGaleria, .prevGaleria,
+                .nextGaleria-2, .prevGaleria-2,
+                .nextGaleria-3, .prevGaleria-3,
+                .nextGaleria-4, .prevGaleria-4 {
+                    a {
+                        background-color: transparent;
+                        height: 114px;
+                        width: 32px;
+                        text-indent: -9999px;
+                        display: inline-block;
+                    }
+                }
+                .prevGaleria, .prevGaleria-2, .prevGaleria-3, .prevGaleria-4 {
+                    a { background: url('../img/ui/prevGaleria.png') no-repeat center center; }
+                }
+                .nextGaleria, .nextGaleria-2, .nextGaleria-3, .nextGaleria-4 {
+                    a { background: url('../img/ui/nextGaleria.png') no-repeat center center; }
+                }
+                // position coord
+                .containerThumb {
+                    position: relative;
+                    .prevGaleria, .nextGaleria,
+                    .prevGaleria-2, .nextGaleria-2,
+                    .prevGaleria-3, .nextGaleria-3,
+                    .prevGaleria-4, .nextGaleria-4, {
+                        position: absolute;
+                        top: -10px;
+                    }
+                    .prevGaleria, .prevGaleria-2, .prevGaleria-3, .prevGaleria-4{
+                        left: 5px;
+                    }
+                    .nextGaleria, .nextGaleria-2, .nextGaleria-3, .nextGaleria-4 {
+                        right: 5px;
+                    }
+                }
+                .galerias { margin-bottom: $meioGrid }
+            }
+        }
+    }
+
+    // section plantas
+    .plantas {
+        .imgPlantas {
+            text-align: center;
+            background-color: #fff;
+            @include radius(5px,5px,5px,5px);
+            height: 370px;
+            overflow: hidden;
+            .imgGaleriaPlantas {
+                padding: $meioGrid ($meioGrid/2);
+            }
+            p {
+                font-size: 1.25rem;
+                font-family: $fontThin, sans-serif;
+                margin: 0;
+            }
+        }
+    }
+
+    // section mapa
+    .localizacao {
+        p {
+            font-size: 1.25rem;
+            font-family: $fontThin, sans-serif;
+            margin: 0;
+            line-height: 1.5rem;
+        }
+        h5 {
+            color: $laranja;
+            font-size: 1.25rem;
+            margin: 1rem 0;
+        }
+        .mapaLocalizacao {
+            display: block;
+            height: 30rem;
+            margin: 0px;
+            padding: 0px;
+            border: 1px  solid #d9d9d9;
+            img {
+                max-width: none;
+            }
+        }
+        .itensLocalizacao {
+            h6 {
+                font-size: 1.25rem;
+                margin: $grid 0 ($meioGrid/2) 0;
+                padding: 0;
+                text-transform: uppercase;
+                color: $laranja;
+                font-family: $fontRegular, sans-serif;
+                letter-spacing: -1px;
+            }
+            ul {
+                border-right: 1px solid rgba(255,102,9,.6);
+                li {
+                    font-size: 1rem;
+                    font-family: $fontThin, sans-serif;
+                }
+            }
+            .clr { border-right: none; }
+        }
+    }
+
+    // section estagio obras
+    .obra {
+        .datas {
+            h6 {
+                font-size: 1.25rem;
+                margin: 0;
+                padding: 0;
+                text-transform: uppercase;
+                color: $laranja;
+                font-family: $fontMedium, sans-serif;
+                letter-spacing: -1px;
+                line-height: 1em;
+            }
+            p {
+                margin: 0;
+                font-family: $fontThin;
+                font-size: 1.25rem;
+            }
+            ul {
+                li:first-child {
+                    border-right: 1px solid rgba(255,102,9,.6);
+                }
+            }
+            .head { padding: 0 $meioGrid; }
+        }
+        .ilustra { padding-top: $meioGrid; }
+        .itensEstagioObra {
+            .status {
+                font-size: 1.125rem;
+                font-family: $fontThin, sans-serif;
+                width: $grid*3;
+                line-height: 1em;
+                border-bottom: 1px solid #ccc;
+                margin-bottom: $meioGrid*1.2;
+                padding: $meioGrid/4;
+                span {
+                    .indic {
+                        color: $laranja;
+                        font-family: $fontRegular;
+                    }
+                }
+            }
+            ul {
+                li {
+                    display: block;
+                    margin-bottom: $meioGrid/2;
+                    font-family: $fontThin, sans-serif;
+                    font-size: 1.125rem;
+                    p {
+                        margin: 0;
+                        line-height: 1.125rem;
+                    }
+                }
+            }
+            .barra {
+                display: block;
+                width: 100%;
+                background-color: #fff;
+                position: relative;
+                padding: 0;
+                min-height: 1.56rem;
+                @include radius(5px,5px,5px,5px);
+                span {
+                    display: inline-block;
+                    color: #000;
+                    position: absolute;
+                    z-index: 10;
+                    font-size: 1.125rem;
+                    top: 0;
+                    left: 50%;
+                    margin-left: -.5rem;
+                    line-height: 1.56rem
+                }
+                .percent {
+                    height: 100%;
+                    width: 0;
+                    background-color: $laranja;
+                    @include radius(5px,5px,5px,5px);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+        .fotosObra {
+            padding: 0;
+            h4 {
+                font-size: 1.5rem;
+                margin: 0;
+                padding: ($meioGrid*1.5) 0 ($meioGrid);
+                text-transform: uppercase;
+                color: $laranja;
+                text-align: center;
+                font-family: $fontRegular, sans-serif;
+                letter-spacing: -1px;
+            }
+            .fotosObraBig {
+                padding-top: $meioGrid;
+                text-align: center;
+                img {
+                    background-color: #fff;
+                    padding: 8px;
+                    @include radius(5px,5px,5px,5px);
+                    display: inline-block;
+                    margin-right: 15px;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+        .thumbBigFotosObra {
+            img {
+                background-color: #fff;
+                padding: ($meioGrid/2);
+                @include radius(5px,5px,5px,5px);
+            }
+        }
+    }
+
 }
 
 /*  $Media Queries
@@ -533,8 +884,19 @@ footer[role="contentinfo"] {
     .row .row .c12 { width:100%; margin-bottom:20px }
     .row .row > div:last-child { margin-bottom:0 !important; }
 
-    // flags
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Index
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    // flags header
     .flags { display: none; }
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Empreendimentos
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    // patterns
+    .asideMenu { display:none; }
+
 }
 
 
@@ -593,14 +955,14 @@ footer[role="contentinfo"] {
                 h4 { font-size: 1.4rem; }
                 p { font-size: .875rem }
                 .dorms { font-size: 1rem; }
-                a { 
+                a {
                     padding: .25em .75em;
                     font-size: .875rem;
                 }
             }
         }
     }
-    .pagerCustomizado { 
+    .pagerCustomizado {
         bottom: 5px;
         .bx-pager-item {
             margin: 0 ($meioGrid/4);
@@ -611,11 +973,11 @@ footer[role="contentinfo"] {
         }
     }
     .bx-controls-direction { display: none; }
-    
+
     nav[role="navigation"] {
         min-height: 1em;
         background: $cinza85;
-        li { 
+        li {
             min-width: 22%;
             a { padding: 1em; }
         }
@@ -655,6 +1017,120 @@ footer[role="contentinfo"] {
             padding: 1em 0;
         }
         .saibaMaisFooter { display: inline-block; }
+    }
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Empreendimentos
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    div[role="main"] {
+        .nameTitle {
+            h3 { font-size: 1.65rem; }
+        }
+        .galeria, .plantas {
+            .content {
+            padding: $meioGrid;
+            margin: $meioGrid/2;
+                .btns {
+                    margin-bottom: 0;
+                    h4 {
+                        font-size: 1.5em;
+                        padding: ($meioGrid/4);
+                    }
+                    ul {
+                        margin-bottom: ($meioGrid/2);
+                        li {
+                            width: 49%;
+                            margin-bottom: $meioGrid/2;
+                            a {
+                                display: block;
+                                font-size: 1rem;
+                            }
+                        }
+                    }
+                    p {
+                        margin: 0;
+                        text-align: center;
+                        font-size: 1.1rem;
+                    }
+                }
+                .imgGaleria {
+                    height: 560px;
+                }
+            }
+        }
+        // galeria
+        .galeria {
+            .content {
+                .imgGaleria {
+                    .containerThumb {
+                        .nextGaleria, .nextGaleria-2, .nextGaleria-3, .nextGaleria-4  { right: 35px; }
+                        .prevGaleria, .prevGaleria-2, .prevGaleria-3, .prevGaleria-4  { left: 35px; }
+                    }
+                }
+            }
+        }
+        .plantas {
+            .imgPlantas {
+                height: 400px;
+            }
+        }
+        // localizacao
+        .localizacao {
+            .itensLocalizacao {
+                .c3 { margin-bottom: 0; }
+                h6 {
+                    margin: ($meioGrid/4) 0;
+                    font-size: 1rem;
+                    border-bottom: 1px solid $laranja;
+                    font-size: 1.125rem;
+                }
+                ul {
+                    border-right: none;
+                    li {
+                        display: block;
+                        line-height: 1.2em;
+                        border-right: none;
+                    }
+                }
+            }
+        }
+        // obra
+        .obra {
+            .datas {
+                ul {
+                    margin-bottom: 0;
+                    text-align: center;
+                    li {
+                        margin-bottom: 0;
+                        &:first-child {
+                            border-right: none;
+                        }
+                        h6 {
+                            font-size: 1.125rem;
+                        }
+                        p { font-size: 1rem; }
+                    }
+                }
+            }
+            .itensEstagioObra {
+                .status {
+                    display: block;
+                    text-align: center;
+                    font-size: 1.125rem;
+                    line-height: 1em;
+                    border-bottom: 0;
+                    margin: 0;
+                    width: 100%;
+                    padding-bottom: ($meioGrid/2);
+                }
+            }
+            .fotosObra {
+                h4 {
+                    padding: $meioGrid 0 0;
+                    font-size: 1.25rem;
+                }
+            }
+        }
     }
 }
 
@@ -702,7 +1178,7 @@ footer[role="contentinfo"] {
                 position: relative;
                 margin: 0;
                 top: 1em;
-                .busca { 
+                .busca {
                     text-align: center;
                     padding: 0;
                     margin-top: $meioGrid/2;
@@ -726,6 +1202,7 @@ footer[role="contentinfo"] {
             width: 100%;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             border-left: none;
+            &:first-child { border-top: 1px solid rgba(255, 255, 255, 0.1) }
         }
     }
 
@@ -752,9 +1229,10 @@ footer[role="contentinfo"] {
                 text-align: center;
                 p:last-child { margin: $meioGrid 0; }
             }
-            .nameTitle { 
+            .nameTitle {
                 font-size: 2rem;
                 margin: ($meioGrid/2) 0;
+                text-align: center;
             }
         }
     }
@@ -771,8 +1249,154 @@ footer[role="contentinfo"] {
         }
     }
 
-}
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Empreendimentos
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    div[role="main"] {
+        .logoEmpreendimento { display: none; }
+        .nameTitle { background: none;
+            h3 { font-size: 1.25rem; }
+        }
+        .content {
+            padding: ($meioGrid/2);
+            margin: 0;
+        }
+        // sobre
+        .sobre {
+            .nameTitle {
+                margin: $meioGrid/2;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
+            .content {
+                h4 {
+                    font-size: 2rem;
+                }
+            }
+            .saibaMaisSobre {
+                text-align: center;
+                padding-bottom: ($meioGrid);
+                margin-top: ($meioGrid);
+            }
+        }
+        // galeria
+        .galeria, .plantas {
+            .content {
+                padding: ($meioGrid/2);
+                margin: 0;
+                .btns {
+                    padding: 0;
+                    ul {
+                        li {
+                            width: 100%;
+                            margin-bottom: ($meioGrid/4);
+                            a {
+                                font-size: 1rem;
+                                padding: .5em;
+                                line-height: 1.2em;
+                            }
+                        }
+                    }
+                    p {
+                        font-size: 1.1rem;
+                        line-height: 1.1em;
+                    }
+                }
+                .imgGaleria {
+                    height: 420px;
+                    .nextGaleria, .prevGaleria, .nextGaleria-2, .prevGaleria-2, .nextGaleria-3, .prevGaleria-3, .nextGaleria-4, .prevGaleria-4 {
+                        a {
+                            height: 35px;
+                            @include radius(5px,5px,5px,5px);
+                        }
+                    }
+                    .containerThumb {
+                        .prevGaleria, .prevGaleria-2, .prevGaleria-3, .prevGaleria-4 {
+                            top: -35px;
+                            left: 0;
+                        }
+                        .nextGaleria, .nextGaleria-2, .nextGaleria-3, .nextGaleria-4 {
+                            top: -35px;
+                            right: 0;
+                        }
+                    }
+                    .pagerThumb, .carouselThumb, .pagerThumb-2, .carouselThumb-2, .pagerThumb-3, .carouselThumb-3, .pagerThumb-4, .carouselThumb-4 {
+                        img {
+                            padding: 4px;
+                        }
+                    }
+                }
+            }
+        }
+        // plantas
+        .plantas {
+            .imgPlantas {
+                height: 290px;
+                p {
+                    font-size: 1rem;
+                    line-height: 1em;
+                }
+            }
+        }
+        //localizacao
+        .localizacao {
+            h5 {
+                font-size: 1.125rem;
+                line-height: 1em;
+                text-align: center;
+            }
+            .mapaLocalizacao { height: 20rem; }
+        }
+        // obra
+        .obra {
+            .fotosObra {
+                h4 {
+                    padding: ($meioGrid/2) 0 0;
+                    font-size: 1rem
+                }
+                .fotosObraBig {
+                    img {
+                        padding: 4px;
+                        margin-bottom: ($meioGrid/2);
+                        margin-right: 0;
+                        width: 100%;
+                    }
+                }
+            }
+            .thumbBigFotosObra {
+                padding: 0;
+                a {
+                    width: 45%;
+                    display: inline-block;
+                }
+                .imgSlider { display: none; }
+            }
+        }
+    }
 
+}
+/* Mobile ching-ling */
+@media only screen and (max-width:320px) {
+    // thumbnails galeria
+    div[role="main"] {
+        .galeria {
+            .content {
+                .imgGaleria { height: 280px; }
+            }
+        }
+    }
+
+    // thumbnails plantas
+    div[role="main"] {
+        .plantas {
+            .imgPlantas {
+                height: 210px;
+            }
+        }
+    }
+
+}
 /* $Helper classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .ir {
