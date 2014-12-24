@@ -109,6 +109,8 @@ a.btnSaibaMais:hover { text-decoration: none; }
 .btnSaibaMais, header[role="banner"] .headerGeneral .busca input[type="submit"] { background-color: #f26322; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; border-radius: 5px; color: #fff; font-size: 1rem; padding: .75em 1em; text-transform: uppercase; border: none; }
 .btnSaibaMais:hover, header[role="banner"] .headerGeneral .busca input[type="submit"]:hover { background-color: #E1581A; }
 
+.carouselHeader li img { min-width: 100%; }
+
 .pagerCustomizado { display: inline-block; position: absolute; bottom: 10px; left: 50%; }
 .pagerCustomizado .bx-pager-item { display: inline-block; width: 20px; }
 .pagerCustomizado .bx-pager-item a { height: 15px; width: 15px; display: inline-block; margin: 0; background-color: rgba(255, 255, 255, 0.4); border-radius: 50%; text-indent: -9999px; }
@@ -123,13 +125,14 @@ a.btnSaibaMais:hover { text-decoration: none; }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Index
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-header[role="banner"] .firsLine { background-color: rgba(1, 1, 1, 0.15); width: 100%; display: block; }
-header[role="banner"] .firsLine .fixbug { padding-right: 5em; }
+header[role="banner"] .firsLine { position: relative; background-color: rgba(1, 1, 1, 0.15); width: 100%; display: block; }
+header[role="banner"] .firsLine .containerFirst { width: 80%; text-align: right; margin-left: 10%; max-width: 980px; }
 header[role="banner"] .language, header[role="banner"] .netWork { font-family: "colaborate-thin", sans-serif; font-size: .875rem; display: inline-block; margin: .5em 0; }
 header[role="banner"] .language li, header[role="banner"] .netWork li { margin-right: 0.5em; }
 header[role="banner"] .netWork { border-left-width: 1px; border-left-style: solid; border-left-color: rgba(1, 1, 1, 0.5); padding-left: 1em; }
-header[role="banner"] .netWork li { height: 24px; width: 24px; }
-header[role="banner"] .netWork li a { display: block; text-indent: -9999px; background: transparent url("../img/ui/network.png") 0 0 no-repeat; transition: background 0.25s ease; -o-transition: background 0.25s ease; -ms-transition: background 0.25s ease; -moz-transition: background 0.25s ease; -webkit-transition: background 0.25s ease; }
+header[role="banner"] .netWork li { height: 24px; width: 24px; margin-right: 0; }
+header[role="banner"] .netWork li:first-child { margin-right: .5em; }
+header[role="banner"] .netWork li a { display: block; text-indent: -9999px; background: transparent url("../img/ui/network.png") 0 0 no-repeat; color: transparent; transition: background 0.25s ease; -o-transition: background 0.25s ease; -ms-transition: background 0.25s ease; -moz-transition: background 0.25s ease; -webkit-transition: background 0.25s ease; }
 header[role="banner"] .netWork .twi a:hover { background-position: 0 -24px; }
 header[role="banner"] .netWork .fac a { background-position: 0 -48px; }
 header[role="banner"] .netWork .fac a:hover { background-position: 0 -72px; }
@@ -139,17 +142,20 @@ header[role="banner"] .headerGeneral .promotional h4 { text-transform: uppercase
 header[role="banner"] .headerGeneral .promotional p { margin: 0; font-size: 1rem; font-family: "colaborate-thin", sans-serif; line-height: 1em; }
 header[role="banner"] .headerGeneral .promotional .dorms { font-size: 1.4rem; font-family: "colaborate-regular", sans-serif; }
 header[role="banner"] .headerGeneral .promotional a { font-size: 1rem; margin-top: 10px; display: inline-block; padding: .25em .75em; }
-header[role="banner"] .headerGeneral .brandSearchFlags { position: absolute; top: 0; background-color: rgba(1, 1, 1, 0.5); border-radius: 5px; padding: 10px; width: 80%; left: 10%; }
+header[role="banner"] .headerGeneral .brandSearchFlags { position: absolute; top: 0; background-color: rgba(1, 1, 1, 0.5); border-radius: 5px; padding: 10px 10px 5px 10px; width: 80%; left: 10%; max-width: 980px; }
 header[role="banner"] .headerGeneral .brand h1 { margin: 0; }
 header[role="banner"] .headerGeneral .brand img { margin: 10% 0 0; max-width: 140px; }
-header[role="banner"] .headerGeneral .busca { text-align: right; padding: 20px 10px 0 0; position: relative; }
-header[role="banner"] .headerGeneral .busca input[type="text"] { background-color: #fff; border-radius: 5px; border: none; font-size: .75rem; padding: .5em; width: 220px; }
-header[role="banner"] .headerGeneral .busca .icoSearch { margin: 0; position: absolute; right: 95px; top: 25px; }
-@-moz-document url-prefix() { header[role="banner"] .headerGeneral .busca .icoSearch { right: 105px; } }
-header[role="banner"] .headerGeneral .busca input[type="submit"] { margin-left: .5em; cursor: pointer; padding: .5em 1em; font-size: .75rem; }
-header[role="banner"] .headerGeneral .flags { color: #fff; margin-top: 20px; text-align: right; }
-header[role="banner"] .headerGeneral .flags h6 { margin: 0; text-transform: uppercase; font-family: "colaborate-regular"; font-size: .75rem; letter-spacing: -1px; text-align: right; }
-header[role="banner"] .headerGeneral .flags .listFlags { margin-top: 0; }
+header[role="banner"] .headerGeneral .busca { text-align: right; padding: 20px 0 0 0; position: relative; }
+header[role="banner"] .headerGeneral .busca input[type="text"] { background-color: #fff; border-radius: 5px; border: none; font-size: .75rem; padding: .25rem .5rem; width: 165px; margin-right: 2px; }
+header[role="banner"] .headerGeneral .busca .icoSearch { margin: 0; display: inline-block; margin-left: -25px; padding: 0; }
+@-moz-document url-prefix() { header[role="banner"] .headerGeneral .busca .icoSearch { right: 95px; } }
+header[role="banner"] .headerGeneral .busca input[type="submit"] { margin-left: .5em; cursor: pointer; padding: .25rem .5rem; font-size: .75rem; }
+@-moz-document url-prefix() { header[role="banner"] .headerGeneral .busca input[type="submit"] { padding: 0.25rem; } }
+header[role="banner"] .headerGeneral .flags { color: #fff; margin-top: 20px; }
+header[role="banner"] .headerGeneral .flags .containerFlags { width: 80%; float: right; text-align: right; }
+header[role="banner"] .headerGeneral .flags .listFlags { margin-top: 20px; }
+header[role="banner"] .headerGeneral .flags .listFlags .grupoLar { position: relative; }
+header[role="banner"] .headerGeneral .flags .listFlags .grupoLar::before { content: "GrupoLar no mundo"; width: 200px; position: absolute; left: 0; top: -20px; text-align: left; text-transform: uppercase; font-family: "colaborate-regular", sans-serif; font-size: .75rem; }
 header[role="banner"] .headerGeneral .flags .listFlags li i { height: 26px; width: 36px; display: block; background: transparent url("../img/ui/flags.png") no-repeat 0 0; margin: auto; }
 header[role="banner"] .headerGeneral .flags .listFlags li span { font-size: .6875rem; font-family: "colaborate-thin"; text-align: center; display: inline-block; color: transparent; }
 header[role="banner"] .headerGeneral .flags .listFlags li:hover span { color: #fff; }
@@ -168,7 +174,7 @@ nav[role="navigation"] li { border-left: 1px solid rgba(255, 255, 255, 0.1); min
 nav[role="navigation"] li:last-child { border-right: 1px solid rgba(255, 255, 255, 0.1); }
 nav[role="navigation"] li:last-child a { width: 100%; }
 nav[role="navigation"] li a { font-size: 1rem; font-family: "colaborate-thin", sans-serif; text-transform: uppercase; color: #adadad; padding: 2em 1em; display: block; width: 102%; height: 100%; }
-nav[role="navigation"] li a:hover { color: #f26322; }
+nav[role="navigation"] li a:hover { color: #f26322; text-decoration: none; }
 nav[role="navigation"] li .activeMenu { background: rgba(1, 1, 1, 0.3); color: #f26322; }
 
 .backgroundColors { background: rgba(0, 0, 0, 0.1) url("../img/home/bgBody.png") repeat-x top left; }
@@ -262,9 +268,13 @@ div[role="main"] .obra .datas p { margin: 0; font-family: "colaborate-thin"; fon
 div[role="main"] .obra .datas ul li:first-child { border-right: 1px solid rgba(255, 102, 9, 0.6); }
 div[role="main"] .obra .datas .head { padding: 0 20px; }
 div[role="main"] .obra .ilustra { padding-top: 20px; }
+div[role="main"] .obra .ilustra .containerIlustra { position: relative; display: block; width: 285px; height: 425px; overflow: hidden; margin: 0 auto; }
+div[role="main"] .obra .ilustra .containerIlustra .mask { position: absolute; width: 100%; height: 380px; margin-top: 30px; display: inline-block; overflow: hidden; }
+div[role="main"] .obra .ilustra .containerIlustra .mask .percentObra { display: block; width: 100%; height: 0; bottom: 0; background-color: #f26322; position: absolute; }
+div[role="main"] .obra .ilustra .containerIlustra img { z-index: 2; margin-left: 0; position: absolute; }
 div[role="main"] .obra .itensEstagioObra .status { font-size: 1.125rem; font-family: "colaborate-thin", sans-serif; width: 120px; line-height: 1em; border-bottom: 1px solid #ccc; margin-bottom: 24px; padding: 5px; }
 div[role="main"] .obra .itensEstagioObra .status span .indic { color: #f26322; font-family: "colaborate-regular"; }
-div[role="main"] .obra .itensEstagioObra ul li { display: block; margin-bottom: 10px; font-family: "colaborate-thin", sans-serif; font-size: 1.125rem; }
+div[role="main"] .obra .itensEstagioObra ul li { display: block; margin-bottom: 15px; font-family: "colaborate-thin", sans-serif; font-size: 1.125rem; }
 div[role="main"] .obra .itensEstagioObra ul li p { margin: 0; line-height: 1.125rem; }
 div[role="main"] .obra .itensEstagioObra .barra { display: block; width: 100%; background-color: #fff; position: relative; padding: 0; min-height: 1.56rem; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
 div[role="main"] .obra .itensEstagioObra .barra span { display: inline-block; color: #000; position: absolute; z-index: 10; font-size: 1.125rem; top: 0; left: 50%; margin-left: -.5rem; line-height: 1.56rem; }
@@ -291,12 +301,13 @@ div[role="main"] .obra .thumbBigFotosObra img { background-color: #fff; padding:
   .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 { width: 100%; margin-right: 0; margin-left: 0; margin-bottom: 10px; }
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Index ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
   header[role="banner"] .firsLine { height: 35px; }
+  header[role="banner"] .firsLine .containerFirst { width: 100%; margin-left: 0; }
   header[role="banner"] .headerGeneral .brandSearchFlags { background-color: transparent; width: 100%; margin: 0; left: 0; top: 0; }
   header[role="banner"] .headerGeneral .brandSearchFlags h1 { margin: 0; }
   header[role="banner"] .headerGeneral .brand img { margin: 0; width: 3.5em; }
   header[role="banner"] .headerGeneral .search { position: absolute; top: 25px; right: 0; }
   header[role="banner"] .headerGeneral .search .busca { text-align: right; padding: 0; }
-  header[role="banner"] .headerGeneral .search .busca .icoSearch { right: 5.5em; top: 4px; }
+  header[role="banner"] .headerGeneral .search .busca input[type="text"] { width: 175px; }
   header[role="banner"] .headerGeneral .search .flags { display: none; }
   header[role="banner"] .headerGeneral .promotional { bottom: 15%; left: 12%; padding: 10px; }
   header[role="banner"] .headerGeneral .promotional h4 { font-size: 1.4rem; }
@@ -347,6 +358,7 @@ div[role="main"] .obra .thumbBigFotosObra img { background-color: #fff; padding:
 @media only screen and (max-width: 480px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; margin-bottom: 20px; }
   .row .row > div:last-child { margin-bottom: 0 !important; }
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Index ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+  header[role="banner"] .firsLine .containerFirst .c12 { padding-left: 0; }
   header[role="banner"] .firsLine .fixbug { padding-right: 0; text-align: center; }
   header[role="banner"] .firsLine .end { width: 100%; }
   header[role="banner"] .language, header[role="banner"] .network { width: 60%; }
@@ -356,7 +368,6 @@ div[role="main"] .obra .thumbBigFotosObra img { background-color: #fff; padding:
   header[role="banner"] .headerGeneral .search { position: relative; margin: 0; top: 1em; }
   header[role="banner"] .headerGeneral .search .busca { text-align: center; padding: 0; margin-top: 10px; }
   header[role="banner"] .headerGeneral .search .busca input[type="text"] { width: 100%; }
-  header[role="banner"] .headerGeneral .search .busca .icoSearch { right: 0.5em; top: 4px; }
   header[role="banner"] .headerGeneral .search .busca input[type="submit"] { margin: 10px 0 0; }
   header[role="banner"] .pagerCustomizado { display: none; }
   nav[role="navigation"] li { width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.1); border-left: none; }
@@ -371,12 +382,14 @@ div[role="main"] .obra .thumbBigFotosObra img { background-color: #fff; padding:
   footer[role="contentinfo"] p { width: 90%; padding: 1em; }
   footer[role="contentinfo"] .saibaMaisFooter { display: block; width: 10em; margin: 1em auto; }
   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Empreendimentos ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-  div[role="main"] .logoEmpreendimento { display: none; }
   div[role="main"] .nameTitle { background: none; }
   div[role="main"] .nameTitle h3 { font-size: 1.25rem; }
   div[role="main"] .content { padding: 10px; margin: 0; }
+  div[role="main"] .contentMobile { padding-top: 110px; }
   div[role="main"] .sobre .nameTitle { margin: 10px; }
   div[role="main"] .sobre h3 { font-size: 1.25rem; }
+  div[role="main"] .sobre .content .logoEmpreendimento { display: block; top: 5px; right: 50%; margin-right: -50px; }
+  div[role="main"] .sobre .content .logoEmpreendimento img { max-width: 100px; }
   div[role="main"] .sobre .content h4 { font-size: 2rem; }
   div[role="main"] .sobre .saibaMaisSobre { text-align: center; padding-bottom: 20px; margin-top: 20px; }
   div[role="main"] .galeria .content, div[role="main"] .plantas .content { padding: 10px; margin: 0; }
@@ -384,11 +397,12 @@ div[role="main"] .obra .thumbBigFotosObra img { background-color: #fff; padding:
   div[role="main"] .galeria .content .btns ul li, div[role="main"] .plantas .content .btns ul li { width: 100%; margin-bottom: 5px; }
   div[role="main"] .galeria .content .btns ul li a, div[role="main"] .plantas .content .btns ul li a { font-size: 1rem; padding: .5em; line-height: 1.2em; }
   div[role="main"] .galeria .content .btns p, div[role="main"] .plantas .content .btns p { font-size: 1.1rem; line-height: 1.1em; }
-  div[role="main"] .galeria .content .imgGaleria, div[role="main"] .plantas .content .imgGaleria { height: 420px; }
+  div[role="main"] .galeria .content .imgGaleria, div[role="main"] .plantas .content .imgGaleria { height: 440px; }
   div[role="main"] .galeria .content .imgGaleria .nextGaleria a, div[role="main"] .galeria .content .imgGaleria .prevGaleria a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-2 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-2 a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-3 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-3 a, div[role="main"] .galeria .content .imgGaleria .nextGaleria-4 a, div[role="main"] .galeria .content .imgGaleria .prevGaleria-4 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria a, div[role="main"] .plantas .content .imgGaleria .prevGaleria a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-2 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-2 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-3 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-3 a, div[role="main"] .plantas .content .imgGaleria .nextGaleria-4 a, div[role="main"] .plantas .content .imgGaleria .prevGaleria-4 a { height: 35px; border-radius: 5px 5px 5px 5px; -o-border-radius: 5px 5px 5px 5px; -ms-border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
-  div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-4 { top: -35px; left: 0; }
-  div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-4 { top: -35px; right: 0; }
+  div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .prevGaleria-4 { top: 30px; left: 0; }
+  div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-4, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .plantas .content .imgGaleria .containerThumb .nextGaleria-4 { top: 30px; right: 0; }
   div[role="main"] .galeria .content .imgGaleria .pagerThumb img, div[role="main"] .galeria .content .imgGaleria .carouselThumb img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-2 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-2 img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-3 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-3 img, div[role="main"] .galeria .content .imgGaleria .pagerThumb-4 img, div[role="main"] .galeria .content .imgGaleria .carouselThumb-4 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb img, div[role="main"] .plantas .content .imgGaleria .carouselThumb img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-2 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-2 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-3 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-3 img, div[role="main"] .plantas .content .imgGaleria .pagerThumb-4 img, div[role="main"] .plantas .content .imgGaleria .carouselThumb-4 img { padding: 4px; }
+  div[role="main"] .galeria .content .imgGaleria .pagerThumb li figure, div[role="main"] .galeria .content .imgGaleria .pagerThumb-2 li figure, div[role="main"] .galeria .content .imgGaleria .pagerThumb-3 li figure, div[role="main"] .galeria .content .imgGaleria .pagerThumb-4 li figure, div[role="main"] .plantas .content .imgGaleria .pagerThumb li figure, div[role="main"] .plantas .content .imgGaleria .pagerThumb-2 li figure, div[role="main"] .plantas .content .imgGaleria .pagerThumb-3 li figure, div[role="main"] .plantas .content .imgGaleria .pagerThumb-4 li figure { margin: 10px; }
   div[role="main"] .plantas .imgPlantas { height: 290px; }
   div[role="main"] .plantas .imgPlantas p { font-size: 1rem; line-height: 1em; }
   div[role="main"] .localizacao h5 { font-size: 1.125rem; line-height: 1em; text-align: center; }
@@ -399,7 +413,9 @@ div[role="main"] .obra .thumbBigFotosObra img { background-color: #fff; padding:
   div[role="main"] .obra .thumbBigFotosObra a { width: 45%; display: inline-block; }
   div[role="main"] .obra .thumbBigFotosObra .imgSlider { display: none; } }
 /* Mobile ching-ling */
-@media only screen and (max-width: 320px) { div[role="main"] .galeria .content .imgGaleria { height: 280px; }
+@media only screen and (max-width: 320px) { div[role="main"] .galeria .content .imgGaleria { height: 320px; }
+  div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .prevGaleria-4 { top: 20px; left: 0; }
+  div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-2, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-3, div[role="main"] .galeria .content .imgGaleria .containerThumb .nextGaleria-4 { top: 20px; right: 0; }
   div[role="main"] .plantas .imgPlantas { height: 210px; } }
 /* $Helper classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

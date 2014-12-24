@@ -60,25 +60,20 @@ $(document).ready(function () {
     // hide ico 'search' header
     /////////////////////////////////////////////////////////////////////
     var search = $( "#search" ), icoSearch = $( ".icoSearch" );
-    search.on( "focus, focusin", function() { icoSearch.hide() });
-    search.on( "blur, focusout", function() { icoSearch.css( "display","inline-block" ) });
+    search.on( "focus, focusin", function() { icoSearch.css( "opacity", 0 ) });
+    search.on( "blur, focusout", function() { icoSearch.css( "opacity", 1 ) });
 
     /////////////////////////////////////////////////////////////////////
     // carousel
     /////////////////////////////////////////////////////////////////////
     var carouselHeader = $( ".carouselHeader" ).bxSlider({
-        pagerSelector: '.pagerCustomizado'
+        pagerSelector: '.pagerCustomizado',
+        auto:           true
     });
-    // destroy carousel in mobile
-    if( $(window).width() < 481 ) {
-        carouselHeader.destroySlider();
-    }
-    $(window).resize(function() {
-        if( $(this).width() < 481 ) {
-            carouselHeader.destroySlider();
-        }
-    });
-    // adjust alinhament elements carousel header
+    //// destroy carousel in mobile
+    if( $(document).width() < 481 ) { carouselHeader.destroySlider() }
+
+    //// adjust alinhament elements carousel header
     function adjusAlign(el) {
         var p = $(el);
         var w = p.width()/2;
@@ -91,11 +86,11 @@ $(document).ready(function () {
     /////////////////////////////////////////////////////////////////////
     // thumbnails of the section 'galeria'
     /////////////////////////////////////////////////////////////////////
-    // galeria-1
+    //// galeria-1
     $( ".carouselThumb" ).bxSlider({
         minSlides: 3,
         maxSlides: 3,
-        slideWidth: 150, // alterar larguras das imagens
+        slideWidth: 140, // alterar larguras das imagens
         pager: false,
         nextSelector: ".nextGaleria",
         prevSelector:  ".prevGaleria"
@@ -105,11 +100,12 @@ $(document).ready(function () {
         controls: false
     });
 
-    // galeira-2
+
+    //// galeira-2
     $( ".carouselThumb-2" ).bxSlider({
-        minSlides: 3,
+        minSlides: 2,
         maxSlides: 3,
-        slideWidth: 150, // alterar larguras das imagens
+        slideWidth: 140, // alterar larguras das imagens
         pager: false,
         nextSelector: ".nextGaleria-2",
         prevSelector:  ".prevGaleria-2"
@@ -119,11 +115,11 @@ $(document).ready(function () {
         controls: false
     });
 
-    // galeira-3
+    //// galeira-3
     $( ".carouselThumb-3" ).bxSlider({
-        minSlides: 3,
+        minSlides: 2,
         maxSlides: 3,
-        slideWidth: 150, // alterar larguras das imagens
+        slideWidth: 140, // alterar larguras das imagens
         pager: false,
         nextSelector: ".nextGaleria-3",
         prevSelector:  ".prevGaleria-3"
@@ -133,11 +129,11 @@ $(document).ready(function () {
         controls: false
     });
 
-    // galeira-4
+    //// galeira-4
     $( ".carouselThumb-4" ).bxSlider({
-        minSlides: 3,
+        minSlides: 2,
         maxSlides: 3,
-        slideWidth: 150, // alterar larguras das imagens
+        slideWidth: 140, // alterar larguras das imagens
         pager: false,
         nextSelector: ".nextGaleria-4",
         prevSelector:  ".prevGaleria-4"
@@ -146,15 +142,31 @@ $(document).ready(function () {
         pagerCustom: "#carouselThumbPager-4",
         controls: false
     });
-    // swipe galeria
+    //// swipe galeria
     var imgDasGalerias = $( ".galerias" ),
         botoesGaleria = $( ".btnGaleria" );
     swipeImage(imgDasGalerias, botoesGaleria);
 
-    // add style 'active'
+    //// add style 'active'
     $(botoesGaleria).click(function(){
         $(botoesGaleria).removeClass( "activeBtnGaleria" );
         $(this).toggleClass( "activeBtnGaleria" );
+    });
+
+    /////////////////////////////////////////////////////////////////////
+    // scrolling page
+    /////////////////////////////////////////////////////////////////////
+    function scrollAnchor (ancora) {
+        var link = $( ".nameTitle h3[id=" + ancora + "]" );
+        $( "html, body" ).animate({
+            scrollTop:  link.offset().top
+        }, "slow" );
+    }
+    var btnsAside = $( ".asideMenu li a" );  // callback function in 'click'
+    btnsAside.on( "click", function (event) {
+        event.preventDefault();
+        var a = $(this).attr( "href" ).split("#").slice(1);
+        scrollAnchor(a);
     });
 
     /////////////////////////////////////////////////////////////////////
@@ -187,25 +199,39 @@ $(document).ready(function () {
     /////////////////////////////////////////////////////////////////////
     function progressBar() {
         var progressBar = $( ".percent" ),
-            display = $( ".barra span" );
+            display = $( ".barra span" ),
+            contagem = 0,
+            totalIt = progressBar.length;
 
         progressBar.each(function (key,value) {
-            // attr 'data-value' ao progressBar
+            //// attr 'data-value' ao progressBar
             var value = $(this).attr( "data-value" );
             $(this).css( "width", value + "%" );
 
-            // set text percentual
+            //// set text percentual
             var display = $(this).prev( "span" );
             display.html( value + "%" );
 
-            // conditional display's
+            //// conditional display's
             if( value >= 55 ) { display.css( "color", "#fff" ) };
             if( value > 100 ) {
                 $(this).css( "width", "100%" );
                 display.html( "100%" );
             };
             if( isNaN(value) ) { display.html( "NaN" ) };
+
+            //// fazendo a média
+            contagem += parseInt(value);
+            return contagem;
         });
+
+        var result = contagem / totalIt;
+        var contraResult = 100 - result;
+
+        //// view display total percent
+        $( "#alertDisplay" ).text(contraResult.toFixed() + "%");
+        //// applying height fill building
+        $( "#percentObra" ).css( "height", result + "%" );
     }
     progressBar();
 
@@ -216,7 +242,6 @@ $(document).ready(function () {
         pagerCustom: "#pagerSlides",
         controls: false
     });
-
 
 });
 

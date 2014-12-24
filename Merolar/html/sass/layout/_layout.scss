@@ -124,6 +124,17 @@ a.btnSaibaMais:hover { text-decoration: none; }
     border: none;
     &:hover { background-color: #E1581A; }
 }
+/////////////////////////////////////////////////////////////////////
+// carousel header
+/////////////////////////////////////////////////////////////////////
+
+// img
+.carouselHeader {
+    li {
+        img { min-width: 100%; }
+    }
+}
+
 // pager carousel
 .pagerCustomizado {
     display: inline-block;
@@ -193,11 +204,17 @@ a.btnSaibaMais:hover { text-decoration: none; }
 header[role="banner"] {
     // firtsline
     .firsLine {
-        // height: $grid;
+        position: relative;
         background-color: rgba(1,1,1,.15);
         width: 100%;
         display: block;
-        .fixbug { padding-right: 5em; }
+        .containerFirst {
+            width: 80%;
+            text-align: right;
+            margin-left: 10%;
+            max-width: 980px;
+        }
+        // .fixbug { padding-right: 5em; }
     }
     .language, .netWork {
         font-family: $fontThin, sans-serif;
@@ -216,10 +233,13 @@ header[role="banner"] {
         li {
             height: 24px;
             width: 24px;
+            margin-right: 0;
+            &:first-child { margin-right: .5em; }
             a {
                 display: block;
                 text-indent: -9999px;
                 background: transparent url('../img/ui/network.png') 0 0 no-repeat;
+                color: transparent;
                 @include transition(background .25s ease);
             }
         }
@@ -276,9 +296,10 @@ header[role="banner"] {
             top: 0;
             background-color: $cinza50;
             border-radius: ($meioGrid/4);
-            padding: $meioGrid/2;
+            padding: ($meioGrid/2) ($meioGrid/2) ($meioGrid/4) ($meioGrid/2);
             width: 80%;
             left: 10%;
+            max-width: 980px; // layout psd
         }
         // logo
         .brand {
@@ -291,48 +312,61 @@ header[role="banner"] {
         // search
         .busca {
             text-align: right;
-            padding: $meioGrid ($meioGrid/2) 0 0;
+            padding: $meioGrid 0 0 0;
             position: relative;
             input[type="text"] {
                 background-color: #fff;
                 border-radius: ($meioGrid/4);
                 border: none;
                 font-size: .75rem;
-                padding: .5em;
-                width: 220px;
+                padding: .25rem .5rem;
+                width: 165px;
+                margin-right: 2px;
             }
             .icoSearch {
                 margin: 0;
-                position: absolute;
-                right: 95px;
-                top: 25px;
+                display: inline-block;
+                margin-left: -25px;
+                padding: 0;
             }
-            @-moz-document url-prefix() {
-              .icoSearch { right: 105px; }
-          }
-          input[type="submit"] {
+        @-moz-document url-prefix() { .icoSearch { right: 95px; } }
+        input[type="submit"] {
             @extend .btnSaibaMais;
             margin-left: .5em;
             cursor: pointer;
-            padding: .5em 1em;
+            padding: .25rem .5rem;
             font-size: .75rem;
         }
+        @-moz-document url-prefix() { input[type="submit"] { padding: 0.25rem; } }
     }
         // flags
         .flags {
             color: #fff;
             margin-top: $meioGrid;
-            text-align: right;
-            h6 {
-                margin: 0;
-                text-transform: uppercase;
-                font-family: $fontRegular;
-                font-size: .75rem;
-                letter-spacing: -1px;
+            .containerFlags {
+                width: 80%;
+                float: right;
                 text-align: right;
             }
             .listFlags {
-                margin-top: 0;
+                margin-top: $meioGrid;
+                .grupoLar {
+                    position: relative;
+                    &::before {
+                        // content
+                        content: "GrupoLar no mundo";
+                        width: 200px;
+                        // position
+                        position: absolute;
+                        left: 0;
+                        top: -20px;
+                        text-align: left;
+                        // format
+                        text-transform: uppercase;
+                        font-family: $fontRegular, sans-serif;
+                        font-size: .75rem;
+                    }
+                }
                 li {
                     i {
                         height: 26px;
@@ -389,7 +423,10 @@ nav[role="navigation"] {
             display: block;
             width: 102%;
             height: 100%;
-            &:hover { color: $laranja; }
+            &:hover {
+                color: $laranja;
+                text-decoration: none;
+            }
         }
         .activeMenu { background: $cinza30; color: $laranja; }
     }
@@ -769,7 +806,39 @@ div[role="main"] {
             }
             .head { padding: 0 $meioGrid; }
         }
-        .ilustra { padding-top: $meioGrid; }
+        .ilustra {
+            padding-top: $meioGrid;
+            .containerIlustra { // predio animacao
+                position: relative;
+                display: block;
+                width: 285px; // = img
+                height: 425px; // = img
+                overflow: hidden;
+                margin: 0 auto;
+                .mask {
+                    position: absolute;
+                    width: 100%;
+                    // compensacao das pontas do predio
+                    height: 380px;
+                    margin-top: 30px;
+                    display: inline-block;
+                    overflow: hidden;
+                    .percentObra {
+                        display: block;
+                        width: 100%;
+                        height: 0;
+                        bottom: 0;
+                        background-color: $laranja;
+                        position: absolute;
+                    }
+                }
+                img {
+                    z-index: 2;
+                    margin-left: 0;
+                    position: absolute;
+                }
+            }
+        }
         .itensEstagioObra {
             .status {
                 font-size: 1.125rem;
@@ -789,7 +858,7 @@ div[role="main"] {
             ul {
                 li {
                     display: block;
-                    margin-bottom: $meioGrid/2;
+                    margin-bottom: $meioGrid - 5;
                     font-family: $fontThin, sans-serif;
                     font-size: 1.125rem;
                     p {
@@ -917,7 +986,12 @@ div[role="main"] {
         Index
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     header[role="banner"] {
-        .firsLine { height: 35px; }
+        .firsLine { height: 35px;
+            .containerFirst {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
         .headerGeneral {
             .brandSearchFlags {
                 background-color: transparent;
@@ -940,10 +1014,7 @@ div[role="main"] {
                 .busca {
                     text-align: right;
                     padding: 0;
-                    .icoSearch {
-                        right: 5.5em;
-                        top: 4px;
-                    }
+                    input[type="text"] { width: 175px; }
                 }
                 .flags { display: none; }
             }
@@ -1157,6 +1228,9 @@ div[role="main"] {
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     header[role="banner"] {
         .firsLine {
+            .containerFirst {
+                .c12 { padding-left: 0; }
+            }
             .fixbug {
                 padding-right: 0;
                 text-align: center;
@@ -1183,10 +1257,6 @@ div[role="main"] {
                     padding: 0;
                     margin-top: $meioGrid/2;
                     input[type="text"] { width: 100%; }
-                    .icoSearch {
-                        right: 0.5em;
-                        top: 4px;
-                    }
                     input[type="submit"] {
                         margin: $meioGrid/2 0 0;
                     }
@@ -1253,7 +1323,6 @@ div[role="main"] {
         Empreendimentos
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
     div[role="main"] {
-        .logoEmpreendimento { display: none; }
         .nameTitle { background: none;
             h3 { font-size: 1.25rem; }
         }
@@ -1261,6 +1330,7 @@ div[role="main"] {
             padding: ($meioGrid/2);
             margin: 0;
         }
+        .contentMobile { padding-top: 110px; } // appear icon
         // sobre
         .sobre {
             .nameTitle {
@@ -1270,6 +1340,13 @@ div[role="main"] {
                 font-size: 1.25rem;
             }
             .content {
+                .logoEmpreendimento {
+                    display: block;
+                    top: $meioGrid/4;
+                    right: 50%;
+                    margin-right: -50px;
+                    img { max-width: 100px; }
+                }
                 h4 {
                     font-size: 2rem;
                 }
@@ -1304,7 +1381,7 @@ div[role="main"] {
                     }
                 }
                 .imgGaleria {
-                    height: 420px;
+                    height: 440px;
                     .nextGaleria, .prevGaleria, .nextGaleria-2, .prevGaleria-2, .nextGaleria-3, .prevGaleria-3, .nextGaleria-4, .prevGaleria-4 {
                         a {
                             height: 35px;
@@ -1313,17 +1390,22 @@ div[role="main"] {
                     }
                     .containerThumb {
                         .prevGaleria, .prevGaleria-2, .prevGaleria-3, .prevGaleria-4 {
-                            top: -35px;
+                            top: 30px;
                             left: 0;
                         }
                         .nextGaleria, .nextGaleria-2, .nextGaleria-3, .nextGaleria-4 {
-                            top: -35px;
+                            top: 30px;
                             right: 0;
                         }
                     }
                     .pagerThumb, .carouselThumb, .pagerThumb-2, .carouselThumb-2, .pagerThumb-3, .carouselThumb-3, .pagerThumb-4, .carouselThumb-4 {
                         img {
                             padding: 4px;
+                        }
+                    }
+                    .pagerThumb, .pagerThumb-2, .pagerThumb-3, .pagerThumb-4 {
+                        li {
+                            figure { margin: ($meioGrid/2); }
                         }
                     }
                 }
@@ -1382,7 +1464,19 @@ div[role="main"] {
     div[role="main"] {
         .galeria {
             .content {
-                .imgGaleria { height: 280px; }
+                .imgGaleria {
+                    height: 320px;
+                    .containerThumb {
+                        .prevGaleria, .prevGaleria-2, .prevGaleria-3, .prevGaleria-4 {
+                            top: 20px;
+                            left: 0;
+                        }
+                        .nextGaleria, .nextGaleria-2, .nextGaleria-3, .nextGaleria-4 {
+                            top: 20px;
+                            right: 0;
+                        }
+                    }
+                }
             }
         }
     }
