@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Highlight Title</title>
+	<style>
+		body {
+		 	box-sizing: border-box;	
+		}
+		.container {
+			display: block;
+			margin: 0 auto;
+			width: 60em;
+			padding-top: 2em;
+			clear: both;
+			position: relative;
+		}
+		.container p {
+			line-height: 1.65em;
+			font-size: 1.25em;
+			color: #7d7d7d;
+		}
+		.container h2 {
+			font-size: 2.25em;
+		}
+		#nav {
+		    float: left;
+		    margin-right: 1em;
+		}
+		#main-nav {
+			background-color: #fff;
+		    padding: 1em;
+		    width: 10em;
+		    position: fixed;
+			top: 2em;
+		}
+		#main-nav ul {
+			list-style-type: none;
+		    padding: 0;
+		    font-size: 1.25em;
+		}
+		#main-nav ul li {
+			margin-bottom: .5em;
+		}
+		#main-nav ul li a { text-decoration: none; position: relative; }
+		#main-nav ul li a:hover { text-decoration: underline; }
+		.content {
+			float: right;
+			width: 46em;
+			display: block;
+			border-left: 1px solid #ccc;
+			padding-left: 1em
+		}
+		.content:after {
+			clear: both;
+		}
+		.active { 
+			font-weight: 600;
+		}
+		.active:before {
+		    content: "";
+		    height: 18px;
+		    width: 18px;
+		    display: inline-block;
+		    background: url('ok.png') center center no-repeat;
+		    position: absolute;
+		    left: -1.25em;
+		    top: 50%;
+		    margin-top: -9px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav id="nav">
+		    <div id="main-nav"> <!-- container para fixar o menu -->
+		        <!-- <ul>
+		            <li><a id="nav_section1" href="#section1" class="active"></a></li>
+		            <li><a id="nav_section2" href="#section2"></a></li>
+		            <li><a id="nav_section3" href="#section3"></a></li>
+		        </ul> -->
+		    </div>
+		</nav>
+		<article class="content">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut velit, alias nulla laborum quod consequatur rerum rem perspiciatis aut, ipsa eos voluptates nesciunt in nisi accusantium quidem quam. Sapiente in iste, possimus voluptatum nihil quidem excepturi itaque modi sunt dicta repellendus consectetur deleniti tempora soluta quos, perspiciatis cum veritatis enim nesciunt. Minus, consequatur, deleniti.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat fugit dolor molestias modi quia voluptatem reiciendis quae sit voluptas!</p>
+			<h2><a name="section1" class="section">Eliminate distractions. Focus on getting things done.</a></h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente perspiciatis odit cum qui sit nam numquam accusantium, animi, laudantium tenetur rerum saepe modi corporis enim quia eaque, illum cumque consectetur minima nihil! Blanditiis similique eveniet ullam, consectetur distinctio totam, quas, accusamus ratione accusantium, delectus natus ex consequuntur maxime nisi. Sed, nihil voluptatem labore perferendis corporis ab magni, quae possimus unde libero sit voluptate delectus vitae, impedit fuga obcaecati! Inventore iure eum quasi atque, blanditiis odit commodi provident ad laborum nam maxime, harum reprehenderit asperiores, consequuntur rerum nisi cumque dicta odio deleniti. A molestias itaque voluptatem officiis libero? Rem iusto laudantium obcaecati sequi, iure eligendi placeat mollitia error repellendus expedita minima rerum alias impedit doloribus reprehenderit cupiditate necessitatibus eius, magnam qui esse. Nihil architecto nostrum officia nesciunt atque. Itaque dolorem possimus nesciunt inventore, natus laboriosam veritatis voluptates quos architecto nisi voluptate magnam, optio voluptatum illum necessitatibus accusantium eligendi impedit eveniet in amet, deserunt eius neque! Nam quo reiciendis, temporibus deleniti! Similique provident amet maiores iste quia dolorem ex assumenda quisquam ea accusamus ut quam autem temporibus molestiae voluptates nihil, dolores, ad tempora nisi numquam modi quibusdam. Quaerat et laborum error debitis sunt repudiandae sit incidunt. At fugit, corporis minima, mollitia, perferendis perspiciatis repellendus nemo necessitatibus doloribus, delectus iste tempora facilis quas autem libero in eos et eveniet fuga nesciunt vero! Necessitatibus facere ipsa harum assumenda dignissimos ipsam sunt, nemo, deserunt cumque inventore molestias veniam a.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi maiores illum delectus sunt doloribus, accusamus quo iure officiis. Sequi tenetur quas mollitia nostrum voluptates dicta quisquam cupiditate! Laborum pariatur, repellat quidem ut officiis commodi vel ad libero eveniet beatae. Praesentium soluta debitis quod dolore officia velit neque nemo mollitia quo nihil, laboriosam commodi recusandae rerum deserunt quidem dolorum minus at vel earum. Illo, fuga, voluptates.</p>
+
+			<h2><a name="section2" class="section">The State of Responsive Images in 2015.</a></h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente perspiciatis odit cum qui sit nam numquam accusantium, animi, laudantium tenetur rerum saepe modi corporis enim quia eaque, illum cumque consectetur minima nihil! Blanditiis similique eveniet ullam, consectetur distinctio totam, quas, accusamus ratione accusantium, delectus natus ex consequuntur maxime nisi. Sed, nihil voluptatem labore perferendis corporis ab magni, quae possimus unde libero sit voluptate delectus vitae, impedit fuga obcaecati! Inventore iure eum quasi atque, blanditiis odit commodi provident ad laborum nam maxime, harum reprehenderit asperiores, consequuntur rerum nisi cumque dicta odio deleniti. A molestias itaque voluptatem officiis libero? Rem iusto laudantium obcaecati sequi, iure eligendi placeat mollitia error repellendus expedita minima rerum alias impedit doloribus reprehenderit cupiditate necessitatibus eius, magnam qui esse. Nihil architecto nostrum officia nesciunt atque. Itaque dolorem possimus nesciunt inventore, natus laboriosam veritatis voluptates quos architecto nisi voluptate magnam, optio voluptatum illum necessitatibus accusantium eligendi impedit eveniet in amet, deserunt eius neque! Nam quo reiciendis, temporibus deleniti! Similique provident amet maiores iste quia dolorem ex assumenda quisquam ea accusamus ut quam autem temporibus molestiae voluptates nihil, dolores, ad tempora nisi numquam modi quibusdam. Quaerat et laborum error debitis sunt repudiandae sit incidunt. At fugit, corporis minima, mollitia, perferendis perspiciatis repellendus nemo necessitatibus doloribus, delectus iste tempora facilis quas autem libero in eos et eveniet fuga nesciunt vero! Necessitatibus facere ipsa harum assumenda dignissimos ipsam sunt, nemo, deserunt cumque inventore molestias veniam a.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi maiores illum delectus sunt doloribus, accusamus quo iure officiis. Sequi tenetur quas mollitia nostrum voluptates dicta quisquam cupiditate! Laborum pariatur, repellat quidem ut officiis commodi vel ad libero eveniet beatae. Praesentium soluta debitis quod dolore officia velit neque nemo mollitia quo nihil, laboriosam commodi recusandae rerum deserunt quidem dolorum minus at vel earum. Illo, fuga, voluptates.</p>
+
+			<h2><a name="section3" class="section">So, why does it get referenced so often?</a></h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente perspiciatis odit cum qui sit nam numquam accusantium, animi, laudantium tenetur rerum saepe modi corporis enim quia eaque, illum cumque consectetur minima nihil! Blanditiis similique eveniet ullam, consectetur distinctio totam, quas, accusamus ratione accusantium, delectus natus ex consequuntur maxime nisi. Sed, nihil voluptatem labore perferendis corporis ab magni, quae possimus unde libero sit voluptate delectus vitae, impedit fuga obcaecati! Inventore iure eum quasi atque, blanditiis odit commodi provident ad laborum nam maxime, harum reprehenderit asperiores, consequuntur rerum nisi cumque dicta odio deleniti. A molestias itaque voluptatem officiis libero? Rem iusto laudantium obcaecati sequi, iure eligendi placeat mollitia error repellendus expedita minima rerum alias impedit doloribus reprehenderit cupiditate necessitatibus eius, magnam qui esse. Nihil architecto nostrum officia nesciunt atque. Itaque dolorem possimus nesciunt inventore, natus laboriosam veritatis voluptates quos architecto nisi voluptate magnam, optio voluptatum illum necessitatibus accusantium eligendi impedit eveniet in amet, deserunt eius neque! Nam quo reiciendis, temporibus deleniti! Similique provident amet maiores iste quia dolorem ex assumenda quisquam ea accusamus ut quam autem temporibus molestiae voluptates nihil, dolores, ad tempora nisi numquam modi quibusdam. Quaerat et laborum error debitis sunt repudiandae sit incidunt. At fugit, corporis minima, mollitia, perferendis perspiciatis repellendus nemo necessitatibus doloribus, delectus iste tempora facilis quas autem libero in eos et eveniet fuga nesciunt vero! Necessitatibus facere ipsa harum assumenda dignissimos ipsam sunt, nemo, deserunt cumque inventore molestias veniam a.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi maiores illum delectus sunt doloribus, accusamus quo iure officiis. Sequi tenetur quas mollitia nostrum voluptates dicta quisquam cupiditate! Laborum pariatur, repellat quidem ut officiis commodi vel ad libero eveniet beatae. Praesentium soluta debitis quod dolore officia velit neque nemo mollitia quo nihil, laboriosam commodi recusandae rerum deserunt quidem dolorum minus at vel earum. Illo, fuga, voluptates.</p>
+		</article>
+	</div>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$(function(){
+		    var sections = {},
+		        _height  = $(window).height(),
+		        i        = 0;
+		    
+		    // Grab positions of our sections 
+		    $('.section').each(function(){
+		        sections[this.name] = $(this).offset().top;
+		    });
+
+		    $(document).scroll(function(){
+		        var $this = $(this),
+		            pos   = $this.scrollTop();
+		            
+		        for(i in sections){
+		            if(sections[i] < pos && sections[i] > pos - _height){
+		                $('a').removeClass('active');
+		                $('#nav_' + i).addClass('active');
+		            }  
+		        }
+		    });
+
+		    /* Inserindo titulos nos links dos menus */
+		    var titles 	= $('h2 a'),
+	    		navs 	= $('#main-nav'),
+	    		ul 		= $('<ul>');
+
+	    	if(!titles.length) { // se não houver titulos esconde o menu
+	    		navs.css('display', 'none');
+	    	} else {
+	    		titles.each(function(index, value) {
+	    			var titles_name 	= $(this).attr('name');
+		    		var titles_text 	= $(this).text();
+		    		var a = $('<a>').text(titles_text).attr('href', '#' + titles_name).attr('id', 'nav_' + titles_name);
+		    		var li = $('<li>').append(a);
+		    		ul.append(li);
+	    		});
+	    		navs.append(ul);
+	    	}
+	    	// // inserindo a class 'active' para o 1º menu
+	    	navs.find('a').eq(0).addClass('active');
+
+
+		    /* Fazendo a rolagem da tela */
+		    function rolatela(ancora) {
+		    	var title = $('h2 a[name=' + ancora + ']');
+		    	$( "html, body" ).animate({
+		            scrollTop:  title.offset().top + 5
+		        }, "500" );
+		    }
+		    var link = $('#nav').find('a');
+		    link.each(function(index, value) {
+		    	$(this).on('click', function(event) {
+		    		var alvo = $(this).attr('href').split("#").slice(1);
+		    		rolatela(alvo);
+		    	});
+		    });
+
+		});
+	</script>
+</body>
+</html>
