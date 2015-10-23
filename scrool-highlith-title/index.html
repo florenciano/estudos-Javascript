@@ -74,11 +74,11 @@
 	<div class="container">
 		<nav id="nav">
 		    <div id="main-nav"> <!-- container para fixar o menu -->
-		        <!-- <ul>
-		            <li><a id="nav_section1" href="#section1" class="active"></a></li>
-		            <li><a id="nav_section2" href="#section2"></a></li>
-		            <li><a id="nav_section3" href="#section3"></a></li>
-		        </ul> -->
+		        <ul>
+		            <li><a id="nav_section1" href="#section1" class="active">item1</a></li>
+		            <li><a id="nav_section2" href="#section2">item2</a></li>
+		            <li><a id="nav_section3" href="#section3">item3</a></li>
+		        </ul>
 		    </div>
 		</nav>
 		<article class="content">
@@ -121,41 +121,42 @@
 		        }
 		    });
 
-		    /* Inserindo titulos nos links dos menus */
-		    var titles 	= $('h2 a'),
-	    		navs 	= $('#main-nav'),
-	    		ul 		= $('<ul>');
 
-	    	if(!titles.length) { // se não houver titulos esconde o menu
-	    		navs.css('display', 'none');
-	    	} else {
-	    		titles.each(function(index, value) {
-	    			var titles_name 	= $(this).attr('name');
-		    		var titles_text 	= $(this).text();
-		    		var a = $('<a>').text(titles_text).attr('href', '#' + titles_name).attr('id', 'nav_' + titles_name);
-		    		var li = $('<li>').append(a);
-		    		ul.append(li);
-	    		});
-	    		navs.append(ul);
-	    	}
-	    	// // inserindo a class 'active' para o 1º menu
-	    	navs.find('a').eq(0).addClass('active');
+		    // /* Inserindo titulos nos links dos menus */
+		    // var titles 	= $('h2 a'),
+	    	// 	navs 	= $('#main-nav'),
+	    	// 	ul 		= $('<ul>');
+
+	    	// if(!titles.length) { // se não houver titulos esconde o menu
+	    	// 	navs.css('display', 'none');
+	    	// } else {
+	    	// 	titles.each(function(index, value) {
+	    	// 		var titles_name 	= $(this).attr('name');
+		    // 		var titles_text 	= $(this).text();
+		    // 		var a = $('<a>').text(titles_text).attr('href', '#' + titles_name).attr('id', 'nav_' + titles_name);
+		    // 		var li = $('<li>').append(a);
+		    // 		ul.append(li);
+	    	// 	});
+	    	// 	navs.append(ul);
+	    	// }
+	    	// // // inserindo a class 'active' para o 1º menu
+	    	// navs.find('a').eq(0).addClass('active');
 
 
-		    /* Fazendo a rolagem da tela */
-		    function rolatela(ancora) {
-		    	var title = $('h2 a[name=' + ancora + ']');
-		    	$( "html, body" ).animate({
-		            scrollTop:  title.offset().top + 5
-		        }, "500" );
-		    }
-		    var link = $('#nav').find('a');
-		    link.each(function(index, value) {
-		    	$(this).on('click', function(event) {
-		    		var alvo = $(this).attr('href').split("#").slice(1);
-		    		rolatela(alvo);
-		    	});
-		    });
+		    // /* Fazendo a rolagem da tela */
+		    // function rolatela(ancora) {
+		    // 	var title = $('h2 a[name=' + ancora + ']');
+		    // 	$( "html, body" ).animate({
+		    //         scrollTop:  title.offset().top + 5
+		    //     }, "500" );
+		    // }
+		    // var link = $('#nav').find('a');
+		    // link.each(function(index, value) {
+		    // 	$(this).on('click', function(event) {
+		    // 		var alvo = $(this).attr('href').split("#").slice(1);
+		    // 		rolatela(alvo);
+		    // 	});
+		    // });
 
 		});
 	</script>

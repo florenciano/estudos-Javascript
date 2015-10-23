@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<style>
+		.caixa {
+			background-color: gray;
+			font-size: 1em;
+			width: 2em;
+			height: 2em;
+			display: inline-block;
+			margin: 0 .125em;
+			text-align: center;
+			line-height: 2em;
+			color: #fff;
+			border-radius: 4px;
+		}
+		.red { 
+			background-color: red;
+			-webkit-transition: background-color 600ms linear;
+			   -moz-transition: background-color 600ms linear;
+			     -o-transition: background-color 600ms linear;
+			    -ms-transition: background-color 600ms linear;
+			        transition: background-color 600ms linear;
+		}
+	</style>
+</head>
+<body>
+	<p><button id="btn">Sortear</button></p>
+	<div class="caixa">1</div>
+	<div class="caixa">2</div>
+	<div class="caixa">3</div>
+	<div class="caixa">4</div>
+	<div class="caixa">5</div>
+	<div class="caixa">6</div>
+	<div class="caixa">7</div>
+	<div class="caixa">8</div>
+	<div class="caixa">9</div>
+	<div class="caixa">10</div>
+	<div class="caixa">11</div>
+	<div class="caixa">12</div>
+	<script>
+		var b = document.getElementById('btn'),
+		 	c = document.querySelectorAll('.caixa');
+		
+		function _randow() {
+			var n = Math.random();
+				n *= 12; // qtde caixa
+				n = Math.round(n); // result numb entre 1 - 12
+			n == 0 ? n++ : n; // no caso de resulta 0 transforma em 1
+			console.log('-> ' + n + ' <-');
+			_short(n);
+		};
+
+		function _addClass (el) {
+			if(el.className == "caixa red") { // se já foi sorteado repete 
+				_randow(); 
+			} else {
+				el.setAttribute('class','caixa red'); // senão aplica a cor
+			}
+			_countClass();
+		};
+
+		function _short (numb) {
+			switch(numb) {
+				case 1:
+					_addClass( c[0] );
+					break;
+				case 2:
+					_addClass( c[1] );
+					break;
+				case 3:
+					_addClass( c[2] );
+					break;
+				case 4:
+					_addClass( c[3] );
+					break;
+				case 5:
+					_addClass( c[4] );
+					break;
+				case 6:
+					_addClass( c[5] );
+					break;
+				case 7:
+					_addClass( c[6] );
+					break;
+				case 8:
+					_addClass( c[7] );
+					break;
+				case 9:
+					_addClass( c[8] );
+					break;
+				case 10:
+					_addClass( c[9] );
+					break;
+				case 11:
+					_addClass( c[10] );
+					break;
+				case 12:
+					_addClass( c[11] );
+					break;
+				default:
+					console.log(" :[ "); // não exec, but...
+			}
+		}
+
+		function _countClass() { // verifica qtdos tem a cor red
+			var r = 0;
+			for(i = 0; i < c.length; i++) {
+				if(c[i].className == "caixa red") {
+					r++;
+				}
+			}
+			if(r > 11) { // se chegou no limite esconde o btn - evitar loop
+				b.style.display = "none";
+			}
+		}
+
+		b.onclick = function() { // event DOM nível 0
+			_randow();
+		}
+	</script>
+</body>
+</html>
