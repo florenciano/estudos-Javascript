@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Event - Cross Browser</title>
+</head>
+<body>
+	<script>
+		if(document.attachEvent) { // ie < 8
+			document.attachEvent( 'onclick', nomeFunc );
+		} else if(document.addEventListener) {
+			document.addEventListener( 'click', nomeFunc, true );
+		}
+		function nomeFunc(e) {
+			var ev = e ? e : window.event; // configura event all browser
+			var t = "Coordenada X " + ev.screenX;
+			console.log(t);
+		}
+	</script>
+</body>
+</html>
