@@ -5,17 +5,113 @@
 	<title>Event - Cross Browser</title>
 </head>
 <body>
+	<form id="myForm" action="" method="post">
+        <p>Nome: <input id="nome" name="nome" type="text"></p>
+        <p>Sobrenome: <input id="sobrenome" name="sobrenome" type="text"></p>
+        <p>Senha: <input id="senha" name="senha" type="password"></p>
+        <p>Sexo: <input type="radio" name="sexo" value="m" checked=""> Masculino
+                 <input type="radio" name="sexo" value="f"> Feminino</p>
+        <p>Opções: <select name="opcoes" id="opcoes">
+                    <option></option>
+                    <option value="Opção 1">Opção 1</option>
+                    <option value="Opção 2">Opção 2</option>
+                    <option value="Opção 3">Opção 3</option>
+                    <option value="Opção 4">Opção 4</option>
+                </select></p>
+        <p>Mensagem: <textarea name="mensagem"></textarea></p>
+        <p><input type="submit"></p>
+    </form>
+
 	<script>
-		if(document.attachEvent) { // ie < 8
-			document.attachEvent( 'onclick', nomeFunc );
-		} else if(document.addEventListener) {
-			document.addEventListener( 'click', nomeFunc, true );
+		function catchEvents (obj, event, _function) {
+			if(obj.addEventListener) {
+				obj.addEventListener( event, _function, true );
+			} else if(obj.attachEvent) { // ie <= 8
+				var evento = 'on' + event;
+				obj.attachEvent(event, _function);
+			}
 		}
-		function nomeFunc(e) {
-			var ev = e ? e : window.event; // configura event all browser
-			var t = "Coordenada X " + ev.screenX;
-			console.log(t);
+		
+		function stopEvents (event) {
+			if(event.stopPropagation) {
+				event.stopPropagation();
+				event.preventDefault();
+			} else { // ie <= 8
+				event.returnValue = false;
+				event.cancelBubble = true;
+			}
 		}
+
+		// submit myForm
+		function submitForm (e) {
+			var evento = e ? e : window.event; // crossbrowser
+			// element of the event[submit] = formulário
+			var form = evento.target ? evento.target : evento.srcElement;
+			
+			// <select>
+			var opt = form.opcoes;
+			for(i = 0; i < opt.length; i++) {
+				if(opt[i].selected) {
+					if(opt[i].value == "" || opt[i].value == null || opt[i].value == undefined) {
+						console.log('-- OPTION SELECT EMPTY  --');
+						stopEvents(evento);
+					}
+				}
+			}
+
+			// <radio>
+			var radios = form.sexo; // ou document.getElementsByTagName('input');
+			var mark = false;
+			for(i = 0; i < radios.length; i++) {
+				if(radios[i].type == "radio" && radios[i].name == "sexo") {
+					if(radios[i].checked) {
+						mark = true;
+						console.log('valor: ' + radios[i].value); // catch value selected
+					}
+				}
+			}
+			if(!mark) {
+				console.log('-- SEX NOT DEFINED --');
+				stopEvents(evento);
+			}
+
+			// <text geral>
+			var nome, sobrenome, senha, msg;
+			nome 	  = form.nome.value;
+			sobrenome = form.sobrenome.value;
+			senha 	  = form.senha.value;
+			msg 	  = form.mensagem.value;
+			if(nome == "" || nome == null || nome == undefined) {
+				console.log('-- NOME EMPTY --');
+			}
+			if(sobrenome == "" || sobrenome == null || sobrenome == undefined) {
+				console.log('-- SOBRENOME EMPTY --');
+			}
+			if(senha == "" || senha == null || senha == undefined) {
+				console.log('-- SENHA EMPTY --');
+			}
+			if(msg == "" || msg == null || msg == undefined) {
+				console.log('-- MSG EMPTY --');
+			}
+
+
+			/*
+				Para evitar que seja executado o reenvio do formulário após a detectação de erro
+				fazer uma condicional sobre uma variável de conteúdo global com valores booleanos.
+				Esta metodologia foi implantada na verificação dos inputs radios
+			*/
+
+			console.log('SEND FORM SUCCESS :-]');
+			stopEvents(evento); // cancel refresh page
+		}
+
+		// AFTER load of the page
+		function general () {
+			catchEvents(document.getElementById('myForm'), 'submit', submitForm	);
+		}
+
+		// load of the page
+		catchEvents(window, 'load', general);
 	</script>
 </body>
 </html>
