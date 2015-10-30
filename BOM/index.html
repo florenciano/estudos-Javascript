@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BOM</title>
+</head>
+<body>
+	<p id="a1">0</p>
+	<script>
+		var
+		count = 0,
+		p = document.getElementById('a1');
+		
+		function counter () {
+			count++;
+			p.innerHTML=count;
+		}
+		
+		var refresh = setInterval(counter, 2000);
+
+		if(p.innerHTML < "2") {
+			clearInterval(refresh);
+		}
+	</script>
+</body>
+</html>
