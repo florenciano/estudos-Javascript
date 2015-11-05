@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos Javascript</title>
+</head>
+<body>
+	
+
+	<script>
+	// Usando o prototype
+
+	// Criando um objeto normal
+	var n = new Number();
+	n = -15;
+	console.log(n); // -15
+
+	// criando um método [consologando] neste obj para isto vamos usar o prototype
+	Number.prototype.consologando = function(param) {
+		console.log(param);
+	};
+
+	// 1º instância
+	var n2 = new Number();
+		n2.consologando(90);
+
+	// 2º instância
+	var n3 = new Number();
+		n3.consologando(35);
+
+	// outro exemplo com string
+	String.prototype.trim = function() {
+		var val = this;
+		val = val.replace(/\s/g, ''); // remove espaço vazio da string
+		return val;
+	};
+
+	var s = new String('  Keep calm and chuta o balde     ');
+	console.log( s.trim());
+	// testando o método trim para string primitiva
+	var s2 = 'Ei carinha que mora logo ali';
+	console.log( s2.trim() );
+
+
+	/* ---- Passando os métodos e propriedades de um obj para outro ----- */
+	var firstName = function() {
+		this.nome = 'Rodrigo';
+	};
+
+	// criando um segundo obj que ira receber a propriedade do 1º, se liga
+	var lastName = function () {
+		this.fullName = this.nome + ' Florenciano';
+	};
+
+	lastName.prototype = new firstName; // faz a prototipagem
+
+	var completo = new lastName; // instância do 2º nome
+
+	console.log(completo.fullName, completo.nome);
+
+
+	/* ---- Objetos personalizados ----- */
+	var obj = {
+		prop1: 'value1',
+		prop2: 2,
+		prop3: true,
+		metodo: function (param1, param2) {
+			return 'Algo' + param1 + param2;
+		}
+	};
+	console.log( obj.metodo(' de valor', ' aqui') );
+	
+	// Agora criando objetos por meio de um Construtor
+	// Isto é útil quando criarmos instância deste obj
+	// suas propriedades de métodos estarão disponíveis em suas instâncias
+
+	var Obj2 = {};
+	
+	Obj2.met = function (valor) { // construtores são simplesmentes funções
+		this.frase = valor;
+	};	
+
+	var mostra = new Obj2.met('valor qualquer');
+
+	console.log(mostra.frase);
+
+
+
+	</script>
+</body>
+</html>

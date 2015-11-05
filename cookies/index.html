@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cookies</title>
+	<style>
+		button {
+		    background-color: #ddd;
+		    border: 1px solid #aaa;
+		    border-radius: 2px;
+		    padding: 1em;
+		    margin: 0 .5em;
+		    cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<button id="create-cookie">Criar</button>
+	<button id="alt-cookie">Alterar</button>
+	<button id="del-cookie">Deletar</button>
+	<script>
+		
+		function id (el) {
+			return document.getElementById(el);
+		}
+
+		// criando cookies e att data de expiração
+		function createCookie(nome, valor) {
+			var data = new Date(2016,4,18); 
+				data = data.toGMTString();
+			valor = encodeURI(valor);
+			document.cookie = nome + '=' + valor + ';expires=' + data + ';path=/';
+		}
+		var create = id('create-cookie');
+		create.addEventListener( 'click', function() {
+			createCookie('Nome', 'Rodrigo');
+			createCookie('Sobrenome', 'Florenciano');
+			console.log('Criou-se: ' + document.cookie);
+			return false;
+		});
+
+		// alterando valores dos cookies
+		function altCookie (nome, valor) {
+			valor = encodeURI(valor);
+			document.cookie = nome + '=' + valor + ';path=/';
+		}
+		var alt = id('alt-cookie');
+		alt.addEventListener( 'click', function() {
+			altCookie('Nome', 'Camila');
+			altCookie('Sobrenome', 'Barbosa');
+			console.log('Dados atualizados: ' + document.cookie);
+			return false;
+		});
+
+		// apagando os cookies
+		function delCookie (nome) {
+			// criando uma data no passadao
+			var data = new Date(2000,0,01);
+				data = data.toGMTString();
+			document.cookie = nome + '= ;expires=' + data + ';path=/';
+		}
+		var del = id('del-cookie');
+		del.addEventListener( 'click', function() {
+			delCookie('Nome');
+			delCookie('Sobrenome');
+			console.log('Cookies deletados com sucesso!' + document.cookie);
+			return false;
+		});
+
+		// capturando cookies
+		function catchCookie (nomeCookie) {
+			var cname = ' ' + nomeCookie + '=';
+			var allCookies = document.cookie;
+
+			// se o cookie existe
+			if(allCookies.indexOf(cname) == -1) {
+				return false;
+			}
+
+			// remove a parte que não interessa dos cookies
+			allCookies = allCookies.substr(allCokies.indexOf(cname),allCookies.length);
+
+			// obtém o valor do cookie até o ';'
+			if(allCookies.indexOf(';') != -1) {
+				allCookies = allCookies.substr(0, allCookies.indexOf(';'));
+			}
+
+			// remove o nome do cookie e o sinal de =
+			allCookies = allCookies.split('=')[1];
+
+			// retorna apenas o valor do cookie
+			return decoreURI(allCokies);
+		}
+
+		var nome = catchCookie('Rodrigo');
+		console.log(nome);
+	</script>
+</body>
+</html>

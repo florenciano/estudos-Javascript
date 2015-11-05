@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<style>
+		p {
+			font-family: serif;
+			font-size: 1.65em;
+			line-height: 1.425em;
+			margin: 1em 2em;
+			color: #5f5f5f;
+		}
+	</style>
+</head>
+<body>
+	<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quas accusamus earum nisi odit nobis aliquam, minima similique nesciunt cupiditate dolor, <a href="#" title="quibusdam" class="linkIn" target="_self">quibusdam</a> rerum placeat saepe doloremque, <a href="#" title="comodi" class="linkOut" target="_blank">commodi</a> molestias. Nemo, voluptas.</p>
+	<p id="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptatibus debitis eligendi porro cum et vitae, tenetur sed iure odio.</p>
+
+	<script>
+		window.addEventListener( 'load', function() {
+			var p = document.getElementById('p1');
+			var links = p.getElementsByTagName('a');
+
+			for (i = 0; i < links.length; i++) {
+				if (links[i].getAttribute('target') == '_self') {
+					links[i].setAttribute('target', '_blank');
+				}
+			}
+			links.item(0).className += ' active';
+
+			var txt = document.createTextNode(' modafoca!');
+			setTimeout( function() {
+				links.item(1).appendChild(txt);
+			}, 2000);
+
+			setTimeout( function() {
+				links.item(0).style.color = 'red';
+			}, 4000);
+		});
+	</script>
+</body>
+</html>
