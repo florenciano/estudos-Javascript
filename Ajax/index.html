@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax</title>
+</head>
+<body>
+	<a href="#" id="click-me">Click me</a>
+	<div id="myDiv"></div>
+	<script>
+		// configurando evento crossbrowser em obj
+		var evento = {
+			bind: function (el, ev, fn) {
+				if (window.addEventListener) {
+					el.addEventListener(ev, fn, false); // modern browsers including IE9+
+				} else if (window.attachEvent) {
+					el.attachEvent('on' + ev, fn); // IE8 and below
+				} else {
+					el['on' + ev] = fn;
+				}
+			},
+			unbind: function (el, ev, fn) {
+				if (window.removeEventListener) {
+					el.removeEventListener(ev, fn, false);
+				} else if(window.detachEvent) {
+					el.detachEvent('on' + ev, fn);
+				} else {
+					el['on' + ev] = null;
+				}
+			},
+			stop: function (ev) {
+				var e = ev ? ev : window.event;
+				e.cancelBubble = true;
+				if (e.stopPropagation) e.stopPropagation();
+			}
+		}
+		evento.bind(window, 'load', clickLink); // qdo clicar no link chama o Ajax
+
+		function clickLink () {
+			var a = document.getElementById('click-me');
+			evento.bind(a, 'click', initAjax); // chamando o ajax
+		}
+
+		/* //////////////////////////////////////////////////////////
+									// AJAX //
+		////////////////////////////////////////////////////////// */
+		function initAjax () {
+			// vamos criar um obj XMLHttpRequest que gerencia
+			// a comunicação assíncrona entre servidor e cliente
+			var chamaAjax = new XMLHttpRequest();
+
+			// detalhando o que precisamos abrir:
+			chamaAjax.open('GET', 'contentAjax.html', true); // true = assíncrona, false = síncrona
+
+			// envinado dados para o servidor
+			chamaAjax.send();
+
+			// verficando se a conexão foi realizada com sucesso
+			chamaAjax.onreadystatechange = function () {
+				// verifica se a página foi carregada sem erros
+				if (this.readyState == 4 && this.status == 200) {
+					var div = document.getElementById('myDiv');
+					div.innerHTML = this.responseText; // coloca o conteúdo na DIV
+				}
+			}
+		}
+	</script>
+</body>
+</html>
