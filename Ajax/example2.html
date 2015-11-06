@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax e JSON</title>
+</head>
+<body>
+	<a href="#" id="click-me">Click me</a>
+	<div id="myDiv"></div>
+	<script>
+		/* //////////////////////////////////////////////////////////
+					// Configurando evento 'crossbroser' //
+		////////////////////////////////////////////////////////// */
+		var evento = {
+			bind: function (el, ev, fn) {
+				if (window.addEventListener) {
+					el.addEventListener(ev, fn, false); // modern browsers including IE9+
+				} else if (window.attachEvent) {
+					el.attachEvent('on' + ev, fn); // IE8 and below
+				} else {
+					el['on' + ev] = fn;
+				}
+			},
+			unbind: function (el, ev, fn) {
+				if (window.removeEventListener) {
+					el.removeEventListener(ev, fn, false);
+				} else if(window.detachEvent) {
+					el.detachEvent('on' + ev, fn);
+				} else {
+					el['on' + ev] = null;
+				}
+			},
+			stop: function (ev) {
+				var e = ev ? ev : window.event;
+				e.cancelBubble = true;
+				if (e.stopPropagation) e.stopPropagation();
+			}
+		}
+
+		/* //////////////////////////////////////////////////////////
+					// Criando o obj XMLHttpRequest //
+		////////////////////////////////////////////////////////// */
+		function queryXmlHttp () {
+			var obj;
+			if (window.XMLHttpRequest) {
+				obj = new XMLHttpRequest();
+			} else {
+				obj = new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			return obj;
+		}
+
+		/* //////////////////////////////////////////////////////////
+								// AJAX //
+		////////////////////////////////////////////////////////// */
+		evento.bind(window, 'load', function (ev) {
+			// após o carregamento da página...
+			var a = document.getElementById('click-me');
+			
+			// após o click no link...
+			evento.bind(a, 'click', function (ev) {
+				var xmlHttp = queryXmlHttp();
+
+				// abrindo a requisição
+				xmlHttp.open('GET', 'dados.json', true);
+				xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				xmlHttp.send();
+
+				// verifica o status da requisição
+				xmlHttp.onreadystatechange = function () {
+					if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+						var dadosJSON;
+						try {
+							dadosJSON = JSON.parse(xmlHttp.responseText); // browser moderno
+						} catch(e) {
+							eval('dadosJSON = (' + xmlHttp.responseText + ');'); // IE7 and below
+						}
+
+						// localizando a DIV
+						var div = document.getElementById('myDiv');
+
+						// fazendo laço nos dados.json
+						for (var propriedade in dadosJSON) {
+							// Add propriedade no texto da DIV
+							div.innerHTML += propriedade + ' = ';
+
+							// verifica se a propriedade é um obj
+							if (typeof dadosJSON[propriedade] !== 'object') {
+								// add o valor da propriedade no texto da div
+								div.innerHTML += dadosJSON[propriedade] + '<br>';
+							} else {
+								// Se for objeto, acessa o valor da maneira alterativa e 
+								// adiciona na div
+								div.innerHTML += '<br>';
+								div.innerHTML += 'Estudar: ' + dadosJSON[propriedade][0].Estudar;
+								div.innerHTML += '<br>';
+								div.innerHTML += 'Ler: ' + dadosJSON[propriedade][1].Ler;
+								div.innerHTML += '<br>';
+								div.innerHTML += 'Jogar: ' + dadosJSON[propriedade][2].Jogar;
+							}
+						}
+					}
+				}
+
+				// evento crossbrowser
+				var evt = ev ? ev : window.event;
+				evento.stop(evt);
+			});
+		});
+	</script>
+</body>
+</html>

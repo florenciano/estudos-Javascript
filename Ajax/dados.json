@@ -1,0 +1,26 @@
+{
+	"nome" : "Rodrigo",
+	"sobrenome" : "Florenciano",
+	"hobbies" : 
+	[
+		{ 
+			"Estudar" : 
+				[
+					"Javascript", 
+					"HTML",
+					"CSS"
+				] 
+		},
+		{ 
+			"Ler" : 
+			[
+				"Usabilidade", 
+				"Front-end",
+				"Bíblia Sagrada"
+			] 
+		},
+		{ 
+			"Jogar" : "Xadrez" 
+		}
+	]
+}

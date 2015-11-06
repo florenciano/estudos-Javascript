@@ -8,7 +8,9 @@
 	<a href="#" id="click-me">Click me</a>
 	<div id="myDiv"></div>
 	<script>
-		// configurando evento crossbrowser em obj
+		/* //////////////////////////////////////////////////////////
+					// Configurando evento crossbroser //
+		////////////////////////////////////////////////////////// */
 		var evento = {
 			bind: function (el, ev, fn) {
 				if (window.addEventListener) {
@@ -34,7 +36,7 @@
 				if (e.stopPropagation) e.stopPropagation();
 			}
 		}
-		evento.bind(window, 'load', clickLink); // qdo clicar no link chama o Ajax
+		evento.bind(window, 'load', clickLink); // esperando o click no link
 
 		function clickLink () {
 			var a = document.getElementById('click-me');
