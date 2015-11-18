@@ -31,5 +31,6 @@ function soma (frase) {
 	return soma;
 }
 
-
+var a = soma("Eu tenho 2 laranjas, ganhei 4 laranjas. Quantas tenho?");
+console.log(a);
 

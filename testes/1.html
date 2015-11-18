@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Funções em métodos</title>
+</head>
+<body>
+	<div id="foo">Conteúdo da DIV</div>
+	<p>Habilite o console do navegador</p>
+	<script>
+		var opMat = (function() {
+			var memory = {
+				adic : function () {
+					var a = 0;
+					for (i = 0; i < arguments.length; i++) {
+						a += parseFloat(arguments[i]);
+					}
+					return parseFloat(a.toFixed(2));
+				},
+				delet : function (numb1, numb2) {
+					var d = parseFloat(numb1) - parseFloat(numb2);
+					return parseFloat(d.toFixed(2));
+				},
+				mult : function (numb1, numb2) {
+					var d = parseFloat(numb1) * parseFloat(numb2);
+					return parseFloat(d.toFixed(2));
+				},
+				divis : function (numb1, numb2) {
+					var d = parseFloat(numb1) / parseFloat(numb2);
+					return parseFloat(d.toFixed(2));
+				}
+			};
+			return memory
+		})();
+
+		// variables out general scope
+		(function (func) {
+			
+			var s = opMat.adic('2.585','5',36,'9.584',36,257.365897);
+			console.log('Soma: ', s, typeof s);
+
+			var d = opMat.delet(4,8);
+			console.log('Subtração: ', d, typeof d);
+
+			var m = opMat.mult(6,9);
+			console.log('Multiplicação: ', m, typeof m);
+
+			var dd = opMat.divis(12,6);
+			console.log('Divisão: ', dd, typeof dd);
+
+		})(opMat);
+
+		// function test
+		var myLink = document.createElement('a');
+		var txt_myLink = document.createTextNode('Link criado dinamicamente');
+		myLink.appendChild(txt_myLink);
+
+		function setAttributes (el, attr) {
+			for (var prop in attr) {
+				el.setAttribute(prop, attr[prop]);
+			}
+		}
+
+		setAttributes(myLink,
+			{
+				'href'	: '#',
+				'class'	: 'link-lincado',
+				'target': '_blank'
+			}
+		);
+		// equival insertAfter
+		var div = document.getElementById('foo');
+			div.parentNode.insertBefore(myLink, div.nextSibling);
+
+		// css( {...} )
+		var x = document.createElement('p');
+		var x_txt = document.createTextNode('sei lá');
+		x.appendChild(x_txt);
+		x_css = {
+			'font-size' : '12px',
+			'left'		: '10px',
+			'top'		: '5px'
+		}
+		
+		for (var i in x_css) {
+			x.style[i] = x_css[i];
+		}
+		console.log(x);
+	</script>
+</body>
+</html>
