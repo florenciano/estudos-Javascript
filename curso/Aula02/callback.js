@@ -22,4 +22,3 @@ console.log(getList(["palio", "gol", "fox", "corsa"], function (carros) {
 // 	return lista.sort();
 // };
 // console.log(nameList(["Tobias", "Guga", "Beatriz", "Francisca", "Ana"]));
-

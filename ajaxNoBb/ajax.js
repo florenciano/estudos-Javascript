@@ -27,21 +27,38 @@ function minhaFuncao () {
 			
 		    // criando as listas
 			var minhaDiv, ul, li;
-		    minhaDiv = $( "#myDiv" ), ul = $( "<ul>" );
+				minhaDiv = document.getElementById('myDiv'),
+				ul = document.createElement('ul');
+
 		    for( i = 0; i < data.length; i++ ) {
-		    	li = $( "<li>" ).text( data[i].capitulo.assunto );
-		    	ul.append( li );
+		    	li = document.createElement('li');
+		    	li.innerText = data[i].capitulo.assunto;
+		    	ul.appendChild( li );
 		    }
-		    // DOM 
-		    minhaDiv.append( ul );
+		    // inserindo no DOM
+		    minhaDiv.appendChild( ul );
     	}
 	});
 }
 
 /* EVENTOS */
-$( "#gerarLista" ).on( "click", function (e) {
-	$( "#myDiv li" ).length < 1 ? minhaFuncao() : e.preventDefault();
+var a = document.getElementById('apagarLista'),
+	b = document.getElementById('gerarLista'),
+	d = document.getElementById('myDiv'),
+	u = d.getElementsByTagName('ul'),
+	l = d.getElementsByTagName('li');
+
+// gerar lista
+b.addEventListener( 'click', function (e) {
+	l.length < 1 ? minhaFuncao() : e.preventDefault();
 });
-$( "#apagarLista" ).on( "click", function (e) {
-	$( "#myDiv ul" ).remove();
+
+
+// apagar lista
+function remove (element) { element.parentNode.removeChild(element) }
+
+a.addEventListener( 'click', function (e) {
+	u.item(0).remove(u);
+	e.preventDefault();
 });
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Criar listagem - DOM</title>
+	<style>
+		.topicos:nth-child(even) {
+			background-color:  #efefef;
+		}
+	</style>
+</head>
+<body>
+	<div class="materias">
+		
+	</div>
+	<script>
+		(function(){
+			// criando objs de conteúdos
+			function contentLista () {
+				var listagem = [];
+				
+				var lista1 = {
+					nome : 	'Lorem ipsum',
+					obs  :  'Taca le pau'
+				};
+				var lista2 = {
+					nome : 	'Dalar somet',
+					obs  :  'Cala a boca Galvão'
+				};
+				var lista3 = {
+					nome : 	'Peshingum Lek',
+					obs  :  'Saaaaaai'
+				};
+				var lista4 = {
+					nome : 	'Lorem ipsum',
+					obs  :  'Taca le pau'
+				};
+				var lista5 = {
+					nome : 	'Dalar somet',
+					obs  :  'Cala a boca Galvão'
+				};
+				var lista6 = {
+					nome : 	'Peshingum Lek',
+					obs  :  'Saaaaaai'
+				};
+
+				listagem.push(
+					lista1, lista2, lista3,
+					lista4, lista5, lista6
+				);
+				return listagem;
+			}
+
+			// montando as listagem no DOM
+			function criarLista () {
+				var container = document.getElementsByClassName('materias');
+				var ul = document.createElement('ul');
+				// chama o obj com o conteúdo
+				var itensDaLista = contentLista();
+
+				for (i = 0; i < itensDaLista.length; i++) {
+					// criando o el <li>, inserindo txt e add a classe
+					var li = document.createElement('li');
+					var li_txt = document.createTextNode(itensDaLista[i].nome);
+					li.appendChild(li_txt);
+					li.className = 'topicos';
+
+					// criando o el <p> e inserindo o txt
+					var p = document.createElement('p');
+					var p_txt = document.createTextNode(itensDaLista[i].obs);
+					p.appendChild(p_txt);
+
+					// inserindo no DOM o elementos
+					li.appendChild(p);
+					ul.appendChild(li);
+				}
+
+				// na primeira instância de 'container'
+				// já que ele é um obj
+				container.item(0).appendChild(ul);
+			}
+
+			criarLista();
+
+		})();
+	</script>
+</body>
+</html>

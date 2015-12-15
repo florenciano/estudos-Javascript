@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Callbacks</title>
+</head>
+<body>
+	<script>
+		// outro example
+		(function(){
+			function sum (x, y, fn) {
+				fn(x,y)
+				return 'A soma deles é: ' + (x + y);
+			}
+			var k = sum(6,9, function (x, y) {
+				console.log(' Os valores foram: ' + x + ' e ' + y);
+			});
+			console.log(k);
+
+			/* objetos e métodos */
+			var carro = {
+			cor			: 	"vermelho",
+			marca		: 	"fox",
+			ano			: 	2013,
+			motor		: 	1.6,
+			fabricante	:  "volks",
+			status		: 	"off",
+			ligar		: 	function() {
+				if(carro.status == "off") {
+					carro.status = "on";
+					return "O carro " + carro.marca + " foi ligado";
+				} else {
+					return "O carro já esta ligado. Presta atenção!";
+				}
+			},
+			desligar	: 	function() {
+				if(carro.status == "on") {
+					carro.status = "off";
+					return "O carro " + carro.marca + " foi desligado";
+				} else {
+					return "O carro já esta desligado. Presta atenção!";
+				}
+			},
+		};
+		console.log(carro.motor);
+		})();
+	</script>
+</body>
+</html>
