@@ -11,5 +11,11 @@
 		console.log( numbTabuada + ' X ' + init + ' = ' + (numbTabuada * init) ) ;
 		init ++;
 	}
+	console.log("-----------");
+
+	// faça o mesmo, usando o laço for
+	for (var i = 0; i <= 10; i++) {
+		console.log( numbTabuada + ' X ' + i + ' = ' + (numbTabuada * i) + ' for');
+	};
 
 })();
