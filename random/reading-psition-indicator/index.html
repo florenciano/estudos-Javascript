@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reading Position Indicator</title>
+	<style>
+		/* style bobos */
+		body {
+			width: 80%;
+			margin: 0 auto;
+		}
+		header {
+			padding-top: 1.15em;
+			height: 8em;
+			background-color: #dcdcdc;
+		}
+		p {
+			font-family: georgia, times, serif;
+			line-height: 1.65em;
+		}
+		h1 {
+			margin-top: 0;
+		}
+		article {
+			padding: 1em;
+			background-color: #FBF5CC;
+		}
+		.container-progress {
+			background-color: #fff;
+			display: block;
+			width: 100%;
+			margin: 0;
+
+			/* Positioning */
+		 	position: fixed;
+		 	left: 0;
+		 	top: 0;
+		}
+		/* progress */
+		progress {
+		 	/* Dimensions */
+		 	width: 100%;
+		 	height: 5px;
+
+		 	/* Reset the appearance */
+		 	-webkit-appearance: none;
+		    -moz-appearance: none;
+		        appearance: none;
+
+		 	/* Get rid of the default border in Firefox/Opera. */
+		 	border: none;
+
+		 	/* Progress bar container for Firefox/IE10+ */
+		 	background-color: transparent;
+
+		 	/* Progress bar value for IE10+ */
+		 	color: #58D3F7;
+		}
+		/* crossbrowser */
+		progress::-webkit-progress-bar {
+			background-color: transparent;
+		}
+
+		progress::-webkit-progress-value {
+			background-color: #58D3F7; 
+		}
+
+		progress::-moz-progress-bar {
+			background-color: #58D3F7; 
+		}
+	</style>
+</head>
+<body>
+	<div class="container-progress">
+		<progress max="0" value="0"></progress>	
+	</div>
+
+	<header>
+		<h1>Titulo da página</h1>
+		<h4>Lorem ipsum dolor simet</h4>
+	</header>
+	<article id="article">
+		<h1>Título da página</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam praesentium facere rerum nesciunt amet reprehenderit est modi impedit. Cum aliquid libero expedita adipisci omnis? Libero non suscipit totam excepturi fugiat maiores facilis nam ut, quas dolorum, ad dignissimos consectetur est eaque quo unde id ab quam ratione veniam nesciunt impedit harum. Optio sed, sapiente id debitis corporis dolorum nemo, placeat iusto iure cum, explicabo excepturi assumenda earum maiores libero provident? Dolor quo tempora assumenda quaerat esse quas est animi sapiente inventore similique, non, accusamus sunt nihil voluptas ab officia corrupti nostrum harum! Ullam, esse facere aliquid! Expedita aut natus alias, commodi magnam obcaecati quis tempore nulla, ipsam odit nisi officia, error ea praesentium nostrum fugiat. Possimus illum tempora, explicabo voluptates eius. Numquam, vitae sapiente nisi earum soluta dicta consectetur, porro delectus fugit obcaecati quasi atque, praesentium eaque doloremque dolor cupiditate nesciunt ad maiores animi. Error molestias ad quasi aperiam maxime dolor vitae recusandae eligendi atque dolore eos doloremque voluptas culpa labore, iusto sed quo asperiores quibusdam eaque vero id incidunt dolores nemo! Quisquam expedita sunt aut tenetur vitae. Nostrum voluptate, fuga. Quae quasi unde vero omnis consequuntur ullam architecto quia natus, molestias ea magni ipsam expedita mollitia fugit fugiat nobis dolor perspiciatis tempora odio sint at delectus temporibus nemo accusamus. Nobis, excepturi.</p>
+		<h2>Subtítulo da página</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum facere vitae sunt earum porro possimus expedita, illum! Natus ab beatae atque incidunt. Adipisci consequatur a, fuga cupiditate fugit placeat iure, velit sunt nihil. Mollitia eos blanditiis modi nam! Rerum nesciunt officiis, numquam earum quis quos, voluptates sint aperiam dolore natus amet quaerat laborum quas qui illo dolor facere, est doloremque accusamus? Quas labore perspiciatis suscipit iste pariatur doloribus architecto eius, aliquid quasi nulla? Corporis non blanditiis doloremque quas sed officiis quibusdam nemo dolorem optio eligendi ex provident, itaque sit amet ducimus nobis facilis iusto, illo necessitatibus eius deserunt quod, fugiat commodi? Omnis ipsa, nobis dolores itaque sed tenetur molestiae iusto aliquid obcaecati necessitatibus aut quaerat blanditiis voluptatum sit incidunt cum, nihil atque! Odit quisquam repellat commodi neque officiis quidem qui excepturi. Dolorem molestiae, laboriosam expedita rerum eligendi amet consequuntur sed doloribus, excepturi ipsum nostrum sequi, accusantium nam. Doloremque rem voluptatem ipsum officia magnam impedit perspiciatis dolores rerum optio porro assumenda, reiciendis alias molestiae minima. Id sed maiores ab cumque quibusdam et saepe optio voluptatum sit amet expedita, totam incidunt, atque obcaecati ipsam, odit. Impedit repellendus, omnis culpa eos iure numquam magni non vero aperiam similique quidem facilis at quos id optio praesentium reiciendis. Perferendis incidunt quasi temporibus ea quas, non autem? Tempora fuga odio, exercitationem, architecto consequatur consectetur neque aspernatur eum quibusdam enim dicta. Tempore quam eveniet saepe autem, doloremque accusantium iste quos obcaecati!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta perferendis repellat, commodi recusandae laboriosam eos non culpa? Dolorem quisquam distinctio alias, recusandae pariatur possimus! Saepe ipsa vel tempora molestiae sunt. Quos voluptatibus quibusdam accusamus. Tempore distinctio veritatis sint eum dolorum commodi alias magni dolore ducimus quisquam, consequatur dolores sapiente, impedit id dignissimos veniam nulla doloremque voluptatum. Laudantium mollitia magnam vero labore iusto dolores esse, illum impedit veniam, iste dolorum ex accusantium adipisci laborum, officiis facilis quo distinctio voluptates fugit ullam, officia quis corporis animi illo sequi. Officiis!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi vitae iure nemo obcaecati rem, dolores ex quam asperiores rerum quod laudantium placeat, minus? Ullam, inventore unde.</p>
+		<h2>Subtítulo da página 2</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ipsa illo, veritatis doloribus nam molestiae ullam quidem ab, adipisci, harum consequatur nisi officia maiores optio doloremque fuga delectus nulla et unde suscipit sapiente vero cum asperiores ex! Nulla soluta natus dolorum tempora nihil, sint tenetur iusto aut, laborum fuga. Placeat quaerat sint et ipsa eius esse accusamus, quidem iure dolores unde! Suscipit, voluptatem quasi vitae, veritatis fuga, id hic odit officia nihil nemo ratione sint, repellendus tenetur. Est minus, aut nisi enim numquam optio facere nemo autem debitis iusto nesciunt sapiente nulla culpa dolorum laboriosam unde soluta earum praesentium error. Sequi, id blanditiis iure alias ratione reiciendis. Nemo quisquam veniam, magni repellendus praesentium soluta doloremque voluptatum animi dolorum. Odio nihil, ad, pariatur quod sit, fugiat excepturi dolorem praesentium sapiente velit eaque inventore, iure iste. Tempora reiciendis incidunt nam nostrum, molestiae cumque quasi voluptatem error iusto deleniti, dolorem consectetur neque culpa aut deserunt at, quod quae. Totam nisi veniam ea dolorum eos cum sapiente tempora asperiores, fugit, consequuntur, iusto libero sunt ducimus, quo minus porro! Quibusdam sed, quidem quis nemo nulla quam itaque eius iste neque temporibus quisquam voluptatem consequuntur veritatis illo consequatur fugiat sit, ipsam esse iure expedita voluptate sunt consectetur quia? Est et hic officiis minima dolore cupiditate, pariatur obcaecati quis ducimus fuga dolores cum accusamus ea corporis quae, illum aliquam molestias accusantium aperiam quas ut eum. Sed numquam, temporibus accusantium, saepe ut laboriosam illum pariatur voluptas, itaque enim nihil eligendi quae aut eveniet non earum. Cupiditate eaque, repudiandae eos quo blanditiis doloribus aspernatur nobis! Magni eligendi neque doloremque cumque, commodi dolorum facere nesciunt, odio dignissimos iusto saepe debitis. Deleniti nam rem fugit rerum accusantium quod, dolorum iure minus, illum dolore ea pariatur dolores recusandae eum cum magni magnam autem molestias repellendus. Aliquam corrupti ut harum, provident, saepe libero voluptatibus vel explicabo eos, sequi beatae. Dignissimos numquam velit nostrum tenetur ea voluptatem vero obcaecati voluptatibus rerum totam eius, tempore veritatis expedita pariatur dolor sit doloribus debitis error repellat assumenda. Aspernatur libero asperiores ex sed consequatur possimus et reiciendis dolorum, quam doloremque necessitatibus dolorem, error cupiditate!</p>
+		<p>Rem, inventore quia iure illo vitae perferendis repudiandae esse, recusandae ipsum excepturi at? Ut dolorum iure esse minima repudiandae provident veritatis cumque nesciunt pariatur officia optio itaque a, est odit dolore rem quae doloribus omnis dignissimos vitae id doloremque eos reprehenderit, nisi! Corrupti omnis necessitatibus qui illo, aut expedita quod dolor praesentium minima nostrum officiis repellat asperiores fuga ipsa, ea veritatis aperiam provident eaque, magnam est rerum. Quisquam aspernatur, dolor animi dignissimos perferendis reiciendis non quia provident eius laudantium molestias, voluptatum, consectetur quaerat. Eaque error voluptas, rerum asperiores, cumque vel magni iure vitae quos minus, perferendis! Impedit labore, cum quisquam sed et accusantium nam praesentium provident magnam corporis fugiat sint repellendus quibusdam laboriosam minus distinctio magni reiciendis nulla veniam aliquid voluptas dolore consectetur. Libero non eius debitis quasi eligendi eaque ipsum autem aliquam perferendis ullam, magnam praesentium et ab. Corrupti sunt, suscipit, eum sint deleniti odio quasi delectus nobis inventore ut laudantium exercitationem officiis quod ab molestias veniam minus libero illum ipsum! Ut, soluta quisquam molestias ea odit impedit. Esse eligendi impedit expedita. Culpa, distinctio quidem velit possimus nesciunt, maxime quis beatae ex nostrum, itaque suscipit eos perspiciatis veniam. Culpa labore, tempore. Possimus sed quo, enim ex.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur rerum nemo quisquam totam beatae ex eum iste hic. Maiores ipsa eveniet distinctio blanditiis qui, sint facilis, consequatur amet consectetur ad recusandae nostrum ipsam similique, facere harum delectus doloribus nobis natus praesentium, vel voluptatem quidem! Eos sit error magni? Eligendi accusantium reprehenderit ipsum velit quo qui sunt corporis dolorem pariatur, nisi alias aliquid delectus incidunt, nesciunt porro cupiditate beatae exercitationem ratione odio saepe quasi officia, ullam consequuntur nobis! Ex quidem maxime porro suscipit, omnis, odit voluptates assumenda cumque reprehenderit.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis pariatur rem architecto atque aperiam culpa quisquam vero sit incidunt sequi enim odio, facilis facere error libero minus iusto at debitis quos adipisci temporibus eveniet consectetur reprehenderit. Illum, quas laborum. Aperiam corporis, itaque delectus minus alias repellendus eligendi aliquam sed laborum, ullam impedit similique atque, illo voluptas nam quidem? Provident dignissimos blanditiis temporibus odio perferendis, harum!</p>
+	</article>
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+	<script>
+	$( document ).ready( function () {
+		
+		var $progress = $( "progress" ),
+	 	max, value;
+
+		var getMax = function() {
+			return $( "#article" ).outerHeight() - $( window ).height(); // 2025
+		};
+
+		var getValue = function() {
+			return $( window ).scrollTop() - $( "header" ).outerHeight();
+		};
+
+		$progress.attr({ max: getMax() });
+
+		/* set value position window in scroll */
+		$( document ).on( "scroll", function() {
+			$progress.attr({ value: getValue() });	
+		});
+
+		/* When resizes the window, the height of the window and the document will change */
+		$(window).on( "resize", function() {
+			// Need to reset the Max attr
+			max = getMax();
+			$progress.attr({ max: getMax() });
+
+			// Need to reset the Max attr
+		 	value =  getValue();
+		 	$progress.attr({ value: getValue() });
+		});
+
+	});
+	</script>
+</body>
+</html>
