@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style>
+		.body {
+			height: 200px;
+    		background: beige;
+    		width: 90%;
+    		margin: auto;
+    		overflow: hidden;
+		}
+		.dot {
+		    height: 8px; width: 8px;
+		    border-radius: 50%;
+		    background: blue;
+		    position: absolute;
+		  }
+		  .bar {
+		  	background: orange;
+		  	width: 60px;
+		  	height: 20px;
+		  }
+	</style>
+</head>
+<body>
+	<p><button>Clique-me</button></p>
+	<p><button id="button2">Clique-me como quiser</button></p>
+	<p id="p">A paragraph with a <button>button</button>.</p>
+	<p id="p2"><button>A</button><button>B</button><button>C</button></p>
+	<p>Press CTRL-Space to continue</p>
+
+	<p>Clique no retângulo abaixo</p>
+	<div class="body"></div>
+	<p>Arraste a barra de progresso abaixo :]</p>
+	<div class="bar"></div>
+	<script src="eventos.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style>
+  		.progress {
+			border: 1px solid blue;
+			width: 100px;
+			position: fixed;
+			top: 10px; right: 10px;
+  		}
+	  	.progress > div {
+		    height: 12px;
+		    background: blue;
+		    width: 0%;
+	  	}
+	  	body {
+	    	height: 2000px;
+	  	}
+	</style>
+</head>
+<body>
+	<div class="progress">
+		<!-- bar here -->
+		<div></div>
+	</div>
+	<p>Scroll me...</p>
+
+	<p>
+		<label for="name">Name:</label> <input type="text" data-help="Your full name" id="name">
+	</p>
+	<p>
+		<label for="age">Age:</label> <input type="text" data-help="Age in years" id="age">
+	</p>
+	<p id="help"></p>
+	
+	<script src="eventos-2.js"></script>
+</body>
+</html>
