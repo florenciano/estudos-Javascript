@@ -56,4 +56,51 @@
 		buttons[i].addEventListener("change", setColor);
 	}
 
+	/* 
+		Select: 
+		Extraindo valores a partir de um campo múltiplo
+	*/
+	var select = document.querySelector("select"),
+		output2 = document.querySelector("#output");
+
+	select.addEventListener("change", function (event){
+		var number = 0;
+		// iterando em cada item do select
+		for (var i = 0; i < select.options.length; i++) {
+			var option = select.options[i];
+			// se houver algum item selecionado...
+			if (option.selected) {
+				number += Number(option.value);
+			}
+		}
+		output2.textContent = number;
+	});
+
+	/* 
+		file: 
+		Lendo arquivos através do input type=file
+	*/
+	var inputfile = document.querySelector(".inputfile");
+	inputfile.addEventListener("change", function (event){
+		if (inputfile.files.length > 0) {
+			var file = inputfile.files[0];
+			console.log("You choose", file.name);
+			if (file.type) {
+				console.log("It has type", file.type);
+			}
+		}
+	});
+
+	/* file multiple */
+	var inputfileMult = document.querySelector(".inputfileMult");
+	inputfileMult.addEventListener("change", function (event){
+		Array.prototype.forEach.call(inputfileMult.files, function (file){
+			var reader = new FileReader();
+			reader.addEventListener("load", function(){
+				console.log("File", file.name);
+			});
+			reader.readAsText(file);
+		});
+	});
+
 })();
