@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Excluir valores da lista de opções em html</title>
+</head>
+<body>
+	 <h1>Avalie de 1 a 4</h1>
+    <div id="p1">
+        <form id="form1" action="" method="get">
+            <label class="control-label" for="a1">Organizado</label>
+            <select name="a1">
+                <option  id="a1" name="a1" value="4">4</option>
+                <option  id="a1" name="a1" value="3">3</option>
+                <option  id="a1" name="a1" value="2">2</option>
+                <option  id="a1" name="a1" value="1">1</option>
+            </select>&nbsp;
+            <label class="control-label" for="b1">Criativo</label>
+            <select name="b1">
+                <option  id="b1" name="b1" value="4">4</option>
+                <option  id="b1" name="b1" value="3">3</option>
+                <option  id="b1" name="b1" value="2">2</option>
+                <option  id="b1" name="b1" value="1">1</option>
+            </select>&nbsp;
+            <label class="control-label" for="c1">Independente</label>
+            <select name="c1">
+                <option  id="c1" name="c1" value="4">4</option>
+                <option  id="c1" name="c1" value="3">3</option>
+                <option  id="c1" name="c1" value="2">2</option>
+                <option  id="c1" name="c1" value="1">1</option>
+            </select>&nbsp;
+            <label class="control-label" for="d1">Impulsivo</label>
+            <select name="d1">
+                <option  id="d1" name="d1" value="4">4</option>
+                <option  id="d1" name="d1" value="3">3</option>
+                <option  id="d1" name="d1" value="2">2</option>
+                <option  id="d1" name="d1" value="1">1</option>
+            </select>
+        </form>
+    </div>
+</body>
+<script>
+	var listas = document.getElementsByTagName("select");
+
+	for(var i = 0; i < listas.length; i++) {
+		listas[i].addEventListener("change", function() {
+			itemSelecionado(this);
+		});
+	}
+
+	function itemSelecionado(listaAtual) {
+ 		var indice = listaAtual.selectedIndex;
+
+		for (var i = 0; i < listas.length; i++) {
+			var item = listas[i];
+
+			if(item.selectedIndex != indice) {
+				item.removeChild(item[indice]);
+			}
+
+		}
+	}
+</script>
+</html>
