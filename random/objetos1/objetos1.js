@@ -137,7 +137,7 @@
 		Calculando GERAL da sala de aula
 	--------------------------------------------------------- */
 	function getClassAverage(classRoom) { // pegando a var classe que tem todos os alunos
-		var resultados = [], averageClassRoom;
+		var resultados = [];
 		for(var student in classRoom) {
 			resultados.push( getAverage(classRoom[student]) );
 		}
