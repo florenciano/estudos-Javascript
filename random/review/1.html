@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Objetos</title>
+</head>
+<body>
+	<script>
+		function Hotel (name, rooms, booked) {
+			this.name = name,
+			this.rooms = rooms,
+			this.booked = booked,
+			this.checkAvailability = function () {
+				return this.rooms - this.booked;
+			};
+		}
+
+		// criando estâncias do objeto hotel
+		var quay1 = new Hotel('Rodrigo', 40, 25);
+		var quay2 = new Hotel('Camila', 36, 24);
+
+		// add/remove propriedades
+		quay2.pool = false;
+		delete quay2.name;
+
+		// mostrando valores no console
+		console.log(quay1.checkAvailability(), quay2);
+		console.log('<*========================*>');
+
+		/* OBJETO EXAMPLE */
+
+		var today;
+
+		function offerExpires (todayRequire) {
+			var weekFromToday, day, date, month, year, dayNames, montNames;
+
+			// add 7 dias à data/hora atual
+			weekFromToday = new Date(todayRequire.getTime() + 7 * 24 * 60 * 60 * 10000);
+
+			// array para nomes dias/meses
+			dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thrusday', 'Friday', 'Saturday'];
+			monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+			// coleta partes da data/mês para mostrar tela
+			day = dayNames[weekFromToday.getDay()];
+			date = weekFromToday.getDate();
+			month = monthNames[weekFromToday.getMonth()];
+			year = weekFromToday.getFullYear();
+
+			// criando a msg
+			var msg = 'Semana: ' + day + ' | Dia: ' + date + ' | Mês: ' + month + ' | Ano: ' + year + ' |';
+			return msg;
+
+		}
+		// mostrando a data
+		today = new Date();
+		console.log(today);
+		console.log(offerExpires(today));
+	</script>
+</body>
+</html>
